@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rooms{% endblock %}
+
+{% block body %}
+    <h1>Rooms</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ room.id }}</td>
+            </tr>
+            <tr>
+                <th>NameRoom</th>
+                <td>{{ room.nameRoom }}</td>
+            </tr>
+            <tr>
+                <th>TypeRoom</th>
+                <td>{{ room.typeRoom }}</td>
+            </tr>
+            <tr>
+                <th>NbPlace</th>
+                <td>{{ room.nbPlace }}</td>
+            </tr>
+            <tr>
+                <th>PriceRoom</th>
+                <td>{{ room.priceRoom }}</td>
+            </tr>
+            <tr>
+                <th>ViewRoom</th>
+                <td>{{ room.viewRoom }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionTypeRoom</th>
+                <td>{{ room.descriptionTypeRoom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('rooms_index') }}">back to list</a>
+
+    <a href="{{ path('rooms_edit', {'id': room.id}) }}">edit</a>
+
+    {{ include('rooms/_delete_form.html.twig') }}
+{% endblock %}

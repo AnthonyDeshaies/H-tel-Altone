@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Amenities index{% endblock %}
+
+{% block body %}
+    <h1>Amenities index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NameAmenity</th>
+                <th>DescriptionAmenity</th>
+                <th>ImgAmenity</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for amenity in amenities %}
+            <tr>
+                <td>{{ amenity.id }}</td>
+                <td>{{ amenity.nameAmenity }}</td>
+                <td>{{ amenity.descriptionAmenity }}</td>
+                <td>{{ amenity.imgAmenity }}</td>
+                <td>
+                    <a href="{{ path('amenities_show', {'id': amenity.id}) }}">show</a>
+                    <a href="{{ path('amenities_edit', {'id': amenity.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('amenities_new') }}">Create new</a>
+{% endblock %}

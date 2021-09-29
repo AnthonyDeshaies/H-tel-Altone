@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategoryDishes index{% endblock %}
+
+{% block body %}
+    <h1>CategoryDishes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NameCategory</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category_dish in category_dishes %}
+            <tr>
+                <td>{{ category_dish.id }}</td>
+                <td>{{ category_dish.nameCategory }}</td>
+                <td>
+                    <a href="{{ path('category_dishes_show', {'id': category_dish.id}) }}">show</a>
+                    <a href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_dishes_new') }}">Create new</a>
+{% endblock %}

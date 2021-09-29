@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeRoom index{% endblock %}
+
+{% block body %}
+    <h1>TypeRoom index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NameType</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_room in type_rooms %}
+            <tr>
+                <td>{{ type_room.id }}</td>
+                <td>{{ type_room.nameType }}</td>
+                <td>
+                    <a href="{{ path('type_room_show', {'id': type_room.id}) }}">show</a>
+                    <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_room_new') }}">Create new</a>
+{% endblock %}

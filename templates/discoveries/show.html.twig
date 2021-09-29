@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Discoveries{% endblock %}
+
+{% block body %}
+    <h1>Discoveries</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ discovery.id }}</td>
+            </tr>
+            <tr>
+                <th>NameDiscovery</th>
+                <td>{{ discovery.nameDiscovery }}</td>
+            </tr>
+            <tr>
+                <th>Descriptiondiscovery</th>
+                <td>{{ discovery.descriptiondiscovery }}</td>
+            </tr>
+            <tr>
+                <th>ImgDiscovery</th>
+                <td>{{ discovery.imgDiscovery }}</td>
+            </tr>
+            <tr>
+                <th>CityDiscovery</th>
+                <td>{{ discovery.cityDiscovery }}</td>
+            </tr>
+            <tr>
+                <th>CoordinatesDiscovery</th>
+                <td>{{ discovery.coordinatesDiscovery }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('discoveries_index') }}">back to list</a>
+
+    <a href="{{ path('discoveries_edit', {'id': discovery.id}) }}">edit</a>
+
+    {{ include('discoveries/_delete_form.html.twig') }}
+{% endblock %}
