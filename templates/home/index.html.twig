@@ -3,18 +3,168 @@
 {% block title %}Accueil-Hôtel Altone{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section id="banner_reservation" class="container">
+    <!-- <div class="row">
+        <div class="col-lg-2">
+            <h3>RÉSERVEZ !</h3>
+        </div>
+        <form action="">
+            <div class="col-lg-2">
+                <label for="start_date" class="form-label">Date d'éntrée</label>
+                <input type="date" class="form-control" id="start_date">
+            </div>
+            <div class="col-lg-2">
+                <label for="end_date" class="form-label">Date de fin</label>
+                <input type="date" class="form-control" id="end_date">
+            </div>
+            <div class="col-lg-2">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            </div>
+            <div class="col-lg-2">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/hotelAltone/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/hotelAltone/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+            </div>
+            <div class="col-lg-2">
+                <a href="#">Vérifier Disponinilité</a>
+            </div>
+        </form>
+    </div> -->
+</section>
+<section id="welcome" class="container-fluid">
+    <div class="row">
+        <div class="col-lg-5">
+            <img src="{{ asset ('images/loire.jpg') }}" alt="">
+        </div>
+        <div class="col-lg-7 welcome_txt container-fluid">
+            <p><span>L'hôtel idéal pour la relaxation et pour vos séminaires</span></p>
+            <h2>PROFITEZ DU CADRE NATUREL DE LA VALLÉE DE LA LOIRE</h2>
+            <P>Situé sur les hauteurs des bords de Loire, l'hôtel Altone est le lieu idéal
+                pour se ressourcer, aussi bien pour un séjour touristique que pour un
+                séminaire professionel. </P>
+            <p>Vous trouverez ici tout ce dont vous aurez besoin pour passer un séjour
+                des plus agréables, dans des chambres offrant le plus grand confort,
+                avec wifi haut débit, un service de chambre entièrement dévoué à
+                votre bien-être, un restaurant haut de gamme, des sallons de détente,
+                un spa, et tout ce dont vous auriez besoin...</p>
+            <a href="#" class="btn">En savoir +</a>
+        </div>
+    </div>
+</section>
+
+<section id="amenities_banner">
+    <div class="amenities_banner_element">
+        <i class="fas fa-wifi"></i>
+        <h3>Free wifi</h3>
+        <p>Pour rester connecté partout dans l'hotêl, y compris dans les jardins !</p>
+    </div>
+    <div class="amenities_banner_element">
+        <i class="fas fa-key"></i>
+        <h3>Service de chambre</h3>
+        <p>Profitez d'un service de chambre irréprochable à votre service !</p>
+    </div>
+    <div class="amenities_banner_element">
+        <i class="fas fa-parking"></i>
+        <h3>Parking</h3>
+        <p>Parking couvert sous vidéo-surveillance accessible 24h/24h ! </p>
+    </div>
+</section>
+
+<section id="rooms_home_page" class="container">
+    <h2>DES CHAMBRES MODERNES HAUT DE GAMME</h2>
+    <p><em> L' Hôtel Altone comprend 32 chambres soignées, avec air conditionné
+            , parfaitement équipés pour un séjour des plus agréables.</em>
+    </p>
+    <div class="row suite_home_page">
+
+        <div class="col-lg-6">
+            <a href="#"><img src="{{ asset ('images/suite_room1.jpg') }}"></a>
+        </div>
+
+        <div class="col-lg-6 suite_home_page_txt">
+            <div>
+                <h3>SUITE ALTONE</h3>
+                <p>La suite Altone comprend 2 chambres et un sallon spacieux qui vous offrira
+                    tout le confort que vous pouvez désirer, aussi bien pour vous relaxer ou
+                    vous divertir en vacances que pour préparer vos dossier professionnels.
+                </p>
+            </div>
+            <div>
+                <h4>CARACTÉRISTIQUES</h4>
+                <P><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i
+                        class="fas fa-male man"></i>
+                    4 personnes</P>
+                <p><i class="far fa-square"></i> Superficie : 92m²</p>
+                <p><i class="far fa-eye"></i> Vue sur la vallée de la Loire</p>
+                <P><i class="fas fa-bath"></i> Salle de bain avec baignoire</P>
+            </div>
+            <a href="#" class="btn">En savoir +</a>
+        </div>
+    </div>
+    <div class="row rooms_kind_home_page">
+        <div class="col-lg-3">
+            <a href="#"><img src="{{ asset ('images/double_room.jpg') }}"></a>
+        </div>
+        <div class="col-lg-3 rooms_home_page_txt">
+            <h3>CHAMBRES DOUBLES</h3>
+            <p>Ces chambres sont spacieuses, lumineuses. Elles offrent
+                une intimité avec vue sur la Loire, le château d’Amboise
+                ou les jardins à l’italienne.</p>
+            <a href="#" class="btn">En savoir +</a>
+        </div>
+        <div class="col-lg-3">
+            <a href="#"><img src="{{ asset ('images/familly_room1.jpg') }}"></a>
+        </div>
+        <div class="col-lg-3 rooms_home_page_txt">
+            <h3>CHAMBRES FAMILLES</h3>
+            <p>Ce sont de belles et grandes chambres de style, avec un espace salon et un blacon privée.
+                L’ambiance feutrée vous apportera calme et sérénité.</p>
+            <a href="#" class="btn">En savoir +</a>
+        </div>
+    </div>
+</section>
+
+<div class="treat"></div>
+
+<section id="restaurant_home_page" class="container">
+    <div class="row">
+        <div class="col-lg-6 restaurant_home_page_txt">
+            <h2>RESTAURANT / BAR</h2>
+            <p>Confortablement installé dans notre salle de restaurant aux grandes baies vitrées ou sur notre
+                terrasse, profitez d'un panorama exeptionnel sur la Loire lors de votre dégustation.
+                <br><br>
+                Savourez l'art de la cuisine gastronomique française au restaurant Le Lotus, en mettant
+                l'accent sur les meilleurs produits de saison de la région.
+                <br><br>
+                Le chef Delouche décrit sa cuisine comme l'équilibre parfait entre les produits modernes et
+                locaux, mettant en valeur les viandes d'élevage régionales et les poissons français tout en
+                les transformant en plats gastronomiques d'art.
+            </p>
+            <a href="#" class="btn">En savoir +</a>
+        </div>
+        <div class="col-lg-6">
+            <a href="#"><img src="{{ asset ('images/food_home.jpg') }}"></a>
+        </div>
+    </div>
+</section>
+
+<div class="treat"></div>
+
+<section id="location_home_page" class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>ACCÈS À L'HÔTEL</h2>
+            <div class="location_infos">
+                <p><i class="fas fa-map-marker-alt" href="#"></i> Chemin de l'île Ardouin, 49400 Saumur</p>
+                <p><i class="fas fa-envelope" href="#"></i> contact@altone.fr</p>
+                <p><i class="fas fa-phone-alt href=" #""></i> 06 33 10 81 28</p>
+                <p><i class="fas fa-thumbtack"></i> 47.290531, -0.109539</p>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <iframe src="https://www.google.com/maps/d/embed?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox" width="100%"
+                height="350px"></iframe>
+        </div>
+
+    </div>
+
+</section>
 {% endblock %}

@@ -1,19 +1,106 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<head>
+	<meta charset="UTF-8">
+	<title>
+		{% block title %}Hôtel ALTONE{% endblock %}
+	</title>
+	{# Run `composer require symfony/webpack-encore-bundle`
+	and uncomment the following Encore helpers to start using Symfony UX #}
+	
+	<!--FONTS-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Source+Sans+Pro&display=swap" rel="stylesheet">	
+	<!-- ICONS -->
+	<script src="https://kit.fontawesome.com/e6187d3d12.js" crossorigin="anonymous"></script>
+
+	{% block stylesheets %}
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ asset('css/style.css')}}">
+	{% endblock %}
+
+	{% block javascripts %}
+	{#{{ encore_entry_script_tags('app') }}#}
+	{% endblock %}
+</head>
+<header>
+	{% block header %}
+	<section id="banner">
+		<div class="adress">
+			<p><i class="fas fa-map-marker-alt" href="#"></i>Chemin de l'île Ardouin, 49400 Saumur</p>
+		</div>
+		<div class="mail">
+			<p><i class="fas fa-envelope" href="#"></i>contact@altone.fr</p>
+		</div>
+		<div class="phone">
+			<p><i class="fas fa-phone-alt href=" #""></i>06 33 10 81 28</p>
+		</div>
+	</section>
+
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container">
+			<a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset ('logos/flat_logo_small.png') }}"
+					class="" alt=""></i></a>
+			<a class="navbar-brand logo-brand" href="{{ path('home') }}">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav  ms-auto">
+						<a class="nav-link" href="#">Chambres</a>
+						<a class="nav-link" href="#">Restaurant</a>
+						<a class="nav-link" href="#">Services</a>
+						<a class="nav-link" href="#">Tourisme</a>
+						<a class="nav-link" href="#">L'établissement</a>
+						<a class="nav-link" href="#">Contact</a>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<span class="login-logo">
+									<i class="fas fa-user"></i>
+								</span>
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+								<a class="dropdown-item" href="{{ path('app_register') }}">Inscrivez-vous !</a>
+								<a class="dropdown-item" href="{{ path('home') }}">Déconnexion</a>
+							</ul>
+						</li>
+					</div>
+				</div>
+			</a>
+		</div>
+	</nav>
+	<section id="main_title">
+		<img src="{{ asset ('logos/flat_logo_small.png') }}" alt="">
+		<h1>Venez-vous détendre en bord de Loire dans le plus agréable des hôtels... </h1>
+	</section>
+
+	{% endblock %}
+</header>
+
+{% block body %}
+{% endblock %}
+
+
+<footer>
+	{% block footer %}
+	<a href="{{ path('home') }}"><img src="{{ asset ('logos/logo_small.png') }}" alt=""></a>
+	<div class="footer_archors">
+		<a href="#">Chambres</a>
+		<a href="#">Restaurant</a>
+		<a href="#">Services</a>
+		<a href="#">Tourisme</a>
+		<a href="#">L'établissement</a>
+		<a href="#">Contact</a>
+	</div>
+	<p>Hôtel Anjou 2021 @ All Rights Reserved</p>
+	{% endblock %}
+</footer>
+
 </html>

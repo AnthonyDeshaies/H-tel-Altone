@@ -1,0 +1,352 @@
+/*========================= GLOBAL ============================*/
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  color: #5184c7;
+}
+
+h3 {
+  color: #69b88e;
+}
+
+p {
+  color: #4e4e4d;
+}
+
+.btn {
+  width: 120px;
+  color: white;
+  background-color: #69b88e;
+}
+
+.treat {
+  width: 300px;
+  height: 2px;
+  background-color: #757570;
+  margin: 100px auto;
+}
+
+/* ===================  BASE.HTML.TWIG ==========================*/
+/* ------------------------ HEADER ---------------------*/
+header {
+  width: 100%;
+}
+
+header #banner {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #69b88e;
+  color: white;
+  margin: auto;
+}
+
+header #banner p {
+  margin-top: 10px;
+}
+
+header #banner i {
+  margin-right: 15px;
+}
+
+header nav img {
+  height: 50px;
+}
+
+header nav a {
+  color: #69b88e !important;
+  font-size: 20px;
+}
+
+header nav a:hover {
+  color: #5184c7 !important;
+  border-bottom: solid 4px #5184c7;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header #main_title {
+  width: 100%;
+  height: 700px;
+  background-image: url("../images/chateau.jpg");
+  background-size: cover;
+}
+
+header #main_title img {
+  height: 150px;
+  display: block;
+  margin: auto;
+  padding-top: 20px;
+}
+
+header #main_title h1 {
+  text-align: center;
+  padding-top: 20px;
+  color: #313130;
+  font-size: 30px;
+  font-style: italic;
+  margin: 0 300px 0 300px;
+}
+
+/* ====================== FOOTER ==========================*/
+footer {
+  margin-top: 150px;
+  width: 100%;
+  height: 200px;
+  background-color: #757570;
+}
+
+footer img {
+  height: 80px;
+  display: block;
+  margin: -10px auto;
+}
+
+footer .footer_archors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer a {
+  color: #69b88e;
+  text-decoration: none;
+  margin: 20px 10px 25px 10px;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+/*====================== HOME PAGE ========================*/
+/*----section banner_reservation---*/
+#banner_reservation {
+  height: 120px;
+  background-color: #69b88e;
+  margin-top: -60px;
+}
+
+/*---------section welcome--------*/
+#welcome {
+  margin: 100px 0 80px 0;
+}
+
+#welcome img {
+  max-width: 100%;
+}
+
+#welcome .welcome_txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#welcome .welcome_txt span {
+  color: #69b88e;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+#welcome .welcome_txt p {
+  font-size: 16px;
+}
+
+/*----------section amenities_banner------*/
+#amenities_banner {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #69b88e;
+}
+
+#amenities_banner .amenities_banner_element {
+  text-align: center;
+  margin: 20px 0 20px 0;
+}
+
+#amenities_banner .amenities_banner_element i {
+  color: #5184c7;
+}
+
+#amenities_banner .amenities_banner_element .fa-wifi, #amenities_banner .amenities_banner_element .fa-key {
+  font-size: 33px;
+}
+
+#amenities_banner .amenities_banner_element .fa-parking {
+  font-size: 42px;
+}
+
+#amenities_banner .amenities_banner_element h3 {
+  margin: 20px 0;
+  color: #e4e4e4;
+  font-weight: normal;
+}
+
+#amenities_banner .amenities_banner_element p {
+  width: 300px;
+  color: #4e4e4d;
+}
+
+/*----------section rooms_home_page------*/
+#rooms_home_page {
+  margin-top: 80px;
+}
+
+#rooms_home_page .suite_home_page {
+  margin-top: 60px;
+}
+
+#rooms_home_page .suite_home_page img {
+  max-width: 100%;
+}
+
+#rooms_home_page .suite_home_page .suite_home_page_txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#rooms_home_page .suite_home_page .suite_home_page_txt h4 {
+  color: #69b88e;
+  font-size: 20px;
+}
+
+#rooms_home_page .suite_home_page .suite_home_page_txt i {
+  font-size: 20px;
+  color: #69b88e;
+}
+
+#rooms_home_page .suite_home_page .suite_home_page_txt .man {
+  margin-right: 17px;
+}
+
+#rooms_home_page .suite_home_page .suite_home_page_txt .fa-square, #rooms_home_page .suite_home_page .suite_home_page_txt .fa-bath {
+  margin: 0 22px 0 8px;
+}
+
+#rooms_home_page .suite_home_page .suite_home_page_txt .fa-eye {
+  margin: 0 19px 0 7px;
+}
+
+#rooms_home_page .rooms_kind_home_page {
+  margin-top: 80px;
+}
+
+#rooms_home_page .rooms_kind_home_page img {
+  max-width: 100%;
+}
+
+#rooms_home_page .rooms_kind_home_page .rooms_home_page_txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+/*-----section restaurant_home_page-----*/
+#restaurant_home_page .restaurant_home_page_txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#restaurant_home_page img {
+  max-width: 100%;
+}
+
+/*----------section location_home--------*/
+#location_home_page {
+  margin-top: 80px;
+}
+
+#location_home_page h2 {
+  margin-bottom: 50px;
+}
+
+#location_home_page .location_infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#location_home_page p {
+  margin: 20px 0 20px 80px;
+}
+
+#location_home_page i {
+  margin-right: 20px;
+  color: #69b88e;
+}
+
+/*----------section rooms_home_page------*/
+/*----------section rooms_home_page------*/
+/*----------section rooms_home_page------*/
+/*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/
+/*========RESPONSIVE HOME PAGE==============*/
+@media screen and (max-width: 1500px) {
+  .welcome_txt {
+    padding: 0 50px;
+  }
+  .welcome_txt p {
+    font-size: 15px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
