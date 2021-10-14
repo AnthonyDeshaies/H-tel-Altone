@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Suppliers{% endblock %}
+{% block title %}Modifier fournisseur{% endblock %}
 
 {% block body %}
-    <h1>Edit Suppliers</h1>
+    <h1>Modifier fournisseur</h1>
 
     {{ include('suppliers/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('suppliers_index') }}">back to list</a>
+    <a href="{{ path('suppliers_index') }}">retour à la liste des fournisseurs</a>
 
     {{ include('suppliers/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Dishes index{% endblock %}
+{% block title %}Index des plats{% endblock %}
 
 {% block body %}
-    <h1>Dishes index</h1>
+    <h1>Index des plats</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameDish</th>
-                <th>DescriptionDish</th>
-                <th>PriceDish</th>
+                <th>Nom de plat</th>
+                <th>Description du plat</th>
+                <th>Prix du plat</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,8 +23,8 @@
                 <td>{{ dish.descriptionDish }}</td>
                 <td>{{ dish.priceDish }}</td>
                 <td>
-                    <a href="{{ path('dishes_show', {'id': dish.id}) }}">show</a>
-                    <a href="{{ path('dishes_edit', {'id': dish.id}) }}">edit</a>
+                    <a href="{{ path('dishes_show', {'id': dish.id}) }}">Voir</a>
+                    <a href="{{ path('dishes_edit', {'id': dish.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('dishes_new') }}">Create new</a>
+    <a href="{{ path('dishes_new') }}">Créer un nouveau plat</a>
 {% endblock %}

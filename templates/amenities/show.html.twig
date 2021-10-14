@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Amenities{% endblock %}
+{% block title %}Services{% endblock %}
 
 {% block body %}
-    <h1>Amenities</h1>
+    <h1>Services</h1>
 
     <table class="table">
         <tbody>
@@ -12,23 +12,23 @@
                 <td>{{ amenity.id }}</td>
             </tr>
             <tr>
-                <th>NameAmenity</th>
+                <th>Nom du service</th>
                 <td>{{ amenity.nameAmenity }}</td>
             </tr>
             <tr>
-                <th>DescriptionAmenity</th>
+                <th>Description du service</th>
                 <td>{{ amenity.descriptionAmenity }}</td>
             </tr>
             <tr>
-                <th>ImgAmenity</th>
+                <th>Image du service</th>
                 <td>{{ amenity.imgAmenity }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('amenities_index') }}">back to list</a>
+    <a href="{{ path('amenities_index') }}">Retour à la liste des services</a>
 
-    <a href="{{ path('amenities_edit', {'id': amenity.id}) }}">edit</a>
+    <a href="{{ path('amenities_edit', {'id': amenity.id}) }}">modifier service</a>
 
     {{ include('amenities/_delete_form.html.twig') }}
 {% endblock %}

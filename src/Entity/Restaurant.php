@@ -54,6 +54,11 @@ class Restaurant
      */
     private $Menus;
 
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $nameRestaurant;
+
     public function __construct()
     {
         $this->Menus = new ArrayCollection();
@@ -162,6 +167,18 @@ class Restaurant
                 $menu->setRestaurant(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNameRestaurant(): ?string
+    {
+        return $this->nameRestaurant;
+    }
+
+    public function setNameRestaurant(string $nameRestaurant): self
+    {
+        $this->nameRestaurant = $nameRestaurant;
 
         return $this;
     }

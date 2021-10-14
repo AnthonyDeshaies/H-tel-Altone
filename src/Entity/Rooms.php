@@ -23,11 +23,6 @@ class Rooms
     private $nameRoom;
 
     /**
-     * @ORM\Column(type="string", length=55)
-     */
-    private $typeRoom;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $nbPlace;
@@ -50,7 +45,7 @@ class Rooms
     /**
      * @ORM\ManyToOne(targetEntity=TypeRoom::class, inversedBy="rooms")
      */
-    private $TypeRoom;
+    private $typeRoom;
 
     public function getId(): ?int
     {
@@ -65,18 +60,6 @@ class Rooms
     public function setNameRoom(string $nameRoom): self
     {
         $this->nameRoom = $nameRoom;
-
-        return $this;
-    }
-
-    public function getTypeRoom(): ?string
-    {
-        return $this->typeRoom;
-    }
-
-    public function setTypeRoom(string $typeRoom): self
-    {
-        $this->typeRoom = $typeRoom;
 
         return $this;
     }
@@ -125,6 +108,18 @@ class Rooms
     public function setDescriptionTypeRoom(string $descriptionTypeRoom): self
     {
         $this->descriptionTypeRoom = $descriptionTypeRoom;
+
+        return $this;
+    }
+
+    public function getTypeRoom(): ?TypeRoom
+    {
+        return $this->typeRoom;
+    }
+
+    public function setTypeRoom(?TypeRoom $typeRoom): self
+    {
+        $this->typeRoom = $typeRoom;
 
         return $this;
     }

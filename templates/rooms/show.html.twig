@@ -3,7 +3,7 @@
 {% block title %}Rooms{% endblock %}
 
 {% block body %}
-    <h1>Rooms</h1>
+    <h1>Chambres</h1>
 
     <table class="table">
         <tbody>
@@ -12,11 +12,11 @@
                 <td>{{ room.id }}</td>
             </tr>
             <tr>
-                <th>NameRoom</th>
+                <th>Nom/Numéro de chambre</th>
                 <td>{{ room.nameRoom }}</td>
             </tr>
             <tr>
-                <th>TypeRoom</th>
+                <th>Type de chambre</th>
                 <td>{{ room.typeRoom }}</td>
             </tr>
             <tr>
@@ -24,23 +24,23 @@
                 <td>{{ room.nbPlace }}</td>
             </tr>
             <tr>
-                <th>PriceRoom</th>
+                <th>Tarif</th>
                 <td>{{ room.priceRoom }}</td>
             </tr>
             <tr>
-                <th>ViewRoom</th>
+                <th>Vue</th>
                 <td>{{ room.viewRoom }}</td>
             </tr>
             <tr>
-                <th>DescriptionTypeRoom</th>
+                <th>Description type de chambre</th>
                 <td>{{ room.descriptionTypeRoom }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('rooms_index') }}">back to list</a>
+    <a href="{{ path('rooms_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('rooms_edit', {'id': room.id}) }}">edit</a>
+    <a href="{{ path('rooms_edit', {'id': room.id}) }}">Modifier</a>
 
     {{ include('rooms/_delete_form.html.twig') }}
 {% endblock %}

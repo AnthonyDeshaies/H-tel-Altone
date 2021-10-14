@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Discoveries{% endblock %}
+{% block title %}Modifier activité touristique{% endblock %}
 
 {% block body %}
-    <h1>Edit Discoveries</h1>
+    <h1>Modifier activité touristique</h1>
 
     {{ include('discoveries/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('discoveries_index') }}">back to list</a>
+    <a href="{{ path('discoveries_index') }}">retour à la liste des activités touristiques</a>
 
     {{ include('discoveries/_delete_form.html.twig') }}
 {% endblock %}

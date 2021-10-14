@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CategoryDishes index{% endblock %}
+{% block title %}Index des catégories de plat{% endblock %}
 
 {% block body %}
-    <h1>CategoryDishes index</h1>
+    <h1>Index des catégories de plat</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameCategory</th>
+                <th>Nom de catégorie de plat</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,8 +19,8 @@
                 <td>{{ category_dish.id }}</td>
                 <td>{{ category_dish.nameCategory }}</td>
                 <td>
-                    <a href="{{ path('category_dishes_show', {'id': category_dish.id}) }}">show</a>
-                    <a href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}">edit</a>
+                    <a href="{{ path('category_dishes_show', {'id': category_dish.id}) }}">Voir</a>
+                    <a href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('category_dishes_new') }}">Create new</a>
+    <a href="{{ path('category_dishes_new') }}">Créer nouvelle catégorie</a>
 {% endblock %}

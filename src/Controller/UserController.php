@@ -28,7 +28,6 @@ class UserController extends AbstractController
 
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
-     * @isGranted("ROLE_USER")
      */
     public function new(Request $request): Response
     {
@@ -62,7 +61,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
-     * @isGranted("ROLE_ADMIN")
+     * @isGranted("ROLE_USER")
      */
     public function edit(Request $request, User $user): Response
     {

@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New CategoryDishes{% endblock %}
+{% block title %}Nouvelle catégorie de plat{% endblock %}
 
 {% block body %}
-    <h1>Create new CategoryDishes</h1>
+    <h1>Créer une nouvelle catégorie de plat</h1>
 
     {{ include('category_dishes/_form.html.twig') }}
 
-    <a href="{{ path('category_dishes_index') }}">back to list</a>
+    <a href="{{ path('category_dishes_index') }}">Retour à la liste des catégories</a>
 {% endblock %}

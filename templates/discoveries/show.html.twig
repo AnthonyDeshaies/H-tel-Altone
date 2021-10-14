@@ -12,31 +12,31 @@
                 <td>{{ discovery.id }}</td>
             </tr>
             <tr>
-                <th>NameDiscovery</th>
+                <th>Nom de l'activité</th>
                 <td>{{ discovery.nameDiscovery }}</td>
             </tr>
             <tr>
-                <th>Descriptiondiscovery</th>
+                <th>Description de l'activité</th>
                 <td>{{ discovery.descriptiondiscovery }}</td>
             </tr>
             <tr>
-                <th>ImgDiscovery</th>
-                <td>{{ discovery.imgDiscovery }}</td>
+                <th>Image de l'activité</th>
+                <td><img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" width="100"></td>
             </tr>
             <tr>
-                <th>CityDiscovery</th>
+                <th>Commune de l'activité</th>
                 <td>{{ discovery.cityDiscovery }}</td>
             </tr>
             <tr>
-                <th>CoordinatesDiscovery</th>
+                <th>Coordonnées GPS de l'activité</th>
                 <td>{{ discovery.coordinatesDiscovery }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('discoveries_index') }}">back to list</a>
+    <a href="{{ path('discoveries_index') }}">Retour à la liste des activités</a>
 
-    <a href="{{ path('discoveries_edit', {'id': discovery.id}) }}">edit</a>
+    <a href="{{ path('discoveries_edit', {'id': discovery.id}) }}">Modifier cette activité</a>
 
     {{ include('discoveries/_delete_form.html.twig') }}
 {% endblock %}

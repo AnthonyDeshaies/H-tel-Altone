@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Amenities{% endblock %}
+{% block title %}Modifier service{% endblock %}
 
 {% block body %}
-    <h1>Edit Amenities</h1>
+    <h1>Modifier service</h1>
 
     {{ include('amenities/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('amenities_index') }}">back to list</a>
+    <a href="{{ path('amenities_index') }}">retour à la liste des services</a>
 
     {{ include('amenities/_delete_form.html.twig') }}
 {% endblock %}

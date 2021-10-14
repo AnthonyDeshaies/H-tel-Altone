@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}TypeRoom index{% endblock %}
+{% block title %}idex type de chambre{% endblock %}
 
 {% block body %}
-    <h1>TypeRoom index</h1>
+    <h1>index des types de chambres</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameType</th>
+                <th>type de chambre</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,8 +19,8 @@
                 <td>{{ type_room.id }}</td>
                 <td>{{ type_room.nameType }}</td>
                 <td>
-                    <a href="{{ path('type_room_show', {'id': type_room.id}) }}">show</a>
-                    <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">edit</a>
+                    <a href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir le type de chambre</a>
+                    <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier ce type de chambre</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('type_room_new') }}">Create new</a>
+    <a href="{{ path('type_room_new') }}">Créer unnouveau type de chambre</a>
 {% endblock %}

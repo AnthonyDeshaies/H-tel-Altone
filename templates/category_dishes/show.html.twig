@@ -12,15 +12,15 @@
                 <td>{{ category_dish.id }}</td>
             </tr>
             <tr>
-                <th>NameCategory</th>
+                <th>Nom de catégorie de plat</th>
                 <td>{{ category_dish.nameCategory }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('category_dishes_index') }}">back to list</a>
+    <a href="{{ path('category_dishes_index') }}">retour à la liste des catégories de plat</a>
 
-    <a href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}">edit</a>
+    <a href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}">Modifier catégorie de plat</a>
 
     {{ include('category_dishes/_delete_form.html.twig') }}
 {% endblock %}

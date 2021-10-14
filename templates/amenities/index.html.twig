@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Amenities index{% endblock %}
+{% block title %}Index des services{% endblock %}
 
 {% block body %}
-    <h1>Amenities index</h1>
+    <h1>Index des services</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameAmenity</th>
-                <th>DescriptionAmenity</th>
-                <th>ImgAmenity</th>
+                <th>Nom du service</th>
+                <th>Description du service</th>
+                <th>Image du service</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,8 +23,8 @@
                 <td>{{ amenity.descriptionAmenity }}</td>
                 <td>{{ amenity.imgAmenity }}</td>
                 <td>
-                    <a href="{{ path('amenities_show', {'id': amenity.id}) }}">show</a>
-                    <a href="{{ path('amenities_edit', {'id': amenity.id}) }}">edit</a>
+                    <a href="{{ path('amenities_show', {'id': amenity.id}) }}">Voir</a>
+                    <a href="{{ path('amenities_edit', {'id': amenity.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('amenities_new') }}">Create new</a>
+    <a href="{{ path('amenities_new') }}">Créer nouveau service</a>
 {% endblock %}

@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @Route("/discoveries")
@@ -28,13 +31,33 @@ class DiscoveriesController extends AbstractController
     /**
      * @Route("/new", name="discoveries_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $discovery = new Discoveries();
         $form = $this->createForm(DiscoveriesType::class, $discovery);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imgDiscovery = $form->get('imgDiscovery')->getData();
+            if ($imgDiscovery) {
+                $originalFilename = pathinfo($imgDiscovery->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom defichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgDiscovery->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sontstockées
+                try {
+                    $imgDiscovery->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
+                }
+                // met à jour la propriété 'photoEleve' pour stocker le nom dufichier PDF au lieu de son contenu
+                $discovery->setImgDiscovery($newFilename);
+            }
+            /** Fin du code à ajouter **/
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($discovery);
             $entityManager->flush();
@@ -83,7 +106,7 @@ class DiscoveriesController extends AbstractController
      */
     public function delete(Request $request, Discoveries $discovery): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$discovery->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $discovery->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($discovery);
             $entityManager->flush();

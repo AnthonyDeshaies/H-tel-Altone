@@ -6,6 +6,8 @@ use App\Entity\Discoveries;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
 
 class DiscoveriesType extends AbstractType
 {
@@ -14,10 +16,23 @@ class DiscoveriesType extends AbstractType
         $builder
             ->add('nameDiscovery')
             ->add('descriptiondiscovery')
-            ->add('imgDiscovery')
+            ->add('img_discovery', FileType::class, [
+                'label' => 'Photo',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/*',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez entrer un format de document
+                valide',
+                    ])
+                ],
+            ])
             ->add('cityDiscovery')
-            ->add('coordinatesDiscovery')
-        ;
+            ->add('coordinatesDiscovery');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

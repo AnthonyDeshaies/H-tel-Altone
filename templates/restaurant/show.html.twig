@@ -12,35 +12,42 @@
                 <td>{{ restaurant.id }}</td>
             </tr>
             <tr>
-                <th>DescriptionRestaurant</th>
+                <th>Nom du restaurant</th>
+                <td>{{ restaurant.nameRestaurant }}</td>
+            </tr>
+            <tr>
+                <th>Description du restaurant</th>
                 <td>{{ restaurant.descriptionRestaurant }}</td>
             </tr>
             <tr>
-                <th>ImgRestaurant</th>
+                <th>Image du restaurant</th>
+                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgRestaurant) }}" width="100"></td>
                 <td>{{ restaurant.imgRestaurant }}</td>
             </tr>
             <tr>
-                <th>ImgStarter</th>
+                <th>Image entrée</th>
+                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgStarter) }}" width="100"></td>
                 <td>{{ restaurant.imgStarter }}</td>
             </tr>
             <tr>
-                <th>ImgMainCourse</th>
+                <th>Image plat de résistance</th>
+                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgMainCourse) }}" width="100"></td>
                 <td>{{ restaurant.imgMainCourse }}</td>
             </tr>
             <tr>
-                <th>ImgDessert</th>
-                <td>{{ restaurant.imgDessert }}</td>
+                <th>Image Dessert</th>
+                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgDessert) }}" width="100"></td>
             </tr>
             <tr>
-                <th>ImgDrink</th>
-                <td>{{ restaurant.imgDrink }}</td>
+                <th>Image Boisson</th>
+                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgDrink) }}" width="100"></td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('restaurant_index') }}">back to list</a>
+    <a href="{{ path('restaurant_index') }}">Retour</a>
 
-    <a href="{{ path('restaurant_edit', {'id': restaurant.id}) }}">edit</a>
+    <a href="{{ path('restaurant_edit', {'id': restaurant.id}) }}">Modifier</a>
 
     {{ include('restaurant/_delete_form.html.twig') }}
 {% endblock %}

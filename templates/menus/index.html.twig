@@ -9,9 +9,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameMenu</th>
-                <th>PriceMenu</th>
-                <th>DescriptionMenu</th>
+                <th>Nom du menu</th>
+                <th>Prix du menu</th>
+                <th>Description du menu</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,8 +23,8 @@
                 <td>{{ menu.priceMenu }}</td>
                 <td>{{ menu.descriptionMenu }}</td>
                 <td>
-                    <a href="{{ path('menus_show', {'id': menu.id}) }}">show</a>
-                    <a href="{{ path('menus_edit', {'id': menu.id}) }}">edit</a>
+                    <a href="{{ path('menus_show', {'id': menu.id}) }}">Voir</a>
+                    <a href="{{ path('menus_edit', {'id': menu.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('menus_new') }}">Create new</a>
+    <a href="{{ path('menus_new') }}">Créer un nouveau menu</a>
 {% endblock %}

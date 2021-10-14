@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Rooms{% endblock %}
+{% block title %}Modifier chambre{% endblock %}
 
 {% block body %}
-    <h1>Edit Rooms</h1>
+    <h1>Modifier chambre</h1>
 
     {{ include('rooms/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('rooms_index') }}">back to list</a>
+    <a href="{{ path('rooms_index') }}">Retour à la liste des chambres</a>
 
     {{ include('rooms/_delete_form.html.twig') }}
 {% endblock %}

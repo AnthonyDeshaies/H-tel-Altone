@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Dishes{% endblock %}
+{% block title %}Nouveau plat{% endblock %}
 
 {% block body %}
-    <h1>Create new Dishes</h1>
+    <h1>Créer un nouveau plat</h1>
 
     {{ include('dishes/_form.html.twig') }}
 
-    <a href="{{ path('dishes_index') }}">back to list</a>
+    <a href="{{ path('dishes_index') }}">Retour à la liste des plats</a>
 {% endblock %}

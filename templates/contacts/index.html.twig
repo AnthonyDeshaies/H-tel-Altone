@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contacts index{% endblock %}
+{% block title %}Index des contacts{% endblock %}
 
 {% block body %}
-    <h1>Contacts index</h1>
+    <h1>Index des contacts</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameContact</th>
-                <th>FirstNameContact</th>
-                <th>MailContact</th>
-                <th>TextContact</th>
+                <th>Nom du contact</th>
+                <th>Prénom du contact</th>
+                <th>Mail du contact</th>
+                <th>contenu</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,8 +25,8 @@
                 <td>{{ contact.mailContact }}</td>
                 <td>{{ contact.textContact }}</td>
                 <td>
-                    <a href="{{ path('contacts_show', {'id': contact.id}) }}">show</a>
-                    <a href="{{ path('contacts_edit', {'id': contact.id}) }}">edit</a>
+                    <a href="{{ path('contacts_show', {'id': contact.id}) }}">Voir/a>
+                    <a href="{{ path('contacts_edit', {'id': contact.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('contacts_new') }}">Create new</a>
+    <a href="{{ path('contacts_new') }}">Créer nouveau contact</a>
 {% endblock %}

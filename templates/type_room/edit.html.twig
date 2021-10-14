@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit TypeRoom{% endblock %}
+{% block title %}Modification type de chambre{% endblock %}
 
 {% block body %}
-    <h1>Edit TypeRoom</h1>
+    <h1>Modifier type de chambre</h1>
 
     {{ include('type_room/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('type_room_index') }}">back to list</a>
+    <a href="{{ path('type_room_index') }}">Retour à la liste</a>
 
     {{ include('type_room/_delete_form.html.twig') }}
 {% endblock %}

@@ -3,18 +3,18 @@
 {% block title %}Rooms index{% endblock %}
 
 {% block body %}
-    <h1>Rooms index</h1>
+    <h1>Les chambres</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameRoom</th>
-                <th>TypeRoom</th>
-                <th>NbPlace</th>
-                <th>PriceRoom</th>
-                <th>ViewRoom</th>
-                <th>DescriptionTypeRoom</th>
+                <th>Nom/Numéro de chambre</th>
+                <th>Type de chambre</th>
+                <th>Nombre de places</th>
+                <th>Tarif</th>
+                <th>Vue</th>
+                <th>Description chambre</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -29,8 +29,8 @@
                 <td>{{ room.viewRoom }}</td>
                 <td>{{ room.descriptionTypeRoom }}</td>
                 <td>
-                    <a href="{{ path('rooms_show', {'id': room.id}) }}">show</a>
-                    <a href="{{ path('rooms_edit', {'id': room.id}) }}">edit</a>
+                    <a href="{{ path('rooms_show', {'id': room.id}) }}">Voir</a>
+                    <a href="{{ path('rooms_edit', {'id': room.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('rooms_new') }}">Create new</a>
+    <a href="{{ path('rooms_new') }}">Créer une nouvelle chambre</a>
 {% endblock %}

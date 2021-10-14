@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Suppliers{% endblock %}
+{% block title %}Fournisseurs{% endblock %}
 
 {% block body %}
-    <h1>Suppliers</h1>
+    <h1>Fournisseurs</h1>
 
     <table class="table">
         <tbody>
@@ -12,43 +12,43 @@
                 <td>{{ supplier.id }}</td>
             </tr>
             <tr>
-                <th>NameSupplier</th>
+                <th>Nom fournisseur</th>
                 <td>{{ supplier.nameSupplier }}</td>
             </tr>
             <tr>
-                <th>DescriptionSupplier</th>
+                <th>Description fournisseur</th>
                 <td>{{ supplier.descriptionSupplier }}</td>
             </tr>
             <tr>
-                <th>ImgSupplier</th>
-                <td>{{ supplier.imgSupplier }}</td>
+                <th>Image fournisseur</th>
+                <td><img src="{{ asset('uploads/photos/' ~ supplier.imgSupplier) }}" width="100"></td>
             </tr>
             <tr>
-                <th>AdressSupplier</th>
+                <th>Adresse fournisseur</th>
                 <td>{{ supplier.adressSupplier }}</td>
             </tr>
             <tr>
-                <th>CpSupplier</th>
+                <th>Code postal fournisseur</th>
                 <td>{{ supplier.cpSupplier }}</td>
             </tr>
             <tr>
-                <th>CitySupplier</th>
+                <th>Commune fournisseurr</th>
                 <td>{{ supplier.citySupplier }}</td>
             </tr>
             <tr>
-                <th>PhoneSupplier</th>
+                <th>Téléphone fournisseur</th>
                 <td>{{ supplier.phoneSupplier }}</td>
             </tr>
             <tr>
-                <th>MailSupplier</th>
+                <th>Mail fournisseur</th>
                 <td>{{ supplier.mailSupplier }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('suppliers_index') }}">back to list</a>
+    <a href="{{ path('suppliers_index') }}">retour à la liste fournisseur</a>
 
-    <a href="{{ path('suppliers_edit', {'id': supplier.id}) }}">edit</a>
+    <a href="{{ path('suppliers_edit', {'id': supplier.id}) }}">modifier fournisseur</a>
 
     {{ include('suppliers/_delete_form.html.twig') }}
 {% endblock %}

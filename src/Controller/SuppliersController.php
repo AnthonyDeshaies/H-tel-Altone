@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @Route("/suppliers")
@@ -28,13 +31,31 @@ class SuppliersController extends AbstractController
     /**
      * @Route("/new", name="suppliers_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $supplier = new Suppliers();
         $form = $this->createForm(SuppliersType::class, $supplier);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $img_supplier = $form->get('img_supplier')->getData();
+            if ($img_supplier) {
+                $originalFilename = pathinfo($img_supplier->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $img_supplier->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $img_supplier->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
+                }
+                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF au lieu de son contenu
+                $supplier->setImgSupplier($newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($supplier);
             $entityManager->flush();
@@ -83,7 +104,7 @@ class SuppliersController extends AbstractController
      */
     public function delete(Request $request, Suppliers $supplier): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$supplier->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $supplier->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($supplier);
             $entityManager->flush();
