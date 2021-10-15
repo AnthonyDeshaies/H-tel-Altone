@@ -6,15 +6,22 @@ use App\Entity\Menus;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class MenusType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nameMenu')
-            ->add('priceMenu')
-            ->add('descriptionMenu')
+            ->add('nameMenu', TextType::class, [
+                'label' => 'Nom du menu'
+            ])
+            ->add('priceMenu', TextType::class, [
+                'label' => 'Prix du menu'
+            ])
+            ->add('descriptionMenu', TextType::class, [
+                'label' => 'Description du menu'
+            ])
         ;
     }
 

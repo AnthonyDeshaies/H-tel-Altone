@@ -16,16 +16,20 @@
                 <td>{{ type_room.nameType }}</td>
             </tr>
             <tr>
-                <th>Image 1 du type de chambre</th>
-                <td><img src="{{ asset('uploads/photos/' ~ typeRomm.imgType1) }}" width="100"></td>
+                <th>description</th>
+                <td>{{ type_room.descriptionTypeRoom |raw }}</td>
             </tr>
             <tr>
-                <th>Image 2 du type de chambre</th>
-                <td><img src="{{ asset('uploads/photos/' ~ typeRomm.imgType2) }}" width="100"></td>
+                <th>Image 1</th>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
             </tr>
             <tr>
-                <th>Image 3 du type de chambre</th>
-                <td><img src="{{ asset('uploads/photos/' ~ typeRomm.imgType3) }}" width="100"></td>
+                <th>Image 2</th>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
+            </tr>
+            <tr>
+                <th>Image 3</th>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
             </tr>
         </tbody>
     </table>

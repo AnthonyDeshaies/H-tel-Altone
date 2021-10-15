@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}idex type de chambre{% endblock %}
+{% block title %}index type de chambre{% endblock %}
 
 {% block body %}
     <h1>index des types de chambres</h1>
@@ -10,6 +10,10 @@
             <tr>
                 <th>Id</th>
                 <th>type de chambre</th>
+                <th>Description</th>
+                <th>image 1</th>
+                <th>image 2</th>
+                <th>image 3</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,6 +22,10 @@
             <tr>
                 <td>{{ type_room.id }}</td>
                 <td>{{ type_room.nameType }}</td>
+                <td>{{ type_room.descriptionTypeRoom |raw }}</td>
+                <td>{{ type_room.imgType1 }}</td>
+                <td>{{ type_room.imgType2 }}</td>
+                <td>{{ type_room.imgType3 }}</td>
                 <td>
                     <a href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir le type de chambre</a>
                     <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier ce type de chambre</a>
@@ -31,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('type_room_new') }}">Créer unnouveau type de chambre</a>
+    <a href="{{ path('type_room_new') }}">Créer un nouveau type de chambre</a>
 {% endblock %}

@@ -24,7 +24,7 @@
             <tr>
                 <td>{{ restaurant.id }}</td>
                 <td>{{ restaurant.nameRestaurant }}</td>
-                <td>{{ restaurant.descriptionRestaurant }}</td>
+                <td>{{ restaurant.descriptionRestaurant |raw }}</td>
                 <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgRestaurant) }}" width="100"></td>
                 <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgStarter) }}" width="100"></td>
                 <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgMainCourse) }}" width="100"></td>

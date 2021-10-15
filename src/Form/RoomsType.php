@@ -3,24 +3,34 @@
 namespace App\Form;
 
 use App\Entity\Rooms;
+use App\Entity\TypeRoom;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class RoomsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nameRoom')
+            ->add('nameRoom', TextType::class, [
+                'label' => 'Nom de chambre'
+            ])
             ->add('TypeRoom', EntityType::class, [
                 'class' => TypeRoom::class,
                 'choice_label' => 'nameType',
                 ])
-            ->add('nbPlace')
-            ->add('priceRoom')
-            ->add('viewRoom')
-            ->add('descriptionTypeRoom')
+            ->add('nbPlace', TextType::class, [
+                'label' => 'Nombre de places'
+            ])
+            ->add('priceRoom', TextType::class, [
+                'label' => 'Tarif de la chambre'
+            ])
+            ->add('viewRoom', TextType::class, [
+                'label' => 'Vue'
+            ])
         ;
     }
 

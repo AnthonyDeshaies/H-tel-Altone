@@ -20,8 +20,7 @@ class TypeRoomType extends AbstractType
                 'label' => 'Type de la chambre'
             ])
             ->add('descriptionTypeRoom', CKEditorType::class, 
-            // TextType::class, [
-            //     'label' => 'Description du type de chambre']
+                array ('label' => 'Description')
             )
             ->add('imgType1', FileType::class, [
                 'label' => 'Image 1',
