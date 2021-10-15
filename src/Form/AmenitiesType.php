@@ -8,6 +8,8 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
 
 class AmenitiesType extends AbstractType
 {
@@ -17,13 +19,26 @@ class AmenitiesType extends AbstractType
             ->add('nameAmenity', TextType::class, [
                 'label' => 'Nom du service'
             ])
-            ->add('descriptionAmenity', CKEditorType::class, 
-            array ('label' => 'Description')
-        )
-            ->add('imgAmenity', TextType::class, [
-                'label' => 'Image du service'
-            ])
-        ;
+            ->add(
+                'descriptionAmenity',
+                CKEditorType::class,
+                array('label' => 'Description')
+            )
+            ->add('imgAmenity', FileType::class, [
+                'label' => 'image du service',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/*',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez entrer un format de document
+            valide',
+                    ])
+                ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

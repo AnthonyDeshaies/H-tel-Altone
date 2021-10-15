@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @Route("/amenities")
@@ -28,13 +31,31 @@ class AmenitiesController extends AbstractController
     /**
      * @Route("/new", name="amenities_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $amenity = new Amenities();
         $form = $this->createForm(AmenitiesType::class, $amenity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imgAmenity = $form->get('imgAmenity')->getData();
+            if ($imgAmenity) {
+                $originalFilename = pathinfo($imgAmenity->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgAmenity->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $imgAmenity->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
+                }
+                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF au lieu de son contenu
+                $amenity->setImgAmenity($newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($amenity);
             $entityManager->flush();
@@ -83,7 +104,7 @@ class AmenitiesController extends AbstractController
      */
     public function delete(Request $request, Amenities $amenity): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$amenity->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $amenity->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($amenity);
             $entityManager->flush();

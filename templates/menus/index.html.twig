@@ -21,7 +21,7 @@
                 <td>{{ menu.id }}</td>
                 <td>{{ menu.nameMenu }}</td>
                 <td>{{ menu.priceMenu }}</td>
-                <td>{{ menu.descriptionMenu }}</td>
+                <td>{{ menu.descriptionMenu |raw }}</td>
                 <td>
                     <a href="{{ path('menus_show', {'id': menu.id}) }}">Voir</a>
                     <a href="{{ path('menus_edit', {'id': menu.id}) }}">Modifier</a>

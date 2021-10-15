@@ -14,7 +14,6 @@
                 <th>Nombre de places</th>
                 <th>Tarif</th>
                 <th>Vue</th>
-                <th>Description chambre</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,11 +22,10 @@
             <tr>
                 <td>{{ room.id }}</td>
                 <td>{{ room.nameRoom }}</td>
-                <td>{{ room.typeRoom }}</td>
+                <td>{{ room.typeRoom.nameType }}</td>
                 <td>{{ room.nbPlace }}</td>
                 <td>{{ room.priceRoom }}</td>
                 <td>{{ room.viewRoom }}</td>
-                <td>{{ room.descriptionTypeRoom }}</td>
                 <td>
                     <a href="{{ path('rooms_show', {'id': room.id}) }}">Voir</a>
                     <a href="{{ path('rooms_edit', {'id': room.id}) }}">Modifier</a>

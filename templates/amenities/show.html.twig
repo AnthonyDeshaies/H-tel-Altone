@@ -17,11 +17,11 @@
             </tr>
             <tr>
                 <th>Description du service</th>
-                <td>{{ amenity.descriptionAmenity }}</td>
+                <td>{{ amenity.descriptionAmenity |raw }}</td>
             </tr>
             <tr>
                 <th>Image du service</th>
-                <td>{{ amenity.imgAmenity }}</td>
+                <td><img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100"></td>
             </tr>
         </tbody>
     </table>

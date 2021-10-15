@@ -38,11 +38,6 @@ class Rooms
     private $viewRoom;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $descriptionTypeRoom;
-
-    /**
      * @ORM\ManyToOne(targetEntity=TypeRoom::class, inversedBy="rooms")
      */
     private $typeRoom;

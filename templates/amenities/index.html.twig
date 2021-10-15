@@ -20,8 +20,8 @@
             <tr>
                 <td>{{ amenity.id }}</td>
                 <td>{{ amenity.nameAmenity }}</td>
-                <td>{{ amenity.descriptionAmenity }}</td>
-                <td>{{ amenity.imgAmenity }}</td>
+                <td>{{ amenity.descriptionAmenity |raw }}</td>
+                <td><img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100"></td>
                 <td>
                     <a href="{{ path('amenities_show', {'id': amenity.id}) }}">Voir</a>
                     <a href="{{ path('amenities_edit', {'id': amenity.id}) }}">Modifier</a>

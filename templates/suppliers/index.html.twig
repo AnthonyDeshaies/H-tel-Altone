@@ -25,7 +25,7 @@
             <tr>
                 <td>{{ supplier.id }}</td>
                 <td>{{ supplier.nameSupplier }}</td>
-                <td>{{ supplier.descriptionSupplier }}</td>
+                <td>{{ supplier.descriptionSupplier |raw }}</td>
                 <td><img src="{{ asset('uploads/photos/' ~ supplier.imgSupplier) }}" width="100"></td>
                 <td>{{ supplier.adressSupplier }}</td>
                 <td>{{ supplier.cpSupplier }}</td>
