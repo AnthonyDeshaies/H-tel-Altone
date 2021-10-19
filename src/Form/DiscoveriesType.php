@@ -35,6 +35,9 @@ class DiscoveriesType extends AbstractType
                     ])
                 ],
             ])
+            ->add('cpDiscovery', TextType::class, [
+                'label' => 'Code postal'
+            ])
             ->add('cityDiscovery', TextType::class, [
                 'label' => 'Commune'
             ])

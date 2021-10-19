@@ -3,9 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Suppliers;
+use App\Entity\CategorySuppliers;
 use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -19,37 +21,39 @@ class SuppliersType extends AbstractType
             ->add('nameSupplier', TextType::class, [
                 'label' => 'Nom du fournisseur'
             ])
-            ->add('descriptionSupplier', CKEditorType::class, 
-            array ('label' => 'Description du fournisseur'))
-            ->add('img_supllier', FileType::class, [
-                'label' => 'Image du fournisseur',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/*',
-                        ],
-                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
-                    ])
-                ],
+            ->add('categorySuppliers', EntityType::class, [
+                'class' => CategorySuppliers::class,
+                'choice_label' => 'nameCategory',
+                'label' => 'Catégorie'
             ])
+            ->add('descriptionSupplier', CKEditorType::class, 
+            array ('label' => 'Description du fournisseur', 'required' => false),
+            )
             ->add('adressSupplier', TextType::class, [
-                'label' => 'Adresse'
+                'label' => 'Adresse',
+                'required' => false,
             ])
             ->add('cpSupplier', TextType::class, [
-                'label' => 'Code postal'
+                'label' => 'Code postal',
+                'required' => false,
             ])
             ->add('citySupplier', TextType::class, [
-                'label' => 'Commune'
+                'label' => 'Commune',
+                'required' => false,
             ])
             ->add('phoneSupplier', TextType::class, [
-                'label' => 'Téléphone'
+                'label' => 'Téléphone',
+                'required' => false,
             ])
             ->add('mailSupplier', TextType::class, [
-                'label' => 'Email'
-            ]);
+                'label' => 'Email',
+                'required' => false,
+            ])
+            ->add('websiteSupplier', TextType::class, [
+                'label' => 'Site internet',
+                'required' => false,
+            ])
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

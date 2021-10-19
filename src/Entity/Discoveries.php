@@ -47,6 +47,11 @@ class Discoveries
      */
     private $longitudeDiscovery;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $cpDiscovery;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Discoveries
     public function setLongitudeDiscovery(string $longitudeDiscovery): self
     {
         $this->longitudeDiscovery = $longitudeDiscovery;
+
+        return $this;
+    }
+
+    public function getCpDiscovery(): ?string
+    {
+        return $this->cpDiscovery;
+    }
+
+    public function setCpDiscovery(string $cpDiscovery): self
+    {
+        $this->cpDiscovery = $cpDiscovery;
 
         return $this;
     }

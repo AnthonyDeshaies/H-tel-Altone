@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index des catégories fournisseur{% endblock %}
+
+{% block body %}
+    <h1>Index des catégories fournisseur</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom de catégorie</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category_supplier in category_suppliers %}
+            <tr>
+                <td>{{ category_supplier.id }}</td>
+                <td>{{ category_supplier.nameCategory }}</td>
+                <td>
+                    <a href="{{ path('category_suppliers_show', {'id': category_supplier.id}) }}">Voir</a>
+                    <a href="{{ path('category_suppliers_edit', {'id': category_supplier.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas d'enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_suppliers_new') }}">Créer une nouvelle catégorie</a>
+{% endblock %}

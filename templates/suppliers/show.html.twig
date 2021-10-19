@@ -16,32 +16,36 @@
                 <td>{{ supplier.nameSupplier }}</td>
             </tr>
             <tr>
-                <th>Description fournisseur</th>
+                <th>Catégorie</th>
+                <td>{{ supplier.CategorySuppliers.nameCategory }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
                 <td>{{ supplier.descriptionSupplier |raw }}</td>
             </tr>
             <tr>
-                <th>Image fournisseur</th>
-                <td><img src="{{ asset('uploads/photos/' ~ supplier.imgSupplier) }}" width="100"></td>
-            </tr>
-            <tr>
-                <th>Adresse fournisseur</th>
+                <th>Adresse</th>
                 <td>{{ supplier.adressSupplier }}</td>
             </tr>
             <tr>
-                <th>Code postal fournisseur</th>
+                <th>Code postal</th>
                 <td>{{ supplier.cpSupplier }}</td>
             </tr>
             <tr>
-                <th>Commune fournisseurr</th>
+                <th>Commune</th>
                 <td>{{ supplier.citySupplier }}</td>
             </tr>
             <tr>
-                <th>Téléphone fournisseur</th>
+                <th>Téléphone</th>
                 <td>{{ supplier.phoneSupplier }}</td>
             </tr>
             <tr>
-                <th>Mail fournisseur</th>
+                <th>Email</th>
                 <td>{{ supplier.mailSupplier }}</td>
+            </tr>
+            <tr>
+                <th>Site internet</th>
+                <td>{{ supplier.websiteSupplier }}</td>
             </tr>
         </tbody>
     </table>
