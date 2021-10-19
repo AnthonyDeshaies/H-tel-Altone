@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nom du service</th>
+                <th>Tarif</th>
                 <th>Description du service</th>
                 <th>Image du service</th>
                 <th>actions</th>
@@ -20,6 +21,7 @@
             <tr>
                 <td>{{ amenity.id }}</td>
                 <td>{{ amenity.nameAmenity }}</td>
+                <td>{{ amenity.priceAmenity}}</td>
                 <td>{{ amenity.descriptionAmenity |raw }}</td>
                 <td><img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100"></td>
                 <td>
@@ -29,7 +31,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Pas d'enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

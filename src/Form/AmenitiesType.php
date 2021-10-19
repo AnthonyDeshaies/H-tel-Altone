@@ -19,6 +19,9 @@ class AmenitiesType extends AbstractType
             ->add('nameAmenity', TextType::class, [
                 'label' => 'Nom du service'
             ])
+            ->add('priceAmenity', TextType::class, [
+                'label' => 'Tarif'
+            ])
             ->add(
                 'descriptionAmenity',
                 CKEditorType::class,

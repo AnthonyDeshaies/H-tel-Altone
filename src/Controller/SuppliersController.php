@@ -82,12 +82,30 @@ class SuppliersController extends AbstractController
     /**
      * @Route("/{id}/edit", name="suppliers_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Suppliers $supplier): Response
+    public function edit(Request $request, Suppliers $supplier, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(SuppliersType::class, $supplier);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $img_supplier = $form->get('img_supplier')->getData();
+            if ($img_supplier) {
+                $originalFilename = pathinfo($img_supplier->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $img_supplier->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $img_supplier->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
+                }
+                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF au lieu de son contenu
+                $supplier->setImgSupplier($newFilename);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('suppliers_index', [], Response::HTTP_SEE_OTHER);

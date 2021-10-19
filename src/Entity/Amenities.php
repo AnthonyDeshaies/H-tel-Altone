@@ -32,6 +32,11 @@ class Amenities
      */
     private $imgAmenity;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $priceAmenity;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Amenities
     public function setImgAmenity(?string $imgAmenity): self
     {
         $this->imgAmenity = $imgAmenity;
+
+        return $this;
+    }
+
+    public function getPriceAmenity(): ?string
+    {
+        return $this->priceAmenity;
+    }
+
+    public function setPriceAmenity(string $priceAmenity): self
+    {
+        $this->priceAmenity = $priceAmenity;
 
         return $this;
     }

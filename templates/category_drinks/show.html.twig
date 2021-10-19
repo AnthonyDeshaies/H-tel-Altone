@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategoryDrinks{% endblock %}
+
+{% block body %}
+    <h1>CategoryDrinks</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ category_drink.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom de catégorie</th>
+                <td>{{ category_drink.nameCategory }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_drinks_index') }}">retour à la liste</a>
+
+    <a href="{{ path('category_drinks_edit', {'id': category_drink.id}) }}">Modifier</a>
+
+    {{ include('category_drinks/_delete_form.html.twig') }}
+{% endblock %}

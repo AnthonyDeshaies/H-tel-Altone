@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drinks{% endblock %}
+
+{% block body %}
+    <h1>Drinks</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ drink.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom de la boisson</th>
+                <td>{{ drink.nameDrink }}</td>
+            </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>{{ drink.CategoryDrinks.nameCategory }}</td>
+            </tr>
+            <tr>
+                <th>Détail</th>
+                <td>{{ drink.detailDrink |raw }}</td>
+            </tr>
+            <tr>
+                <th>Tarif</th>
+                <td>{{ drink.priceDrink }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('drinks_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('drinks_edit', {'id': drink.id}) }}">Modifier</a>
+
+    {{ include('drinks/_delete_form.html.twig') }}
+{% endblock %}

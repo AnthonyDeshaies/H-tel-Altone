@@ -82,12 +82,30 @@ class AmenitiesController extends AbstractController
     /**
      * @Route("/{id}/edit", name="amenities_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Amenities $amenity): Response
+    public function edit(Request $request, Amenities $amenity, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(AmenitiesType::class, $amenity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imgAmenity = $form->get('imgAmenity')->getData();
+            if ($imgAmenity) {
+                $originalFilename = pathinfo($imgAmenity->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgAmenity->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $imgAmenity->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
+                }
+                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF au lieu de son contenu
+                $amenity->setImgAmenity($newFilename);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('amenities_index', [], Response::HTTP_SEE_OTHER);

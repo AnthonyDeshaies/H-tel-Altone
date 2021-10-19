@@ -12,6 +12,7 @@
                 <th>Nom de plat</th>
                 <th>Description du plat</th>
                 <th>Prix du plat</th>
+                <th>Categorie</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{{ dish.nameDish }}</td>
                 <td>{{ dish.descriptionDish |raw }}</td>
                 <td>{{ dish.priceDish }}</td>
+                <td>{{ dish.CategoryDishes.nameCategory }}</td>
                 <td>
                     <a href="{{ path('dishes_show', {'id': dish.id}) }}">Voir</a>
                     <a href="{{ path('dishes_edit', {'id': dish.id}) }}">Modifier</a>
@@ -29,7 +31,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Pas d'enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

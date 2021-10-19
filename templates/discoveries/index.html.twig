@@ -13,7 +13,8 @@
                 <th>Description de l'activité</th>
                 <th>Image de l'activité</th>
                 <th>Commune de l'activité</th>
-                <th>Coordonnées GPS de l'activité</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,10 +23,11 @@
             <tr>
                 <td>{{ discovery.id }}</td>
                 <td>{{ discovery.nameDiscovery }}</td>
-                <td>{{ discovery.descriptiondiscovery }}</td>
+                <td>{{ discovery.descriptionDiscovery |raw }}</td>
                 <td><img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" width="100"></td>
                 <td>{{ discovery.cityDiscovery }}</td>
-                <td>{{ discovery.coordinatesDiscovery }}</td>
+                <td>{{ discovery.latitudeDiscovery }}</td>
+                <td>{{ discovery.longitudeDiscovery }}</td>
                 <td>
                     <a href="{{ path('discoveries_show', {'id': discovery.id}) }}">Voir activité</a>
                     <a href="{{ path('discoveries_edit', {'id': discovery.id}) }}">Modifier activité</a>
@@ -33,7 +35,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Pas d'enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

@@ -27,7 +27,7 @@ class DishesType extends AbstractType
             ->add('categoryDishes', EntityType::class, [
                 'class' => CategoryDishes::class,
                 'choice_label' => 'nameCategory',
-                array ('label' => 'Catégorie du plat')
+                 'label' => 'Catégorie du plat',
                 ])
         ;
     }

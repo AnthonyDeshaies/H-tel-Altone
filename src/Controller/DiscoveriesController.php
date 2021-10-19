@@ -84,13 +84,33 @@ class DiscoveriesController extends AbstractController
     /**
      * @Route("/{id}/edit", name="discoveries_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Discoveries $discovery): Response
+    public function edit(Request $request, Discoveries $discovery, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(DiscoveriesType::class, $discovery);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+           
+            $imgDiscovery = $form->get('imgDiscovery')->getData();
+            if ($imgDiscovery) {
+                $originalFilename = pathinfo($imgDiscovery->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom defichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgDiscovery->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sontstockées
+                try {
+                    $imgDiscovery->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
+                }
+                // met à jour la propriété 'photoEleve' pour stocker le nom dufichier PDF au lieu de son contenu
+                $discovery->setImgDiscovery($newFilename);
+            }
             $this->getDoctrine()->getManager()->flush();
+            /** Fin du code à ajouter **/
 
             return $this->redirectToRoute('discoveries_index', [], Response::HTTP_SEE_OTHER);
         }

@@ -21,8 +21,8 @@ class DiscoveriesType extends AbstractType
             ])
             ->add('descriptiondiscovery', CKEditorType::class, 
             array ('label' => 'Description'))
-            ->add('img_discovery', FileType::class, [
-                'label' => 'Image du service',
+            ->add('imgDiscovery', FileType::class, [
+                'label' => 'Image',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -38,8 +38,11 @@ class DiscoveriesType extends AbstractType
             ->add('cityDiscovery', TextType::class, [
                 'label' => 'Commune'
             ])
-            ->add('coordinatesDiscovery', TextType::class, [
-                'label' => 'Coordonnées GPS'
+            ->add('latitudeDiscovery', TextType::class, [
+                'label' => 'Latitude'
+            ])
+            ->add('longitudeDiscovery', TextType::class, [
+                'label' => 'Longitude'
             ]);
     }
 

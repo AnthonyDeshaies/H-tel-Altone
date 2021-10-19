@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <th>Description de l'activité</th>
-                <td>{{ discovery.descriptiondiscovery }}</td>
+                <td>{{ discovery.descriptionDiscovery |raw}}</td>
             </tr>
             <tr>
                 <th>Image de l'activité</th>
@@ -28,8 +28,12 @@
                 <td>{{ discovery.cityDiscovery }}</td>
             </tr>
             <tr>
-                <th>Coordonnées GPS de l'activité</th>
-                <td>{{ discovery.coordinatesDiscovery }}</td>
+                <th>Coordonnée latitude de l'activité</th>
+                <td>{{ discovery.latitudeDiscovery }}</td>
+            </tr>
+            <tr>
+                <th>Coordonnée longitude de l'activité</th>
+                <td>{{ discovery.longitudeDiscovery }}</td>
             </tr>
         </tbody>
     </table>

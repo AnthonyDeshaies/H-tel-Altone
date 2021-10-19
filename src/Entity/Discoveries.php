@@ -38,9 +38,14 @@ class Discoveries
     private $cityDiscovery;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50)
      */
-    private $coordinatesDiscovery;
+    private $latitudeDiscovery;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $longitudeDiscovery;
 
     public function getId(): ?int
     {
@@ -95,14 +100,26 @@ class Discoveries
         return $this;
     }
 
-    public function getCoordinatesDiscovery(): ?string
+    public function getLatitudeDiscovery(): ?string
     {
-        return $this->coordinatesDiscovery;
+        return $this->latitudeDiscovery;
     }
 
-    public function setCoordinatesDiscovery(?string $coordinatesDiscovery): self
+    public function setLatitudeDiscovery(string $latitudeDiscovery): self
     {
-        $this->coordinatesDiscovery = $coordinatesDiscovery;
+        $this->latitudeDiscovery = $latitudeDiscovery;
+
+        return $this;
+    }
+
+    public function getLongitudeDiscovery(): ?string
+    {
+        return $this->longitudeDiscovery;
+    }
+
+    public function setLongitudeDiscovery(string $longitudeDiscovery): self
+    {
+        $this->longitudeDiscovery = $longitudeDiscovery;
 
         return $this;
     }
