@@ -1,11 +1,63 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Discoveries index{% endblock %}
+{% block title %}Activités touristiques{% endblock %}
 
 {% block body %}
-    <h1>Discoveries index</h1>
 
-    <table class="table">
+<body>
+    <h1>Venez visiter notre région !</h1>
+
+    <p>Le Val de la Loire, et le Loir-et-Cher en particulier, c'est l'escapade où les édifices
+        architecturaux parcourent le temps pour nous conter l'histoire de France. Laissez-vous
+        surprendre par ces paysages aux nombreuses empreintes culturelles. De l'époque
+        médiévale aux grandes royautés, c'est ici que nombre d'événements ont fait évoluer
+        notre monde actuel. Au gré des envies de chacun, retracez le chemin de ceux et celles
+        qui ont marqué notre ère.
+    </p>
+
+    <section id="suite" class="container">
+
+        {% set nb = 0 %}
+        {% for discovery in discoveries %}
+        {% set nb = nb+1 %}
+
+        {% if (nb is even ) %}
+        <div class="row">
+            <div class="col-lg-5">
+                <img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" width="100">
+            </div>
+            <div class="col-lg-7">
+                <h2>{{ discovery.nameDiscovery }}</h2>
+                <p>{{ discovery.descriptionDiscovery |raw}}</p>
+                <div>
+                    <p>{{ discovery.cpDiscovery }} {{ discovery.cityDiscovery }}<p>
+                    <p>latitude: {{ discovery.latitudeDiscovery }} ; longitude {{ discovery.longitudeDiscovery }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if (nb is odd ) %}
+        <div class="row">
+            <div class="col-lg-7">
+                <h2>{{ discovery.nameDiscovery }}</h2>
+                <p>{{ discovery.descriptionDiscovery |raw}}</p>
+                <div>
+                    <p>{{ discovery.cpDiscovery }} {{ discovery.cityDiscovery }}<p>
+                    <p>latitude: {{ discovery.latitudeDiscovery }} ; longitude {{ discovery.longitudeDiscovery }}</p>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" width="100">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </section>
+</body>
+
+
+<!-- {# <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -41,7 +93,7 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>
-
-    <a href="{{ path('discoveries_new') }}">Créer nouvelle activité</a>
+    </table> -->
+</body>
+<a href="{{ path('discoveries_new') }}">Créer nouvelle activité</a> #}
 {% endblock %}
