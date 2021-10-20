@@ -25,6 +25,16 @@ class DrinksController extends AbstractController
         ]);
     }
 
+     /**
+     * @Route("/admin", name="drinks_admin", methods={"GET"})
+     */
+    public function admin(DrinksRepository $drinksRepository): Response
+    {
+        return $this->render('drinks/admin.html.twig', [
+            'drinks' => $drinksRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/new", name="drinks_new", methods={"GET","POST"})
      */

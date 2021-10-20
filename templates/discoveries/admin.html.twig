@@ -1,0 +1,47 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Administration des activités{% endblock %}
+
+{% block body %}
+    <h1>Administration des activités</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom de l'activité</th>
+                <th>Description de l'activité</th>
+                <th>Image de l'activité</th>
+                <th>Code postal</th>
+                <th>Commune</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for discovery in discoveries %}
+            <tr>
+                <td>{{ discovery.id }}</td>
+                <td>{{ discovery.nameDiscovery }}</td>
+                <td>{{ discovery.descriptionDiscovery |raw }}</td>
+                <td><img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" width="100"></td>
+                <td>{{ discovery.cpDiscovery }}</td>
+                <td>{{ discovery.cityDiscovery }}</td>
+                <td>{{ discovery.latitudeDiscovery }}</td>
+                <td>{{ discovery.longitudeDiscovery }}</td>
+                <td>
+                    <a href="{{ path('discoveries_show', {'id': discovery.id}) }}">Voir activité</a>
+                    <a href="{{ path('discoveries_edit', {'id': discovery.id}) }}">Modifier activité</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Pas d'enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('discoveries_new') }}">Créer nouvelle activité</a>
+{% endblock %}

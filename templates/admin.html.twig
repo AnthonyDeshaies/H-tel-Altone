@@ -4,8 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Hôtel ALTONE
-			{% endblock %}
+			{% block title %}Hôtel ALTONE{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle`
 							and uncomment the following Encore helpers to start using Symfony UX #}
@@ -78,6 +77,42 @@
 				</a>
 			</div>
 		</nav>
+		{% if (is_granted('ROLE_USER')) or (is_granted('ROLE_ADMIN'))  %}
+		<section id="nav-admin">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="{{ path('admin') }}">
+                    <p class="admin-brand">Page Administrateur</span></p>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav  ms-auto">
+                        <a class="nav-link" href="{{ path('user_admin') }}">Utilisateurs</a>
+						<a class="nav-link" href="#">Réservations</a>
+                        <a class="nav-link" href="{{ path('amenities_admin') }}">Services</a>
+                        <a class="nav-link" href="{{ path('rooms_admin') }}">Chambre</a>
+                        {# <a class="nav-link" href="{{ path('type_room_admin') }}">Type de Chambre</a> #}
+                        <a class="nav-link" href="{{ path('restaurant_admin') }}">Restaurant</a>
+						<a class="nav-link" href="{{ path('dishes_admin') }}">Plats</a>
+                        {# <a class="nav-link" href="{{ path('category_dishes_admin') }}">Type de plat</a> #}
+                        <a class="nav-link" href="#">Menu</a>
+                        <a class="nav-link" href="{{ path('drinks_admin') }}">Boissons</a>
+						{# <a class="nav-link" href="{{ path('category_drinks_admin') }}">Type de boisson</a> #}
+                        <a class="nav-link" href="{{ path('suppliers_admin') }}">Fournisseurs</a>
+                        {# <a class="nav-link" href="{{ path('category_suppliers_admin') }}">Catégorie de fournisseur</a> #}
+                        <a class="nav-link" href="{{ path('discoveries_admin') }}">Activités</a>
+                        <a class="nav-link" href="#">Contacts</a>
+                        
+                    </div>
+                </div>
+        </nav>
+		{% endif %} 
     </section>
 		<section id="main_title">
 			<img src="{{ asset ('logos/flat_logo_small.png') }}" alt="">

@@ -25,6 +25,16 @@ class MenusController extends AbstractController
         ]);
     }
 
+     /**
+     * @Route("/admin", name="menus_admin", methods={"GET"})
+     */
+    public function admin(MenusRepository $menusRepository): Response
+    {
+        return $this->render('menus/admin.html.twig', [
+            'menuses' => $menusRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/new", name="menus_new", methods={"GET","POST"})
      */

@@ -28,6 +28,16 @@ class AmenitiesController extends AbstractController
         ]);
     }
 
+     /**
+     * @Route("/admin", name="amenities_admin", methods={"GET"})
+     */
+    public function admin(AmenitiesRepository $amenitiesRepository): Response
+    {
+        return $this->render('amenities/admin.html.twig', [
+            'amenities' => $amenitiesRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/new", name="amenities_new", methods={"GET","POST"})
      */

@@ -25,6 +25,16 @@ class ContactsController extends AbstractController
         ]);
     }
 
+     /**
+     * @Route("/", name="contacts_admin", methods={"GET"})
+     */
+    public function admin(ContactsRepository $contactsRepository): Response
+    {
+        return $this->render('contacts/admin.html.twig', [
+            'contacts' => $contactsRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/new", name="contacts_new", methods={"GET","POST"})
      */

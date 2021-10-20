@@ -29,6 +29,16 @@ class SuppliersController extends AbstractController
     }
 
     /**
+     * @Route("/admin", name="suppliers_admin", methods={"GET"})
+     */
+    public function admmin(SuppliersRepository $suppliersRepository): Response
+    {
+        return $this->render('suppliers/admin.html.twig', [
+            'suppliers' => $suppliersRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="suppliers_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response

@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Administration des contacts{% endblock %}
+
+{% block body %}
+    <h1>Administration des contacts</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom du contact</th>
+                <th>Prénom du contact</th>
+                <th>Mail du contact</th>
+                <th>contenu</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.nameContact }}</td>
+                <td>{{ contact.firstNameContact }}</td>
+                <td>{{ contact.mailContact }}</td>
+                <td>{{ contact.textContact |raw }}</td>
+                <td>
+                    <a href="{{ path('contacts_show', {'id': contact.id}) }}">Voir/a>
+                    <a href="{{ path('contacts_edit', {'id': contact.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Pas d'enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('contacts_new') }}">Créer nouveau contact</a>
+{% endblock %}

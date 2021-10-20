@@ -26,6 +26,16 @@ class DishesController extends AbstractController
     }
 
     /**
+     * @Route("/admin", name="dishes_admin", methods={"GET"})
+     */
+    public function admin(DishesRepository $dishesRepository): Response
+    {
+        return $this->render('dishes/admin.html.twig', [
+            'dishes' => $dishesRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="dishes_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response

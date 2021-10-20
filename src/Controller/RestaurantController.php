@@ -28,6 +28,16 @@ class RestaurantController extends AbstractController
         ]);
     }
 
+     /**
+     * @Route("/admin", name="restaurant_admin", methods={"GET"})
+     */
+    public function admin(RestaurantRepository $restaurantRepository): Response
+    {
+        return $this->render('restaurant/admin.html.twig', [
+            'restaurants' => $restaurantRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/new", name="restaurant_new", methods={"GET","POST"})
      */

@@ -3,9 +3,44 @@
 {% block title %}Index des services{% endblock %}
 
 {% block body %}
-    <h1>Index des services</h1>
+<h1>Nos services</h1>
+<section id="suite">
+    {% set nb = 0 %}
+    {% for amenity in amenities %}
+    {% set nb = nb+1 %}
+    {% if (nb is even ) %}
+    
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
+        </div>
+        <div class="col-lg-9">
+            <div>
+                <h2>{{ amenity.nameAmenity }}</h2>
+                <p class="price">{{ amenity.priceAmenity}}</p>
+            </div>
+                <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
+        </div>
+    </div>
+    {% endif %}
+    {% if (nb is odd ) %}
+        <div class="row">
+        <div class="col-lg-9">
+            <div>
+                <h2>{{ amenity.nameAmenity }}</h2>
+                <p class="price">{{ amenity.priceAmenity}}</p>
+            </div>
+            <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
+        </div>
+        <div class="col-lg-3">
+            <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</section>
 
-    <table class="table">
+<!-- {# <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -37,5 +72,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('amenities_new') }}">Créer nouveau service</a>
+    <a href="{{ path('amenities_new') }}">Créer nouveau service</a> #} -->
 {% endblock %}

@@ -28,6 +28,16 @@ class DiscoveriesController extends AbstractController
         ]);
     }
 
+     /**
+     * @Route("/admin", name="discoveries_admin", methods={"GET"})
+     */
+    public function admin(DiscoveriesRepository $discoveriesRepository): Response
+    {
+        return $this->render('discoveries/admin.html.twig', [
+            'discoveries' => $discoveriesRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/new", name="discoveries_new", methods={"GET","POST"})
      */

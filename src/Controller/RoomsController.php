@@ -26,6 +26,16 @@ class RoomsController extends AbstractController
     }
 
     /**
+     * @Route("/admin", name="rooms_admin", methods={"GET"})
+     */
+    public function admin(RoomsRepository $roomsRepository): Response
+    {
+        return $this->render('rooms/admin.html.twig', [
+            'rooms' => $roomsRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="rooms_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response

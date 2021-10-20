@@ -17,11 +17,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/", name="user_index", methods={"GET"})
+     * @Route("/admin", name="user_admin", methods={"GET"})
      */
-    public function index(UserRepository $userRepository): Response
+    public function admin(UserRepository $userRepository): Response
     {
-        return $this->render('user/index.html.twig', [
+        return $this->render('user/admin.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
     }

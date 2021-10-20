@@ -19,11 +19,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class TypeRoomController extends AbstractController
 {
     /**
-     * @Route("/", name="type_room_index", methods={"GET"})
+     * @Route("/admin", name="type_room_admin", methods={"GET"})
      */
-    public function index(TypeRoomRepository $typeRoomRepository): Response
+    public function admin(TypeRoomRepository $typeRoomRepository): Response
     {
-        return $this->render('type_room/index.html.twig', [
+        return $this->render('type_room/admin.html.twig', [
             'type_rooms' => $typeRoomRepository->findAll(),
         ]);
     }

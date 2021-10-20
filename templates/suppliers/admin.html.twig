@@ -1,0 +1,51 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Administration des fournisseurs{% endblock %}
+
+{% block body %}
+    <h1>Administration des fournisseurs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom du fournisseur</th>
+                <th>Catégorie</th>
+                <th>Description du fournisseur</th>
+                <th>Adresse du fournisseur</th>
+                <th>Code postal du fournisseur</th>
+                <th>Commune du fournisseur</th>
+                <th>Téléphone du fournisseur</th>
+                <th>Mail du fournisseur</th>
+                <th>Site internet</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for supplier in suppliers %}
+            <tr>
+                <td>{{ supplier.id }}</td>
+                <td>{{ supplier.nameSupplier }}</td>
+                <td>{{ supplier.CategorySuppliers.nameCategory }}</td>
+                <td>{{ supplier.descriptionSupplier |raw }}</td>
+                <td>{{ supplier.adressSupplier }}</td>
+                <td>{{ supplier.cpSupplier }}</td>
+                <td>{{ supplier.citySupplier }}</td>
+                <td>{{ supplier.phoneSupplier }}</td>
+                <td>{{ supplier.mailSupplier }}</td>
+                <td>{{ supplier.websiteSupplier }}</td>
+                <td>
+                    <a href="{{ path('suppliers_show', {'id': supplier.id}) }}">Voir</a>
+                    <a href="{{ path('suppliers_edit', {'id': supplier.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">Pas d'enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('suppliers_new') }}">Créer nouveau fournisseur</a>
+{% endblock %}

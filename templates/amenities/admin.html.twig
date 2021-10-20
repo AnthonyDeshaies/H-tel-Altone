@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Index des services{% endblock %}
+
+{% block body %}
+    <h1>Administration des services</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom du service</th>
+                <th>Tarif</th>
+                <th>Description du service</th>
+                <th>Image du service</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for amenity in amenities %}
+            <tr>
+                <td>{{ amenity.id }}</td>
+                <td>{{ amenity.nameAmenity }}</td>
+                <td>{{ amenity.priceAmenity}}</td>
+                <td>{{ amenity.descriptionAmenity|raw }}</td>
+                <td><img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100"></td>
+                <td>
+                    <a href="{{ path('amenities_show', {'id': amenity.id}) }}">Voir</a>
+                    <a href="{{ path('amenities_edit', {'id': amenity.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas d'enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('amenities_new') }}">Créer nouveau service</a>
+{% endblock %}

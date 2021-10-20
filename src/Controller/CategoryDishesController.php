@@ -16,11 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryDishesController extends AbstractController
 {
     /**
-     * @Route("/", name="category_dishes_index", methods={"GET"})
+     * @Route("/admin", name="category_dishes_admin", methods={"GET"})
      */
-    public function index(CategoryDishesRepository $categoryDishesRepository): Response
+    public function admin(CategoryDishesRepository $categoryDishesRepository): Response
     {
-        return $this->render('category_dishes/index.html.twig', [
+        return $this->render('category_dishes/admin.html.twig', [
             'category_dishes' => $categoryDishesRepository->findAll(),
         ]);
     }
