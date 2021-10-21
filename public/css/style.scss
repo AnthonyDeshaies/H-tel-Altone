@@ -153,7 +153,27 @@ footer
     height: 120px;
     background-color: rgb(105, 184, 142);
     margin-top: -60px;
+    color: rgb(81, 132, 199);
 
+        
+
+        form
+        {
+            // padding-top: 20px;
+
+            a
+            {
+                padding: 35px 0 0 40px;
+                color: rgb(81, 132, 199);
+                text-decoration: none;
+            }
+            select
+            {
+                width: 37px;
+                height: 37px;
+                border-radius: 15px;
+            }
+        }
 }
 
 /*---------section welcome--------*/
