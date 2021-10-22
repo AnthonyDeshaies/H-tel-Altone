@@ -145,10 +145,17 @@ footer p {
   text-decoration: none;
 }
 
-#banner_reservation form select {
+#banner_reservation form #type_room {
+  width: 100px;
+  height: 37px;
+}
+
+#banner_reservation form #nb_people {
   width: 37px;
   height: 37px;
-  border-radius: 15px;
+  border-radius: 5px;
+  border: 1px solid red;
+  margin: auto;
 }
 
 /*---------section welcome--------*/

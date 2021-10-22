@@ -62,6 +62,7 @@ header
                     margin-right: 15px;
                 }
         }
+
         nav
         {
             img
@@ -167,11 +168,20 @@ footer
                 color: rgb(81, 132, 199);
                 text-decoration: none;
             }
-            select
+
+            #type_room
+            {
+                width: 100px;
+                height: 37px;
+            }
+
+            #nb_people
             {
                 width: 37px;
                 height: 37px;
-                border-radius: 15px;
+                border-radius: 5px;
+                border: 1px solid red;
+                margin: auto;
             }
         }
 }

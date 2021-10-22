@@ -6,7 +6,7 @@
 <section id="banner_reservation" class="container">
     <form action="GET" class="">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <a href="#">RÉSERVEZ !</a>
             </div>
             <div class="col-lg-2">
@@ -18,9 +18,18 @@
                 <input type="date" class="form-control" id="end_date">
             </div>
             <div class="col-lg-2">
-                <label for="start_date" class="form-label">Personnes</label>
+                <label for="start_date" class="form-label">Chambre</label>
                 <br>
-                <select name="" id="">
+                <select name="" id="type_room">
+                    <option value="">Suite Altone</option>
+                    <option value="">Ch. Famille</option>
+                    <option value="">Ch. Double</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <label for="start_date" class="form-label">Participants</label>
+                <br>
+                <select name="" id="nb_people">
                     <option value="">1</option>
                     <option value="">2</option>
                     <option value="">3</option>
@@ -29,8 +38,8 @@
                     <option value="">6</option>
                 </select>
             </div>
-            <div class="col-lg-3">
-                <a href="#">Disponinilité</a>
+            <div class="col-lg-2">
+                <a href="#"> Voir Disponinilité</a>
             </div>
     </form>
     </div>
