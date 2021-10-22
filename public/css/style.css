@@ -139,9 +139,13 @@ footer p {
   color: #5184c7;
 }
 
+#banner_reservation form col {
+  text-align: center;
+}
+
 #banner_reservation form a {
   padding: 35px 0 0 40px;
-  color: #5184c7;
+  color: white;
   text-decoration: none;
 }
 
