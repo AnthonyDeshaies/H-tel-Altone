@@ -50,9 +50,15 @@ class TypeRoom
      */
     private $descriptionTypeRoom;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="typeRoom")
+     */
+    private $reservations;
+
     public function __construct()
     {
         $this->rooms = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -146,6 +152,36 @@ class TypeRoom
     public function setDescriptionTypeRoom(string $descriptionTypeRoom): self
     {
         $this->descriptionTypeRoom = $descriptionTypeRoom;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Reservation[]
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations[] = $reservation;
+            $reservation->setTypeRoom($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getTypeRoom() === $this) {
+                $reservation->setTypeRoom(null);
+            }
+        }
 
         return $this;
     }

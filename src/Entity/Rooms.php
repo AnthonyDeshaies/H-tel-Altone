@@ -23,11 +23,6 @@ class Rooms
     private $nameRoom;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $nbPlace;
-
-    /**
      * @ORM\Column(type="decimal", precision=10, scale=2)
      */
     private $priceRoom;
@@ -55,18 +50,6 @@ class Rooms
     public function setNameRoom(string $nameRoom): self
     {
         $this->nameRoom = $nameRoom;
-
-        return $this;
-    }
-
-    public function getNbPlace(): ?int
-    {
-        return $this->nbPlace;
-    }
-
-    public function setNbPlace(int $nbPlace): self
-    {
-        $this->nbPlace = $nbPlace;
 
         return $this;
     }

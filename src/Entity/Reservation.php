@@ -37,6 +37,16 @@ class Reservation
      */
     private $transportReservation;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=TypeRoom::class, inversedBy="reservations")
+     */
+    private $typeRoom;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="reservations")
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +96,30 @@ class Reservation
     public function setTransportReservation(bool $transportReservation): self
     {
         $this->transportReservation = $transportReservation;
+
+        return $this;
+    }
+
+    public function getTypeRoom(): ?TypeRoom
+    {
+        return $this->typeRoom;
+    }
+
+    public function setTypeRoom(?TypeRoom $typeRoom): self
+    {
+        $this->typeRoom = $typeRoom;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

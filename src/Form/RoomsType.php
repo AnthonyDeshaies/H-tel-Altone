@@ -22,9 +22,6 @@ class RoomsType extends AbstractType
                 'class' => TypeRoom::class,
                 'choice_label' => 'nameType',
                 ])
-            ->add('nbPlace', TextType::class, [
-                'label' => 'Nombre de places'
-            ])
             ->add('priceRoom', TextType::class, [
                 'label' => 'Tarif de la chambre'
             ])
