@@ -1,19 +1,57 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}index type de chambre{% endblock %}
+{% block title %}Index des types de chambre{% endblock %}
 
 {% block body %}
-    <h1>index des types de chambres</h1>
+<section id="suite" class="container">
+    <h1>Index des types de chambre</h1>
 
-    <table class="table">
+    {% set nb = 0 %}
+        {% for amenity in amenities %}
+        {% set nb = nb+1 %}
+        
+        {% if (nb is even ) %}
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
+            </div>
+            <div class="col-lg-9">
+                <div>
+                    <h2>{{ amenity.nameAmenity }}</h2>
+                    <h3>{{ amenity.priceAmenity}}</h3>
+                </div>
+                <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if (nb is odd ) %}
+        <div class="row">
+            <div class="col-lg-9">
+                <div>
+                    <h2>{{ amenity.nameAmenity }}</h2>
+                    <p class="price">{{ amenity.priceAmenity}}</p>
+                </div>
+                <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
+            </div>
+            <div class="col-lg-3">
+                <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </section>
+
+    {# <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>type de chambre</th>
+                <th>Type de chambre</th>
+                <th>Image1</th>
+                <th>Image2</th>
+                <th>Image3</th>
                 <th>Description</th>
-                <th>image 1</th>
-                <th>image 2</th>
-                <th>image 3</th>
+                <th>Nombre de places</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,10 +60,11 @@
             <tr>
                 <td>{{ type_room.id }}</td>
                 <td>{{ type_room.nameType }}</td>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
                 <td>{{ type_room.descriptionTypeRoom |raw }}</td>
-                <td>{{ type_room.imgType1 }}</td>
-                <td>{{ type_room.imgType2 }}</td>
-                <td>{{ type_room.imgType3 }}</td>
+                <td>{{ type_room.nbPlaces }}</td>
                 <td>
                     <a href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir</a>
                     <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier</a>
@@ -33,11 +72,10 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">Pas d'enregistrement trouvé</td>
+                <td colspan="8">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+    </table> #}
 
-    <a href="{{ path('type_room_new') }}">Créer un nouveau type de chambre</a>
 {% endblock %}

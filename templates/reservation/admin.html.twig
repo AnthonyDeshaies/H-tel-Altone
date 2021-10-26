@@ -1,19 +1,19 @@
 {% extends 'admin.html.twig' %}
 
-{% block title %}Reservation index{% endblock %}
+{% block title %}Administration des réservations{% endblock %}
 
 {% block body %}
-    <h1>Reservation index</h1>
+    <h1>Administration des réservations</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>DateStartReservation</th>
-                <th>DateEndReservation</th>
-                <th>NbPeopleReservation</th>
-                <th>TransportReservation</th>
-                <th>actions</th>
+                <th>Date de début de séjour</th>
+                <th>Date de fin de séjour</th>
+                <th>Nombre de participants</th>
+                <th>Transport jusqu'à l'hôtel</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,17 +25,17 @@
                 <td>{{ reservation.nbPeopleReservation }}</td>
                 <td>{{ reservation.transportReservation ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}">show</a>
-                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">edit</a>
+                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}">Voir</a>
+                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Pas d'enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('reservation_new') }}">Create new</a>
+    <a href="{{ path('reservation_new') }}">Créer une nouvelle réservation</a>
 {% endblock %}

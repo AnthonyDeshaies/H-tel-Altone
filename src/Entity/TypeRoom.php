@@ -26,11 +26,6 @@ class TypeRoom
     private $nameType;
 
     /**
-     * @ORM\OneToMany(targetEntity=Rooms::class, mappedBy="typeRoom")
-     */
-    private $rooms;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $imgType1;
@@ -55,6 +50,16 @@ class TypeRoom
      */
     private $reservations;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nbPlaces;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Rooms::class, mappedBy="typeRoom")
+     */
+    private $rooms;
+
     public function __construct()
     {
         $this->rooms = new ArrayCollection();
@@ -74,36 +79,6 @@ class TypeRoom
     public function setNameType(string $nameType): self
     {
         $this->nameType = $nameType;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Rooms[]
-     */
-    public function getRooms(): Collection
-    {
-        return $this->rooms;
-    }
-
-    public function addRoom(Rooms $room): self
-    {
-        if (!$this->rooms->contains($room)) {
-            $this->rooms[] = $room;
-            $room->setTypeRoom($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRoom(Rooms $room): self
-    {
-        if ($this->rooms->removeElement($room)) {
-            // set the owning side to null (unless already changed)
-            if ($room->getTypeRoom() === $this) {
-                $room->setTypeRoom(null);
-            }
-        }
 
         return $this;
     }
@@ -180,6 +155,48 @@ class TypeRoom
             // set the owning side to null (unless already changed)
             if ($reservation->getTypeRoom() === $this) {
                 $reservation->setTypeRoom(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getNbPlaces(): ?int
+    {
+        return $this->nbPlaces;
+    }
+
+    public function setNbPlaces(int $nbPlaces): self
+    {
+        $this->nbPlaces = $nbPlaces;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Rooms[]
+     */
+    public function getRooms(): Collection
+    {
+        return $this->rooms;
+    }
+
+    public function addRoom(Rooms $room): self
+    {
+        if (!$this->rooms->contains($room)) {
+            $this->rooms[] = $room;
+            $room->setTypeRoom($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRoom(Rooms $room): self
+    {
+        if ($this->rooms->removeElement($room)) {
+            // set the owning side to null (unless already changed)
+            if ($room->getTypeRoom() === $this) {
+                $room->setTypeRoom(null);
             }
         }
 

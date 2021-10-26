@@ -18,10 +18,10 @@ class RoomsType extends AbstractType
             ->add('nameRoom', TextType::class, [
                 'label' => 'Nom de chambre'
             ])
-            ->add('TypeRoom', EntityType::class, [
-                'class' => TypeRoom::class,
-                'choice_label' => 'nameType',
-                ])
+            // ->add('TypeRoom', EntityType::class, [
+            //     'class' => TypeRoom::class,
+            //     'choice_label' => 'nameType',
+            //     ])
             ->add('priceRoom', TextType::class, [
                 'label' => 'Tarif de la chambre'
             ])

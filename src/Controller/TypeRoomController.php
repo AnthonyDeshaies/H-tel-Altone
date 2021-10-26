@@ -4,11 +4,12 @@ namespace App\Controller;
 
 use App\Entity\TypeRoom;
 use App\Form\TypeRoomType;
+use App\Form\TypeRoom1Type;
 use App\Repository\TypeRoomRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -18,6 +19,16 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  */
 class TypeRoomController extends AbstractController
 {
+    /**
+     * @Route("/", name="type_room_index", methods={"GET"})
+     */
+    public function index(TypeRoomRepository $typeRoomRepository): Response
+    {
+        return $this->render('type_room/index.html.twig', [
+            'type_rooms' => $typeRoomRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/admin", name="type_room_admin", methods={"GET"})
      */
@@ -38,6 +49,7 @@ class TypeRoomController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $imgType1 = $form->get('imgType1')->getData();
             if ($imgType1) {
                 $originalFilename = pathinfo($imgType1->getClientOriginalName(), PATHINFO_FILENAME);
@@ -86,6 +98,7 @@ class TypeRoomController extends AbstractController
                 }
                 $typeRoom->setImgType3($newFilename);
             }
+        
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($typeRoom);
             $entityManager->flush();
@@ -112,12 +125,13 @@ class TypeRoomController extends AbstractController
     /**
      * @Route("/{id}/edit", name="type_room_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, TypeRoom $typeRoom, SluggerInterface $slugger ): Response
+    public function edit(Request $request, TypeRoom $typeRoom, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(TypeRoomType::class, $typeRoom);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $imgType1 = $form->get('imgType1')->getData();
             if ($imgType1) {
                 $originalFilename = pathinfo($imgType1->getClientOriginalName(), PATHINFO_FILENAME);

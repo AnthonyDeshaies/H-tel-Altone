@@ -22,6 +22,9 @@ class TypeRoomType extends AbstractType
             ->add('descriptionTypeRoom', CKEditorType::class, 
                 array ('label' => 'Description')
             )
+            ->add('nbPlaces', TextType::class, 
+                array ('label' => 'Nombre de places')
+            )
             ->add('imgType1', FileType::class, [
                 'label' => 'Image 1',
                 'mapped' => false,

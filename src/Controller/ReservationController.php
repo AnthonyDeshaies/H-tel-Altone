@@ -2,34 +2,31 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
 use App\Entity\Reservation;
 use App\Form\ReservationType;
 use App\Repository\ReservationRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/reservation")
  */
 class ReservationController extends AbstractController
 {
-    /**
-     * @Route("/", name="reservation_index", methods={"GET"})
-     */
-    public function index(ReservationRepository $reservationRepository): Response
-    {
-        return $this->render('reservation/index.html.twig', [
-            'reservations' => $reservationRepository->findAll(),
-        ]);
-    }
 
     /**
      * @Route("/admin", name="reservation_admin", methods={"GET"})
      */
     public function admin(ReservationRepository $reservationRepository): Response
     {
+
+
+
         return $this->render('reservation/admin.html.twig', [
             'reservations' => $reservationRepository->findAll(),
         ]);
@@ -100,5 +97,42 @@ class ReservationController extends AbstractController
         }
 
         return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);
+    }
+        /**
+     * @Route("/", name="reservation_index")
+     */
+    public function index(ReservationRepository $reservationRepository, Request $request, MailerInterface $mailer): Response
+    {
+        $form = $this->createForm(ContactType::class);
+        
+        $reservation = $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $email = (new TemplatedEmail())
+                ->from($reservation->get('email')->getData())
+                ->to('a.deshaies@laposte.net')
+                ->subject('reservation')
+                ->htmlTemplate('email/contact.html.twig')
+                ->context([
+                    'prenom' => $reservation->get('firstname')->getData(),
+                    'nom' => $reservation->get('lastname')->getData(),
+                    'mail' => $reservation->get('email')->getData(),
+                    'dateStartReservation' => $reservation->get('dateEndReservation')->getData(),
+                    'dateEndReservation' => $reservation->get('dateStartReservation')->getData(),
+                    'nbPeopleReservation' => $reservation->get('nbPlaces')->getData(),
+                    'typeRoom' => $reservation->get('Chambre')->getData(),
+                    'transportReservation' => $reservation->get('transportReservation')->getData(),
+                ]);
+
+                $mailer->send($email);
+
+                return $this->redirectToRoute('contact');
+
+        }
+
+        return $this->render('reservation/admin.html.twig', [
+            'form' => $form->createView(),
+            'reservations' => $reservationRepository->findAll(),
+        ]);
     }
 }

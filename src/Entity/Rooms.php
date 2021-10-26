@@ -78,18 +78,6 @@ class Rooms
         return $this;
     }
 
-    public function getDescriptionTypeRoom(): ?string
-    {
-        return $this->descriptionTypeRoom;
-    }
-
-    public function setDescriptionTypeRoom(string $descriptionTypeRoom): self
-    {
-        $this->descriptionTypeRoom = $descriptionTypeRoom;
-
-        return $this;
-    }
-
     public function getTypeRoom(): ?TypeRoom
     {
         return $this->typeRoom;

@@ -1,19 +1,20 @@
 {% extends 'admin.html.twig' %}
 
-{% block title %}index type de chambre{% endblock %}
+{% block title %}Administration des types de chambre{% endblock %}
 
 {% block body %}
-    <h1>index des types de chambres</h1>
+    <h1>Administration des types de chambre</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>type de chambre</th>
+                <th>Type de chambre</th>
+                <th>Image 1</th>
+                <th>Image 2</th>
+                <th>Image 3</th>
                 <th>Description</th>
-                <th>image 1</th>
-                <th>image 2</th>
-                <th>image 3</th>
+                <th>Nombre de places</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,10 +23,11 @@
             <tr>
                 <td>{{ type_room.id }}</td>
                 <td>{{ type_room.nameType }}</td>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
+                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
                 <td>{{ type_room.descriptionTypeRoom |raw }}</td>
-                <td>{{ type_room.imgType1 }}</td>
-                <td>{{ type_room.imgType2 }}</td>
-                <td>{{ type_room.imgType3 }}</td>
+                <td>{{ type_room.nbPlaces }}</td>
                 <td>
                     <a href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir</a>
                     <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier</a>
@@ -33,7 +35,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">Pas d'enregistrement trouvé</td>
+                <td colspan="8">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
