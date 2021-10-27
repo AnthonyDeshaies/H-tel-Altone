@@ -7,20 +7,20 @@
     <h1>Index des types de chambre</h1>
 
     {% set nb = 0 %}
-        {% for amenity in amenities %}
+        {% for type_room in type_rooms %}
         {% set nb = nb+1 %}
         
         {% if (nb is even ) %}
         <div class="row">
             <div class="col-lg-3">
-                <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
+                <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
             </div>
             <div class="col-lg-9">
                 <div>
-                    <h2>{{ amenity.nameAmenity }}</h2>
-                    <h3>{{ amenity.priceAmenity}}</h3>
+                    <h2>{{ type_room.nameType }}</h2>
+                    {# <h3>{{ typeRoom.priceTypeRoom}}</h3> #}
                 </div>
-                <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
+                <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
             </div>
         </div>
         {% endif %}
@@ -29,13 +29,13 @@
         <div class="row">
             <div class="col-lg-9">
                 <div>
-                    <h2>{{ amenity.nameAmenity }}</h2>
-                    <p class="price">{{ amenity.priceAmenity}}</p>
+                    <h2>{{ type_room.nameType }}</h2>
+                    {# <p class="price">{{ typeRoom.priceAmenity}}</p> #}
                 </div>
-                <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
+                <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
             </div>
             <div class="col-lg-3">
-                <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
+                <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
             </div>
         </div>
         {% endif %}

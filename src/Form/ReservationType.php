@@ -4,12 +4,16 @@ namespace App\Form;
 
 use App\Entity\TypeRoom;
 use App\Entity\Reservation;
+use Doctrine\DBAL\Types\BooleanType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class ReservationType extends AbstractType
@@ -29,12 +33,12 @@ class ReservationType extends AbstractType
                     'class' => 'contact-form-contol'
                 ]
             ])
-            ->add('email', EmailType::class, [
-                'label' => 'Votre email :',
-                'attr' => [
-                    'class' => 'contact-form-contol'
-                ]
-            ])
+            // ->add('email', EmailType::class, [
+            //     'label' => 'Votre email :',
+            //     'attr' => [
+            //         'class' => 'contact-form-contol'
+            //     ]
+            // ])
             ->add('dateStartReservation', DateType::class, [
                 'label' => 'Date de début de séjour',
                 'attr' => [
@@ -54,15 +58,18 @@ class ReservationType extends AbstractType
                     'class' => 'contact-form-control'
                 ]
             ])
-            ->add('transportReservation', BooleanType::class, [
-                'label' => 'Réserver votre transport',
-                'attr' => [
-                    'class' => 'contact-form-control'
-                ]
+            ->add('transportReservation', ChoiceType::class, [
+                'choices' => [
+                    'Oui' => '1',
+                    'Non' => '0'
+                ],
+                 'label' => 'Transport jusqu\'à l\'hôtel',
+                 'mapped' => false,
+                 'expanded' => true,
             ])
             ->add('typeRoom', EntityType::class, [
                 'class' => TypeRoom::class,
-                'choice_label' => 'typeRoom',
+                'choice_label' => 'nameType',
                 'label' => 'Type de chambre',
                 'attr' => [
                     'class' => 'contact-form-control'
@@ -72,8 +79,7 @@ class ReservationType extends AbstractType
                 'attr' => [
                     'class' => 'btn-primary'
                 ]
-            ])
-            ->add('user');
+                ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

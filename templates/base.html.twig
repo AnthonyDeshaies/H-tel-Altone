@@ -48,12 +48,12 @@
 		</div>
 	</section>
 
-	<nav class="navbar navbar-expand-lg navbar-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
 			<a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset ('logos/flat_logo_small.png') }}"
 					class="" alt=""></i>
 			</a>
-			<a class="navbar-brand logo-brand" href="{{ path('home') }}">
+			<!-- <a class="navbar-brand logo-brand" href="{{ path('home') }}"> -->
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -61,8 +61,11 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav  ms-auto">
-						<a class="nav-link" href="{{ path('rooms_index') }}">Chambres</a>
-						<a class="nav-link" href="{{ path('restaurant_index') }}">Restaurant</a>
+						{% if (is_granted('ROLE_ADMIN'))  %}
+						<a class="nav-link" href="{{ path('type_room_index') }}">Administration</a>
+						{% endif %} 
+						<a class="nav-link" href="{{ path('type_room_index') }}">Les Chambres</a>
+						<a class="nav-link" href="{{ path('restaurant_index') }}">Le Restaurant</a>
 						<a class="nav-link" href="{{ path('amenities_index') }}">Services</a>
 						<a class="nav-link" href="{{ path('discoveries_index') }}">Tourisme</a>
 						<a class="nav-link" href="{{ path('suppliers_index') }}">Nos fournisseurs</a>
@@ -83,46 +86,15 @@
 						</li>
 					</div>
 					</li>
-			</a>
+			<!-- </a> -->
 		</div>
 	</nav>
-	</section>
-	{% if (is_granted('ROLE_USER')) or (is_granted('ROLE_ADMIN'))  %}
-		<section id="nav-admin">
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="{{ path('admin') }}">
-                    <p class="admin-brand">Page Administrateur</span></p>
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav  ms-auto navbar_admin">
-                        <a class="nav-link" href="{{ path('user_admin') }}">Utilisateurs</a>
-						<a class="nav-link" href="{{ path('reservation_admin') }}">Réservations</a>
-                        <a class="nav-link" href="{{ path('amenities_admin') }}">Services</a>
-                        <a class="nav-link" href="{{ path('rooms_admin') }}">Chambres</a>
-                        {# <a class="nav-link" href="{{ path('type_room_admin') }}">Type de Chambre</a> #}
-                        <a class="nav-link" href="{{ path('restaurant_admin') }}">Restaurant</a>
-						<a class="nav-link" href="{{ path('dishes_admin') }}">Plats</a>
-                        {# <a class="nav-link" href="{{ path('category_dishes_admin') }}">Type de plat</a> #}
-                        <a class="nav-link" href="#">Menu</a>
-                        <a class="nav-link" href="{{ path('drinks_admin') }}">Boissons</a>
-						{# <a class="nav-link" href="{{ path('category_drinks_admin') }}">Type de boisson</a> #}
-                        <a class="nav-link" href="{{ path('suppliers_admin') }}">Fournisseurs</a>
-                        {# <a class="nav-link" href="{{ path('category_suppliers_admin') }}">Catégorie de fournisseur</a> #}
-                        <a class="nav-link" href="{{ path('discoveries_admin') }}">Activités</a>
-                        <a class="nav-link" href="{{ path('contact') }}">Contacts</a>
-                        
-                    </div>
-                </div>
-        </nav>
-		{% endif %} 
+	{% if app.user %}
+        <div class="mb-3 container">
+            Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+        </div>
+    {% endif %}
+		
 	{% endblock %}
 </header>
 

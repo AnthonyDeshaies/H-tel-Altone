@@ -103,34 +103,33 @@ class ReservationController extends AbstractController
      */
     public function index(ReservationRepository $reservationRepository, Request $request, MailerInterface $mailer): Response
     {
-        $form = $this->createForm(ContactType::class);
-        
+        $form = $this->createForm(ReservationType::class);
         $reservation = $form->handleRequest($request);
-
+        $mail= $this->getUser()->getEmail();
+   
         if ($form->isSubmitted() && $form->isValid()) {
             $email = (new TemplatedEmail())
-                ->from($reservation->get('email')->getData())
+                ->from($mail)
                 ->to('a.deshaies@laposte.net')
                 ->subject('reservation')
-                ->htmlTemplate('email/contact.html.twig')
+                ->htmlTemplate('email/reservation.html.twig')
                 ->context([
                     'prenom' => $reservation->get('firstname')->getData(),
                     'nom' => $reservation->get('lastname')->getData(),
-                    'mail' => $reservation->get('email')->getData(),
+                    'mail' => $mail,
                     'dateStartReservation' => $reservation->get('dateEndReservation')->getData(),
                     'dateEndReservation' => $reservation->get('dateStartReservation')->getData(),
-                    'nbPeopleReservation' => $reservation->get('nbPlaces')->getData(),
-                    'typeRoom' => $reservation->get('Chambre')->getData(),
+                    'nbPeopleReservation' => $reservation->get('nbPeopleReservation')->getData(),
+                    'typeRoom' => $reservation->get('typeRoom')->getData(),
                     'transportReservation' => $reservation->get('transportReservation')->getData(),
                 ]);
 
                 $mailer->send($email);
 
-                return $this->redirectToRoute('contact');
-
+                return $this->redirectToRoute('reservation_index');
         }
 
-        return $this->render('reservation/admin.html.twig', [
+        return $this->render('reservation/index.html.twig', [
             'form' => $form->createView(),
             'reservations' => $reservationRepository->findAll(),
         ]);

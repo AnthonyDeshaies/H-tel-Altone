@@ -18,31 +18,31 @@ class ContactType extends AbstractType
             ->add('firstname', TextType::class, [
                 'label' => 'Votre prénom :',
                 'attr' => [
-                    'class' => 'contact-form-contol'
+                    'class' => 'contact-form-control'
                 ]
             ])
             ->add('lastname', TextType::class, [
                 'label' => 'Votre nom :',
                 'attr' => [
-                    'class' => 'contact-form-contol'
+                    'class' => 'contact-form-control'
                 ]
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Votre email :',
                 'attr' => [
-                    'class' => 'contact-form-contol'
+                    'class' => 'contact-form-control'
                 ]
             ])
             ->add('subject', TextType::class, [
                 'label' => 'Sujet :',
                 'attr' => [
-                    'class' => 'contact-form-contol'
+                    'class' => 'contact-form-control'
                 ]
             ])
             ->add('message', CKEditorType::class, [
                 'label' => 'Votre message :',
                 'attr' => [
-                    'class' => 'contact-form-contol'
+                    'class' => 'contact-form-control'
                 ]
             ])
             ->add('Envoyer', SubmitType::class, [

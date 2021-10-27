@@ -71,41 +71,6 @@ header nav a:hover {
   transition: 0.5s;
 }
 
-/* ====================== FOOTER ==========================*/
-footer {
-  margin-top: 150px;
-  width: 100%;
-  height: 200px;
-  background-color: #757570;
-}
-
-footer img {
-  height: 80px;
-  display: block;
-  margin: -10px auto;
-}
-
-footer .footer_archors {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-footer a {
-  color: #69b88e;
-  text-decoration: none;
-  margin: 20px 10px 25px 10px;
-}
-
-footer p {
-  text-align: center;
-  color: white;
-  font-size: 12px;
-}
-
 /*====================== HOME PAGE ========================*/
 #main_title {
   width: 100%;
@@ -136,29 +101,27 @@ footer p {
   background-color: #69b88e;
   margin-top: -60px;
   color: #5184c7;
-}
-
-#banner_reservation form col {
   text-align: center;
 }
 
-#banner_reservation form a {
-  padding: 35px 0 0 40px;
+#banner_reservation h2 {
+  padding-top: 35px;
+}
+
+#banner_reservation a {
+  font-size: 35px;
+  font-style: italic;
+  text-align: center;
   color: white;
   text-decoration: none;
+  margin-top: 25px;
 }
 
-#banner_reservation form #type_room {
-  width: 100px;
-  height: 37px;
-}
-
-#banner_reservation form #nb_people {
-  width: 37px;
-  height: 37px;
-  border-radius: 5px;
-  border: 1px solid red;
-  margin: auto;
+#banner_reservation a:hover {
+  color: #5184c7 !important;
+  border-bottom: solid 4px #5184c7;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #welcome {
@@ -166,7 +129,7 @@ footer p {
 }
 
 #welcome img {
-  max-width: 100%;
+  width: 100%;
 }
 
 #welcome .welcome_txt {
@@ -328,7 +291,7 @@ footer p {
   max-width: 100%;
 }
 
-/*----------section location_home--------*/
+/*----------section location_home_page--------*/
 #location_home_page {
   margin-top: 80px;
 }
@@ -359,9 +322,79 @@ footer p {
   color: #69b88e;
 }
 
-/*----------section rooms_home_page------*/
+/*====================== PAGE REGISTER ==========================*/
+/* ==================== PAGE PRIVATE POLICY ===================*/
+#private_policy .logo {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#private_policy h1, #private_policy h2 {
+  text-align: center;
+}
+
+#private_policy h1 {
+  margin-top: 150px;
+}
+
+#private_policy .treat {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#private_policy h2 {
+  margin: 70px 0 50px 0;
+  font-size: 25px;
+}
+
+#private_policy h3 {
+  font-size: 20px;
+  margin: 15px 0 20px 0;
+}
+
+/* ===================== PAGE RESERVATION========================*/
+/*----------section reservation_detail------*/
+.reservation_detail {
+  color: green;
+}
+
 /*----------section rooms_home_page------*/
 /*----------section Contact--------------*/
+/* ====================== FOOTER ==========================*/
+footer {
+  margin-top: 150px;
+  width: 100%;
+  height: 200px;
+  background-color: #757570;
+}
+
+footer img {
+  height: 80px;
+  display: block;
+  margin: -10px auto;
+}
+
+footer .footer_archors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer a {
+  color: #69b88e;
+  text-decoration: none;
+  margin: 20px 10px 25px 10px;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
 /*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/
 /*========RESPONSIVE HOME PAGE==============*/
 @media screen and (max-width: 1500px) {

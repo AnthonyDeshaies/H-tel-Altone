@@ -1,0 +1,38 @@
+<h1>Nouvelle réservation</h1>
+
+<table class="table reservation_detail">
+    <tbody>
+        <tr>
+            <th scope="row">Nom :</th>
+            <td>{{ nom }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Prénom :</th>
+            <td>{{ prenom }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email :</th>
+            <td>{{ mail }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Type de chambre souhaité :</th>
+            <td>{{ typeRoom.nameType }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Date de début de séjour souhaitée :</th>
+            <td>{{ dateStartReservation |date('m/d/Y') }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Date de fin de séjour souhaitée :</th>
+            <td>{{ dateEndReservation |date('m/d/Y') }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Nombre de participants :</th>
+            <td>{{ nbPeopleReservation }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Transport jusqu'à l'hôtel:</th>
+            <td>{{ transportReservation }}</td>
+        </tr>
+    </tbody>
+</table>
