@@ -1,9 +1,9 @@
 {% extends 'admin.html.twig' %}
 
-{% block title %}Index des utilisateurs{% endblock %}
+{% block title %}Administration des utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>Index des utilisateurs</h1>
+    <h1>Administration des utilisateurs</h1>
 
     <table class="table">
         <thead>
@@ -12,6 +12,12 @@
                 <th>Email</th>
                 <th>Rôle</th>
                 <th>Mot de passe</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Code postal</th>
+                <th>Commune</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +28,12 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 <td>{{ user.password }}</td>
+                <td>{{ user.nameUser }}</td>
+                <td>{{ user.firstNameUser }}</td>
+                <td>{{ user.phoneUser }}</td>
+                <td>{{ user.adressUser }}</td>
+                <td>{{ user.cpUser }}</td>
+                <td>{{ user.cityUser }}</td>
                 <td>
                     <a href="{{ path('user_show', {'id': user.id}) }}">Voir</a>
                     <a href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OptionTypeRoom{% endblock %}
+
+{% block body %}
+    <h1>OptionTypeRoom</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ option_type_room.id }}</td>
+            </tr>
+            <tr>
+                <th>NameOptionTypeRoom</th>
+                <td>{{ option_type_room.nameOptionTypeRoom }}</td>
+            </tr>
+            <tr>
+                <th>LogoOptionTypeRoom</th>
+                <td>{{ option_type_room.logoOptionTypeRoom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('option_type_room_index') }}">retour à la liste</a>
+
+    <a href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}">edit</a>
+
+    {{ include('option_type_room/_delete_form.html.twig') }}
+{% endblock %}

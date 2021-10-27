@@ -323,6 +323,20 @@ header nav a:hover {
 }
 
 /*====================== PAGE REGISTER ==========================*/
+#inscription {
+  height: 1000px;
+  text-align: center;
+  background-color: #69b88e;
+}
+
+#inscription .inscription {
+  text-align: center;
+  width: 500px;
+  height: 800px;
+  background-color: white;
+  margin: auto;
+}
+
 /* ==================== PAGE PRIVATE POLICY ===================*/
 #private_policy .logo {
   text-align: center;

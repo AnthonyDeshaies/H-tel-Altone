@@ -137,11 +137,11 @@ header
             margin-top: 25px;
         }
         a:hover
-            {
-                color: rgb(81, 132, 199)!important;
-                border-bottom: solid 4px rgb(81, 132, 199);
-                transition: 0.5s;
-            }
+        {
+            color: rgb(81, 132, 199)!important;
+            border-bottom: solid 4px rgb(81, 132, 199);
+            transition: 0.5s;
+        }
 }
 
 #welcome
@@ -335,6 +335,22 @@ header
 }
 
 /*====================== PAGE REGISTER ==========================*/
+
+#inscription
+{
+    height: 1000px;
+    text-align: center;
+    background-color: rgb(105, 184, 142);
+
+        .inscription
+        {
+            text-align: center;
+            width: 500px;
+            height: 800px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+        }
+}
 
 /* ==================== PAGE PRIVATE POLICY ===================*/
 

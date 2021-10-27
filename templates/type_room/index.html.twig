@@ -7,75 +7,85 @@
     <h1>Index des types de chambre</h1>
 
     {% set nb = 0 %}
-        {% for type_room in type_rooms %}
-        {% set nb = nb+1 %}
-        
-        {% if (nb is even ) %}
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
-            </div>
-            <div class="col-lg-9">
-                <div>
-                    <h2>{{ type_room.nameType }}</h2>
-                    {# <h3>{{ typeRoom.priceTypeRoom}}</h3> #}
-                </div>
-                <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
-            </div>
-        </div>
-        {% endif %}
-        
-        {% if (nb is odd ) %}
-        <div class="row">
-            <div class="col-lg-9">
-                <div>
-                    <h2>{{ type_room.nameType }}</h2>
-                    {# <p class="price">{{ typeRoom.priceAmenity}}</p> #}
-                </div>
-                <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
-            </div>
-            <div class="col-lg-3">
-                <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-    </section>
+    {% for type_room in type_rooms %}
+    {% set nb = nb+1 %}
 
-    {# <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Type de chambre</th>
-                <th>Image1</th>
-                <th>Image2</th>
-                <th>Image3</th>
-                <th>Description</th>
-                <th>Nombre de places</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    {% if (nb is even ) %}
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
+        </div>
+        <div class="col-lg-9">
+            <div>
+                <h2>{{ type_room.nameType }}</h2>
+                <h3>{{ type_room.startPrice }}</h3>
+            </div>
+            <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
+            <p> {% for option in type_room.optionTypeRoom %}
+                {{ option.logoOptionTypeRoom|raw }}
+                {{ option.nameOptionTypeRoom }}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if (nb is odd ) %}
+    <div class="row">
+        <div class="col-lg-9">
+            <div>
+                <h2>{{ type_room.nameType }}</h2>
+                <h3>{{ type_room.startPrice }}</h3>
+            </div>
+            <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
+            <p> {% for option in type_room.optionTypeRoom %}
+                {{ option.logoOptionTypeRoom|raw }}
+                {{ option.nameOptionTypeRoom }}
+                {% endfor %}
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</section>
+
+{# <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Type de chambre</th>
+            <th>Image1</th>
+            <th>Image2</th>
+            <th>Image3</th>
+            <th>Description</th>
+            <th>Nombre de places</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for type_room in type_rooms %}
-            <tr>
-                <td>{{ type_room.id }}</td>
-                <td>{{ type_room.nameType }}</td>
-                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
-                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
-                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
-                <td>{{ type_room.descriptionTypeRoom |raw }}</td>
-                <td>{{ type_room.nbPlaces }}</td>
-                <td>
-                    <a href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir</a>
-                    <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier</a>
-                </td>
-            </tr>
+        <tr>
+            <td>{{ type_room.id }}</td>
+            <td>{{ type_room.nameType }}</td>
+            <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
+            <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
+            <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
+            <td>{{ type_room.descriptionTypeRoom |raw }}</td>
+            <td>{{ type_room.nbPlaces }}</td>
+            <td>
+                <a href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir</a>
+                <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier</a>
+            </td>
+        </tr>
         {% else %}
-            <tr>
-                <td colspan="8">Aucun enregistrement trouvé</td>
-            </tr>
+        <tr>
+            <td colspan="8">Aucun enregistrement trouvé</td>
+        </tr>
         {% endfor %}
-        </tbody>
-    </table> #}
+    </tbody>
+</table> #}
 
 {% endblock %}

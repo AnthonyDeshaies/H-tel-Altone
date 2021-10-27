@@ -30,6 +30,25 @@ class UserType extends AbstractType
             ->add('password', TextType::class, [
                 'label' => 'Mot de passe'
             ])
+            ->add('nameUser', TextType::class, [
+                'label' => 'Nom'
+            ])
+            ->add('firstNameUser', TextType::class, [
+                'label' => 'Prénom'
+            ])
+            ->add('phoneUser', TextType::class, [
+                'label' => 'Téléphone'
+            ])
+            ->add('adressUser', TextType::class, [
+                'label' => 'Adresse'
+            ])
+            ->add('cpUser', TextType::class, [
+                'label' => 'Code Postal'
+            ])
+            ->add('cityUser', TextType::class, [
+                'label' => 'Commune'
+            ])
+
         ;
     }
 

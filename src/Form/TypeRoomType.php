@@ -3,9 +3,11 @@
 namespace App\Form;
 
 use App\Entity\TypeRoom;
+use App\Entity\OptionTypeRoom;
 use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -18,6 +20,9 @@ class TypeRoomType extends AbstractType
         $builder
             ->add('nameType', TextType::class, [
                 'label' => 'Type de la chambre'
+            ])
+            ->add('startPrice', TextType::class, [
+                'label' => 'Tarif minimum'
             ])
             ->add('descriptionTypeRoom', CKEditorType::class, 
                 array ('label' => 'Description')
@@ -66,6 +71,13 @@ class TypeRoomType extends AbstractType
                         'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
                     ])
                 ],
+            ])
+            ->add('optionTypeRoom', EntityType::class, [
+                'class' => OptionTypeRoom::class,
+                'multiple' => true,
+                'expanded' => true,
+                'required' => false,
+                'choice_label' => 'nameOptionTypeRoom'
             ])
             ;
     }

@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Reservation;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use App\Repository\UserRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -44,6 +45,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="user")
      */
     private $reservations;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $nameUser;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $firstNameUser;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $phoneUser;
+
+    /**
+     * @ORM\Column(type="string", length=155)
+     */
+    private $adressUser;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $cpUser;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $cityUser;
 
     public function __construct()
     {
@@ -165,6 +196,78 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $reservation->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNameUser(): ?string
+    {
+        return $this->nameUser;
+    }
+
+    public function setNameUser(string $nameUser): self
+    {
+        $this->nameUser = $nameUser;
+
+        return $this;
+    }
+
+    public function getFirstNameUser(): ?string
+    {
+        return $this->firstNameUser;
+    }
+
+    public function setFirstNameUser(string $firstNameUser): self
+    {
+        $this->firstNameUser = $firstNameUser;
+
+        return $this;
+    }
+
+    public function getPhoneUser(): ?string
+    {
+        return $this->phoneUser;
+    }
+
+    public function setPhoneUser(string $phoneUser): self
+    {
+        $this->phoneUser = $phoneUser;
+
+        return $this;
+    }
+
+    public function getAdressUser(): ?string
+    {
+        return $this->adressUser;
+    }
+
+    public function setAdressUser(string $adressUser): self
+    {
+        $this->adressUser = $adressUser;
+
+        return $this;
+    }
+
+    public function getCpUser(): ?string
+    {
+        return $this->cpUser;
+    }
+
+    public function setCpUser(string $cpUser): self
+    {
+        $this->cpUser = $cpUser;
+
+        return $this;
+    }
+
+    public function getCityUser(): ?string
+    {
+        return $this->cityUser;
+    }
+
+    public function setCityUser(string $cityUser): self
+    {
+        $this->cityUser = $cityUser;
 
         return $this;
     }

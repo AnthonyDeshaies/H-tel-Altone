@@ -60,10 +60,26 @@ class TypeRoom
      */
     private $rooms;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=OptionTypeRoom::class, inversedBy="typeRooms")
+     */
+    private $optionTypeRoom;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $startPrice;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $maxPrice;
+
     public function __construct()
     {
         $this->rooms = new ArrayCollection();
         $this->reservations = new ArrayCollection();
+        $this->optionTypeRoom = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -199,6 +215,54 @@ class TypeRoom
                 $room->setTypeRoom(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|OptionTypeRoom[]
+     */
+    public function getOptionTypeRoom(): Collection
+    {
+        return $this->optionTypeRoom;
+    }
+
+    public function addOptionTypeRoom(OptionTypeRoom $optionTypeRoom): self
+    {
+        if (!$this->optionTypeRoom->contains($optionTypeRoom)) {
+            $this->optionTypeRoom[] = $optionTypeRoom;
+        }
+
+        return $this;
+    }
+
+    public function removeOptionTypeRoom(OptionTypeRoom $optionTypeRoom): self
+    {
+        $this->optionTypeRoom->removeElement($optionTypeRoom);
+
+        return $this;
+    }
+
+    public function getStartPrice(): ?string
+    {
+        return $this->startPrice;
+    }
+
+    public function setStartPrice(string $startPrice): self
+    {
+        $this->startPrice = $startPrice;
+
+        return $this;
+    }
+
+    public function getMaxPrice(): ?string
+    {
+        return $this->maxPrice;
+    }
+
+    public function setMaxPrice(string $maxPrice): self
+    {
+        $this->maxPrice = $maxPrice;
 
         return $this;
     }

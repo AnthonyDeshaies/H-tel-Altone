@@ -3,15 +3,28 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1>Inscription</h1>
+<section id="inscription" class="container-fluid">
+    <div class="inscription">
+        <h1>Inscription</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
+        {{ form_start(registrationForm) }}
+        {{ form_label(registrationForm.email) }}<br>
+    {{ form_widget(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+        label: 'Password'
         }) }}
+        {{ form_row(registrationForm.nameUser) }}
+        {{ form_row(registrationForm.firstNameUser) }}
+        {{ form_row(registrationForm.phoneUser) }}
+        {{ form_row(registrationForm.adressUser) }}
+        {{ form_row(registrationForm.cpUser) }}
+        {{ form_row(registrationForm.cityUser) }}
+        <p>Conformément au règlement 2016/679 de l'Union Européenne, <br> veuillez accepter la Politique sur la <a
+                href="{{ path('privatePolicy') }}">protection de vos données personnelles</a>.</p>
         {{ form_row(registrationForm.agreeTerms) }}
 
         <button type="submit" class="btn">S'inscrire</button>
-    {{ form_end(registrationForm) }}
+        {{ form_end(registrationForm) }}
+    </div>
+</section>
 {% endblock %}
