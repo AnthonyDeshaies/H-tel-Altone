@@ -3,20 +3,27 @@
 {% block title %}Index des types de chambre{% endblock %}
 
 {% block body %}
-<section id="suite" class="container">
-    <h1>Index des types de chambre</h1>
-
+<section id="type_rooms_title">
+    <h1>Nos chambres</h1>
+</section>
+<section id="type_rooms" class="container">
+    <p class="sentence">
+        Toutes nos chambres sont pensées pour faciliter votre séjour, 
+        avec un design moderne et original !
+    </p>
+    <div class="treat"></div>
     {% set nb = 0 %}
     {% for type_room in type_rooms %}
     {% set nb = nb+1 %}
 
     {% if (nb is even ) %}
-    <div class="row">
-        <div class="col-lg-3">
+    <div class="treat"></div>
+    <div class="row type_room">
+        <div class="col-lg-5">
             <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
         </div>
-        <div class="col-lg-9">
-            <div>
+        <div class="col-lg-7">
+            <div class="name_price">
                 <h2>{{ type_room.nameType }}</h2>
                 <h3>{{ type_room.startPrice }}</h3>
             </div>
@@ -27,13 +34,13 @@
                 {% endfor %}
             </p>
         </div>
+        <div class="treat"></div>
     </div>
     {% endif %}
-
     {% if (nb is odd ) %}
-    <div class="row">
-        <div class="col-lg-9">
-            <div>
+    <div class="row type_room">
+        <div class="col-lg-7">
+            <div class="name_price">
                 <h2>{{ type_room.nameType }}</h2>
                 <h3>{{ type_room.startPrice }}</h3>
             </div>
@@ -44,7 +51,7 @@
                 {% endfor %}
             </p>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-5">
             <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
         </div>
     </div>

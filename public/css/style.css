@@ -55,20 +55,122 @@ header #banner i {
   margin-right: 15px;
 }
 
-header nav img {
+header #navbar {
+  background-color: #4e4e4d;
+}
+
+header #navbar nav img {
   height: 50px;
 }
 
-header nav a {
+header #navbar nav a {
   color: #69b88e !important;
   font-size: 20px;
 }
 
-header nav a:hover {
+header #navbar nav a:hover {
   color: #5184c7 !important;
   border-bottom: solid 4px #5184c7;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+/* ====================== FOOTER ==========================*/
+footer {
+  margin-top: 150px;
+  width: 100%;
+  height: 250px;
+  background-color: #757570;
+}
+
+footer img {
+  height: 80px;
+  display: block;
+  margin: 20px auto 0 auto;
+}
+
+footer .footer_archors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer a {
+  color: #69b88e;
+  text-decoration: none;
+  margin: 20px 10px 25px 10px;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+/* ===================  BASE ADMIN.HTML.TWIG ==========================*/
+#navbar_admin nav img {
+  height: 50px;
+}
+
+#navbar_admin nav a {
+  color: #69b88e !important;
+  font-size: 20px;
+}
+
+#navbar_admin nav a:hover {
+  color: #5184c7 !important;
+  border-bottom: solid 4px #5184c7;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#admin {
+  margin-bottom: -150px;
+  text-align: center;
+}
+
+#admin .aside {
+  background-color: #757570;
+}
+
+#admin nav .navbar-brand {
+  height: 127px;
+  padding-top: 20px;
+  margin-left: 20px;
+}
+
+#admin nav a {
+  font-size: 25px;
+  color: white;
+}
+
+#admin nav .nav-link {
+  font-size: 20px;
+  color: #69b88e;
+  height: 66px;
+}
+
+#admin .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#admin .navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /*====================== HOME PAGE ========================*/
@@ -372,41 +474,61 @@ header nav a:hover {
   color: green;
 }
 
-/*----------section rooms_home_page------*/
-/*----------section Contact--------------*/
-/* ====================== FOOTER ==========================*/
-footer {
-  margin-top: 150px;
+/* =================== PAGE TYPE DE CHAMBRE ======================*/
+#type_rooms_title {
   width: 100%;
-  height: 200px;
-  background-color: #757570;
+  height: 500px;
+  background-image: url("../images/main_type_room.jpg");
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
 }
 
-footer img {
-  height: 80px;
-  display: block;
-  margin: -10px auto;
+#type_rooms_title h1 {
+  padding-top: 60px;
+  color: #5184c7;
+  text-transform: uppercase;
 }
 
-footer .footer_archors {
+#type_rooms h1 {
+  text-align: center;
+}
+
+#type_rooms img {
+  width: 100%;
+}
+
+#type_rooms .sentence {
+  margin-top: 100px;
+  font-size: 25px;
+  font-style: italic;
+  text-align: center;
+}
+
+#type_rooms .type_room {
+  margin-top: 50px;
+}
+
+#type_rooms .name_price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-footer a {
-  color: #69b88e;
-  text-decoration: none;
-  margin: 20px 10px 25px 10px;
-}
-
-footer p {
-  text-align: center;
+/* ======================= PAGE ADMIN ============================*/
+#admin_page h1 {
+  height: 137px;
+  background-color: #757570;
   color: white;
-  font-size: 12px;
+  padding-top: 35px;
+  margin-bottom: -15px;
+}
+
+#admin_page img {
+  width: 100%;
 }
 
 /*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/
