@@ -28,11 +28,33 @@
                 <h3>{{ type_room.startPrice }}</h3>
             </div>
             <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
-            <p> {% for option in type_room.optionTypeRoom %}
-                {{ option.logoOptionTypeRoom|raw }}
-                {{ option.nameOptionTypeRoom }}
+            <div class="row">
+                {% set x = 0 %}
+                {% for option in type_room.optionTypeRoom %}
+                {% set x = x+1 %}
+                <div class="col-lg-4">
+                    {% if ( x < 5 ) %}
+                    <p> {{ option.logoOptionTypeRoom|raw }}
+                        {{ option.nameOptionTypeRoom }}
+                    </p>
+                    {% endif %}
+                </div>
+                <div class="col-lg-4">
+                    {% if ( x >= 5 and x < 9 ) %}
+                    <p> {{ option.logoOptionTypeRoom|raw }}
+                        {{ option.nameOptionTypeRoom }}
+                    </p>
+                    {% endif %}
+                </div>
+                <div class="col-lg-4">
+                    {% if ( x > 8) %}
+                    <p> {{ option.logoOptionTypeRoom|raw }}
+                        {{ option.nameOptionTypeRoom }}
+                    </p>
+                    {% endif %}
+                </div>
                 {% endfor %}
-            </p>
+            </div>
         </div>
         <div class="treat"></div>
     </div>
