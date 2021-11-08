@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Index des types de chambre{% endblock %}
+{% block title %}Les types de chambre{% endblock %}
 
 {% block body %}
 <section id="type_rooms_title">
@@ -30,7 +30,7 @@
             <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
             <div class="row options">
                 {% for option in type_room.optionTypeRoom %}
-                <div class="col-lg-4 col_opt">
+                <div class="col-md-4 col_opt">
                     <span class="logo"> {{ option.logoOptionTypeRoom|raw }} <span>
                     <span class="option"> {{ option.nameOptionTypeRoom }}</span>
                 </div>
@@ -53,7 +53,7 @@
             <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
             <div class="row options">
                 {% for option in type_room.optionTypeRoom %}
-                <div class="col-lg-4 col_opt">
+                <div class="col-md-4 col_opt">
                     <span class="logo"> {{ option.logoOptionTypeRoom|raw }} <span>
                     <span class="option"> {{ option.nameOptionTypeRoom }}</span>
                 </div>

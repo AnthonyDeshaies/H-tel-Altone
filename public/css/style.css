@@ -3,12 +3,24 @@
   font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+  font-family: 'Parisienne', cursive;
+}
+
 h2 {
+  font-family: 'Parisienne', cursive;
+  font-size: 50px;
   color: #5184c7;
 }
 
 h3 {
+  font-family: 'Parisienne', cursive;
+  font-size: 35px;
   color: #69b88e;
+}
+
+h4 {
+  font-style: italic;
 }
 
 p {
@@ -110,7 +122,7 @@ footer p {
   font-size: 12px;
 }
 
-/* ===================  BASE ADMIN.HTML.TWIG ==========================*/
+/* =================== ADMIN.HTML.TWIG ==========================*/
 #navbar_admin nav img {
   height: 50px;
 }
@@ -176,7 +188,7 @@ footer p {
 /*====================== HOME PAGE ========================*/
 #main_title {
   width: 100%;
-  height: 700px;
+  height: 800px;
   background-image: url("../images/chateau.jpg");
   background-position: center center;
   background-size: cover;
@@ -193,9 +205,10 @@ footer p {
   text-align: center;
   padding-top: 20px;
   color: #313130;
-  font-size: 30px;
+  font-size: 35px;
   font-style: italic;
   margin: 0 300px 0 300px;
+  font-family: 'Roboto, cursive';
 }
 
 #banner_reservation {
@@ -298,6 +311,7 @@ footer p {
 #amenities_banner .amenities_banner_element p {
   width: 300px;
   color: #4e4e4d;
+  font-style: italic;
 }
 
 /*----------section rooms_home_page------*/
@@ -327,9 +341,11 @@ footer p {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin-top: -15px;
 }
 
 #rooms_home_page .suite_home_page .suite_home_page_txt h4 {
+  margin: -15px 0 22px 0;
   color: #69b88e;
   font-size: 20px;
 }
@@ -477,7 +493,7 @@ footer p {
 /* =================== PAGE TYPE DE CHAMBRE ======================*/
 #type_rooms_title {
   width: 100%;
-  height: 500px;
+  height: 600px;
   background-image: url("../images/main_type_room.jpg");
   background-position: center center;
   background-size: cover;
@@ -485,13 +501,13 @@ footer p {
 }
 
 #type_rooms_title h1 {
-  padding-top: 60px;
+  font-size: 80px;
+  padding-top: 50px;
   color: #5184c7;
-  text-transform: uppercase;
 }
 
-#type_rooms h1 {
-  text-align: center;
+#type_rooms .treat {
+  background-color: #69b88e;
 }
 
 #type_rooms img {
@@ -499,10 +515,11 @@ footer p {
 }
 
 #type_rooms .sentence {
-  margin-top: 100px;
-  font-size: 25px;
-  font-style: italic;
+  margin-top: 80px;
+  font-family: 'Parisienne', cursive;
+  font-size: 45px;
   text-align: center;
+  color: #69b88e;
 }
 
 #type_rooms .type_room {
@@ -518,8 +535,15 @@ footer p {
           justify-content: space-between;
 }
 
+#type_rooms .name_price h3 {
+  font-family: 'Roboto', cursive;
+  font-size: 30px;
+}
+
 #type_rooms p {
   margin-bottom: 40px;
+  font-size: 17px;
+  font-style: italic;
 }
 
 #type_rooms .col_opt {
@@ -546,6 +570,27 @@ footer p {
   margin-top: 30px;
 }
 
+/* =================== PAGE RESTAURANT ======================*/
+#restaurant_title {
+  width: 100%;
+  height: 800px;
+  background-image: url("../images/restaurant.jpg");
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+}
+
+#restaurant_title h1 {
+  padding-top: 60px;
+  font-size: 80px;
+  color: #69b88e;
+}
+
+#restaurant_title h1 span {
+  color: #69b88e;
+  font-family: 'Parisienne', cursive;
+}
+
 /* ======================= PAGE ADMIN ============================*/
 #admin_page h1 {
   height: 137px;
@@ -567,6 +612,13 @@ footer p {
   }
   .welcome_txt p {
     font-size: 15px;
+  }
+}
+
+/*========RESPONSIVE RESTAURANT PAGE==============*/
+@media screen and (max-width: 1300px) {
+  #restaurant_title h1 span {
+    color: white;
   }
 }
 /*# sourceMappingURL=style.css.map */

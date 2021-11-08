@@ -4,20 +4,31 @@
 {
     font-family: 'Roboto', sans-serif;
 }
-
+h1
+{
+    font-family: 'Parisienne', cursive;
+}
 h2
 {
+    font-family: 'Parisienne', cursive;
+    font-size: 50px;
     color: rgb(81, 132, 199);
 }
 
 h3
 {
+    font-family: 'Parisienne', cursive;
+    font-size: 35px;
     color: rgb(105, 184, 142);
 }
-
+h4
+{
+    font-style: italic;
+}
 p
 {
     color: rgb(78, 78, 77);
+    // font-style: italic;
 }
 
 .btn
@@ -123,7 +134,7 @@ footer
     }
 }
 
-/* ===================  BASE ADMIN.HTML.TWIG ==========================*/
+/* =================== ADMIN.HTML.TWIG ==========================*/
 
 #navbar_admin
 {
@@ -192,7 +203,7 @@ footer
 #main_title
         {
             width: 100%;
-            height: 700px;
+            height: 800px;
             background-image: url("../images/chateau.jpg");
             background-position: center center;
             background-size: cover;
@@ -209,9 +220,10 @@ footer
                     text-align: center;
                     padding-top: 20px;
                     color: rgb(49, 49, 48);
-                    font-size: 30px;
+                    font-size: 35px;
                     font-style: italic;
                     margin: 0 300px 0 300px;
+                    font-family: 'Roboto, cursive';
                 }
         }
 
@@ -312,6 +324,7 @@ footer
                 {
                     width: 300px;
                     color: rgb(78, 78, 77);
+                    font-style: italic;
                 }
         }
 }
@@ -337,9 +350,11 @@ footer
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: flex-start;
+                margin-top: -15px;
             
                     h4
                     {
+                        margin: -15px 0 22px 0; 
                         color: rgb(105, 184, 142);
                         font-size: 20px;
                     }
@@ -499,7 +514,7 @@ footer
 #type_rooms_title
 {
     width: 100%;
-    height: 500px;
+    height: 600px;
     background-image: url("../images/main_type_room.jpg");
     background-position: center center;
     background-size: cover;
@@ -507,9 +522,9 @@ footer
 
         h1
         {
-            padding-top: 60px;
+            font-size: 80px;
+            padding-top: 50px;
             color: rgb(81, 132, 199);            
-            text-transform: uppercase;
         }
 }
 
@@ -517,7 +532,7 @@ footer
     {
         .treat
         {
-            text-align: center;
+            background-color: rgb(105, 184, 142);
         }
         img
         {
@@ -525,10 +540,11 @@ footer
         }
         .sentence
         {
-            margin-top: 100px;
-            font-size: 25px;
-            font-style: italic;
+            margin-top: 80px;
+            font-family: 'Parisienne', cursive;
+            font-size: 45px;
             text-align: center;
+            color: rgb(105, 184, 142);
         }
         .type_room
         {
@@ -538,10 +554,18 @@ footer
             {
                 display: flex;
                 justify-content: space-between;
+
+                    h3
+                    {
+                        font-family: 'Roboto', cursive;
+                        font-size: 30px;
+                    }
             }
             p
             {
                margin-bottom: 40px;
+               font-size: 17px;
+               font-style: italic;
             }
             .col_opt
             {
@@ -566,6 +590,32 @@ footer
                 margin-top: 30px;
             }
     }
+
+/* =================== PAGE RESTAURANT ======================*/
+
+#restaurant_title
+{
+    width: 100%;
+    height: 800px;
+    background-image: url("../images/restaurant.jpg");
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    
+
+        h1
+        {
+            padding-top: 60px;
+            font-size: 80px;
+            color: rgb(105, 184, 142);
+        
+                span
+                {
+                    color: rgb(105, 184, 142);
+                    font-family: 'Parisienne', cursive;
+                }
+        }
+}
 
 /* ======================= PAGE ADMIN ============================*/
 
@@ -601,5 +651,18 @@ footer
             {
                 font-size: 15px;
             }
+    }
+}
+
+/*========RESPONSIVE RESTAURANT PAGE==============*/
+
+@media screen and (max-width: 1300px)
+{
+    #restaurant_title
+    {
+        h1 span
+        {
+            color: rgb(255, 255, 255);
+        }
     }
 }

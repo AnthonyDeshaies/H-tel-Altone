@@ -1,47 +1,21 @@
-{% extends 'admin.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Restaurant index{% endblock %}
 
 {% block body %}
-    <h1>Restaurant index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom du restaurant</th>
-                <th>Description du restaurant</th>
-                <th>Image du restaurant</th>
-                <th>Image entrée</th>
-                <th>Image plat de résistance</th>
-                <th>Image dessert</th>
-                <th>Image boisson</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <section id="restaurant_title">
+        <h1>Restaurant Le <span>Lotus</span></h1>
+    </section>
+    <section id="restaurant_menu" class="container">
         {% for restaurant in restaurants %}
-            <tr>
-                <td>{{ restaurant.id }}</td>
-                <td>{{ restaurant.nameRestaurant }}</td>
-                <td>{{ restaurant.descriptionRestaurant |raw }}</td>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgRestaurant) }}" width="100"></td>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgStarter) }}" width="100"></td>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgMainCourse) }}" width="100"></td>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgDessert) }}" width="100"></td>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgDrink) }}" width="100"></td>
-                <td>
-                    <a href="{{ path('restaurant_show', {'id': restaurant.id}) }}">Voir</a>
-                    <a href="{{ path('restaurant_edit', {'id': restaurant.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">Pas d'enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="row">
+            <div class="col-lg-5">
+                <img src="{{ asset('uploads/photos/' ~ restaurant.imgStarter) }}">
+            </div>
+            <div class="col-lg-7">
 
-    <a href="{{ path('restaurant_new') }}">Créer un nouveau restaurant</a>
-{% endblock %}
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    {% endblock %}
