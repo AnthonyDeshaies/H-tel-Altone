@@ -6,7 +6,7 @@
 <section id="type_rooms_title">
     <h1>Nos chambres</h1>
 </section>
-<section id="type_rooms" class="container">
+<section id="type_rooms" class="container-fluid">
     <p class="sentence">
         Toutes nos chambres sont pensées pour faciliter votre séjour, 
         avec un design moderne et original !
@@ -28,32 +28,16 @@
                 <h3>{{ type_room.startPrice }}</h3>
             </div>
             <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
-            <div class="row">
-                {% set x = 0 %}
+            <div class="row options">
                 {% for option in type_room.optionTypeRoom %}
-                {% set x = x+1 %}
-                <div class="col-lg-4">
-                    {% if ( x < 5 ) %}
-                    <p> {{ option.logoOptionTypeRoom|raw }}
-                        {{ option.nameOptionTypeRoom }}
-                    </p>
-                    {% endif %}
-                </div>
-                <div class="col-lg-4">
-                    {% if ( x >= 5 and x < 9 ) %}
-                    <p> {{ option.logoOptionTypeRoom|raw }}
-                        {{ option.nameOptionTypeRoom }}
-                    </p>
-                    {% endif %}
-                </div>
-                <div class="col-lg-4">
-                    {% if ( x > 8) %}
-                    <p> {{ option.logoOptionTypeRoom|raw }}
-                        {{ option.nameOptionTypeRoom }}
-                    </p>
-                    {% endif %}
+                <div class="col-lg-4 col_opt">
+                    <span class="logo"> {{ option.logoOptionTypeRoom|raw }} <span>
+                    <span class="option"> {{ option.nameOptionTypeRoom }}</span>
                 </div>
                 {% endfor %}
+            </div>
+            <div class="reservation">
+                <a href="#" class="btn">Réserver</a>
             </div>
         </div>
         <div class="treat"></div>
@@ -67,11 +51,17 @@
                 <h3>{{ type_room.startPrice }}</h3>
             </div>
             <p class="description">{{ type_room.descriptionTypeRoom|raw }}</p>
-            <p> {% for option in type_room.optionTypeRoom %}
-                {{ option.logoOptionTypeRoom|raw }}
-                {{ option.nameOptionTypeRoom }}
+            <div class="row options">
+                {% for option in type_room.optionTypeRoom %}
+                <div class="col-lg-4 col_opt">
+                    <span class="logo"> {{ option.logoOptionTypeRoom|raw }} <span>
+                    <span class="option"> {{ option.nameOptionTypeRoom }}</span>
+                </div>
                 {% endfor %}
-            </p>
+            </div>
+            <div class="reservation">
+                <a href="#" class="btn">Réserver</a>
+            </div>
         </div>
         <div class="col-lg-5">
             <img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100">
@@ -80,41 +70,4 @@
     {% endif %}
     {% endfor %}
 </section>
-
-{# <table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Type de chambre</th>
-            <th>Image1</th>
-            <th>Image2</th>
-            <th>Image3</th>
-            <th>Description</th>
-            <th>Nombre de places</th>
-            <th>actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for type_room in type_rooms %}
-        <tr>
-            <td>{{ type_room.id }}</td>
-            <td>{{ type_room.nameType }}</td>
-            <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
-            <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
-            <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
-            <td>{{ type_room.descriptionTypeRoom |raw }}</td>
-            <td>{{ type_room.nbPlaces }}</td>
-            <td>
-                <a href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir</a>
-                <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier</a>
-            </td>
-        </tr>
-        {% else %}
-        <tr>
-            <td colspan="8">Aucun enregistrement trouvé</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table> #}
-
 {% endblock %}

@@ -103,7 +103,7 @@ class TypeRoomController extends AbstractController
             $entityManager->persist($typeRoom);
             $entityManager->flush();
 
-            return $this->redirectToRoute('type_room_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('type_room_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('type_room/new.html.twig', [
@@ -183,7 +183,7 @@ class TypeRoomController extends AbstractController
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('type_room_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('type_room_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('type_room/edit.html.twig', [
@@ -203,6 +203,6 @@ class TypeRoomController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('type_room_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('type_room_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

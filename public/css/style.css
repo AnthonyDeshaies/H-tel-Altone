@@ -518,6 +518,34 @@ footer p {
           justify-content: space-between;
 }
 
+#type_rooms p {
+  margin-bottom: 40px;
+}
+
+#type_rooms .col_opt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#type_rooms span {
+  margin-bottom: 30px;
+}
+
+#type_rooms .logo {
+  color: #5184c7;
+}
+
+#type_rooms .option {
+  margin-left: 15px;
+  color: #4e4e4d;
+}
+
+#type_rooms .reservation {
+  text-align: center;
+  margin-top: 30px;
+}
+
 /* ======================= PAGE ADMIN ============================*/
 #admin_page h1 {
   height: 137px;

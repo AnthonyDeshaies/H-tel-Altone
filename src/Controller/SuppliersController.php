@@ -52,7 +52,7 @@ class SuppliersController extends AbstractController
             $entityManager->persist($supplier);
             $entityManager->flush();
 
-            return $this->redirectToRoute('suppliers_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('suppliers_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('suppliers/new.html.twig', [
@@ -82,7 +82,7 @@ class SuppliersController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {            
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('suppliers_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('suppliers_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('suppliers/edit.html.twig', [
@@ -102,6 +102,6 @@ class SuppliersController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('suppliers_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('suppliers_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

@@ -7,7 +7,7 @@
 
     {{ include('type_room/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('type_room_index') }}">Retour à la liste to liste</a>
+    <a class="btn" href="{{ path('type_room_admin') }}">Retour à la liste</a>
 
     {{ include('type_room/_delete_form.html.twig') }}
 {% endblock %}

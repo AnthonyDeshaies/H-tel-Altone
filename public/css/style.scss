@@ -534,11 +534,37 @@ footer
         {
             margin-top: 50px;
         }
-        .name_price
-        {
-            display: flex;
-            justify-content: space-between;
-        }
+            .name_price
+            {
+                display: flex;
+                justify-content: space-between;
+            }
+            p
+            {
+               margin-bottom: 40px;
+            }
+            .col_opt
+            {
+                display: flex;
+            }
+                span
+                {
+                    margin-bottom: 30px;
+                }
+                .logo
+                {
+                    color: rgb(81, 132, 199)
+                }
+                .option
+                {
+                    margin-left: 15px;
+                    color: rgb(78, 78, 77)
+                }
+            .reservation
+            {
+                text-align: center;
+                margin-top: 30px;
+            }
     }
 
 /* ======================= PAGE ADMIN ============================*/

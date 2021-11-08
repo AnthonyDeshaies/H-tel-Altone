@@ -16,16 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class RoomsController extends AbstractController
 {
     /**
-     * @Route("/", name="rooms_index", methods={"GET"})
-     */
-    public function index(RoomsRepository $roomsRepository): Response
-    {
-        return $this->render('rooms/index.html.twig', [
-            'rooms' => $roomsRepository->findAll(),
-        ]);
-    }
-
-    /**
      * @Route("/admin", name="rooms_admin", methods={"GET"})
      */
     public function admin(RoomsRepository $roomsRepository): Response
@@ -49,7 +39,7 @@ class RoomsController extends AbstractController
             $entityManager->persist($room);
             $entityManager->flush();
 
-            return $this->redirectToRoute('rooms_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('rooms_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('rooms/new.html.twig', [
@@ -79,7 +69,7 @@ class RoomsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('rooms_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('rooms_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('rooms/edit.html.twig', [
@@ -99,6 +89,6 @@ class RoomsController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('rooms_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('rooms_admin', [], Response::HTTP_SEE_OTHER);
     }
 }
