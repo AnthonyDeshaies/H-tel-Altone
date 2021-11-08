@@ -39,7 +39,7 @@ class CategoryDrinksController extends AbstractController
             $entityManager->persist($categoryDrink);
             $entityManager->flush();
 
-            return $this->redirectToRoute('category_drinks_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('category_drinks_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('category_drinks/new.html.twig', [
@@ -69,7 +69,7 @@ class CategoryDrinksController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('category_drinks_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('category_drinks_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('category_drinks/edit.html.twig', [
@@ -89,6 +89,6 @@ class CategoryDrinksController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('category_drinks_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('category_drinks_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

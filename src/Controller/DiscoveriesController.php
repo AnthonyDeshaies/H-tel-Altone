@@ -72,7 +72,7 @@ class DiscoveriesController extends AbstractController
             $entityManager->persist($discovery);
             $entityManager->flush();
 
-            return $this->redirectToRoute('discoveries_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('discoveries_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('discoveries/new.html.twig', [
@@ -122,7 +122,7 @@ class DiscoveriesController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
             /** Fin du code à ajouter **/
 
-            return $this->redirectToRoute('discoveries_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('discoveries_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('discoveries/edit.html.twig', [
@@ -142,6 +142,6 @@ class DiscoveriesController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('discoveries_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('discoveries_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

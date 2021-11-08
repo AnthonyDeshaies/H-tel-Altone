@@ -49,7 +49,7 @@ class DishesController extends AbstractController
             $entityManager->persist($dish);
             $entityManager->flush();
 
-            return $this->redirectToRoute('dishes_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('dishes_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('dishes/new.html.twig', [
@@ -79,7 +79,7 @@ class DishesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('dishes_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('dishes_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('dishes/edit.html.twig', [
@@ -99,6 +99,6 @@ class DishesController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('dishes_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('dishes_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

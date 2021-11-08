@@ -70,7 +70,7 @@ class AmenitiesController extends AbstractController
             $entityManager->persist($amenity);
             $entityManager->flush();
 
-            return $this->redirectToRoute('amenities_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('amenities_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('amenities/new.html.twig', [
@@ -118,7 +118,7 @@ class AmenitiesController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('amenities_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('amenities_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('amenities/edit.html.twig', [
@@ -138,6 +138,6 @@ class AmenitiesController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('amenities_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('amenities_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

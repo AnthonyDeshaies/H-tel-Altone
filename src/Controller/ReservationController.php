@@ -46,7 +46,7 @@ class ReservationController extends AbstractController
             $entityManager->persist($reservation);
             $entityManager->flush();
 
-            return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('reservation_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('reservation/new.html.twig', [
@@ -76,7 +76,7 @@ class ReservationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('reservation_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('reservation/edit.html.twig', [
@@ -96,7 +96,7 @@ class ReservationController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('reservation_admin', [], Response::HTTP_SEE_OTHER);
     }
         /**
      * @Route("/", name="reservation_index")

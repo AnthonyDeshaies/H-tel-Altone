@@ -142,7 +142,7 @@ class RestaurantController extends AbstractController
             $entityManager->persist($restaurant);
             $entityManager->flush();
 
-            return $this->redirectToRoute('restaurant_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('restaurant_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('restaurant/new.html.twig', [
@@ -262,7 +262,7 @@ class RestaurantController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('restaurant_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('restaurant_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('restaurant/edit.html.twig', [
@@ -282,6 +282,6 @@ class RestaurantController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('restaurant_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('restaurant_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

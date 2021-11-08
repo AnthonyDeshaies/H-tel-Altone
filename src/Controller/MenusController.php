@@ -49,7 +49,7 @@ class MenusController extends AbstractController
             $entityManager->persist($menu);
             $entityManager->flush();
 
-            return $this->redirectToRoute('menus_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('menus_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('menus/new.html.twig', [
@@ -79,7 +79,7 @@ class MenusController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('menus_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('menus_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('menus/edit.html.twig', [
@@ -99,6 +99,6 @@ class MenusController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('menus_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('menus_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

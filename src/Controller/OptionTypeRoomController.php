@@ -16,16 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class OptionTypeRoomController extends AbstractController
 {
     /**
-     * @Route("/", name="option_type_room_index", methods={"GET"})
-     */
-    public function index(OptionTypeRoomRepository $optionTypeRoomRepository): Response
-    {
-        return $this->render('option_type_room/index.html.twig', [
-            'option_type_rooms' => $optionTypeRoomRepository->findAll(),
-        ]);
-    }
-
-    /**
      * @Route("/admin", name="option_type_room_admin", methods={"GET"})
      */
     public function admin(OptionTypeRoomRepository $optionTypeRoomRepository): Response

@@ -49,7 +49,7 @@ class DrinksController extends AbstractController
             $entityManager->persist($drink);
             $entityManager->flush();
 
-            return $this->redirectToRoute('drinks_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('drinks_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('drinks/new.html.twig', [
@@ -79,7 +79,7 @@ class DrinksController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('drinks_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('drinks_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('drinks/edit.html.twig', [
@@ -99,6 +99,6 @@ class DrinksController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('drinks_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('drinks_admin', [], Response::HTTP_SEE_OTHER);
     }
 }

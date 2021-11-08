@@ -39,7 +39,7 @@ class CategorySuppliersController extends AbstractController
             $entityManager->persist($categorySupplier);
             $entityManager->flush();
 
-            return $this->redirectToRoute('category_suppliers_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('category_suppliers_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('category_suppliers/new.html.twig', [
@@ -69,7 +69,7 @@ class CategorySuppliersController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('category_suppliers_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('category_suppliers_admin', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('category_suppliers/edit.html.twig', [
@@ -89,6 +89,6 @@ class CategorySuppliersController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('category_suppliers_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('category_suppliers_admin', [], Response::HTTP_SEE_OTHER);
     }
 }
