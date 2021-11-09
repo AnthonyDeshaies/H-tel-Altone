@@ -28,15 +28,11 @@ h4
 p
 {
     color: rgb(78, 78, 77);
-    // font-style: italic;
 }
 
 .btn
 {
     width: 120px;
-    // display: block;
-    // margin: auto;
-    // margin-top: 30px;
     color: rgb(255, 255, 255);
     background-color: rgb(105, 184, 142);
 }
@@ -45,7 +41,7 @@ p
 {
     width: 300px;
     height: 2px;
-    background-color: rgb(117, 117, 112);
+    background-color: rgb(105, 184, 142);
     margin: 100px auto;
 }
 
@@ -92,8 +88,7 @@ header
                 a:hover
                 {
                     color: rgb(81, 132, 199)!important;
-                    border-bottom: solid 4px rgb(81, 132, 199);
-                    transition: 0.5s;
+                    transition: 0.8s;
                 }              
             }
         }
@@ -138,6 +133,7 @@ footer
 
 #navbar_admin
 {
+    border-bottom: solid 1px rgb(81, 132, 199);
     nav
     {
         img
@@ -147,43 +143,48 @@ footer
         a
         {
             color: rgb(105, 184, 142) !important;
-            font-size: 20px;
+            font-size: 17px;
         }
         a:hover
         {
             color: rgb(81, 132, 199)!important;
-            border-bottom: solid 4px rgb(81, 132, 199);
-            transition: 0.5s;
+            transition: 0.8s;
         }              
     }
 }
 
-#admin
+#side_bar
 {
-    margin-bottom: -150px;
+    margin-bottom: -130px;
     text-align: center;
         .aside
         {
-            background-color: rgb(117, 117, 112);
+            background-color: rgb(255, 255, 255);
+
         }
         nav
         {
             .navbar-brand
             {
-                height: 127px;
+                height: 120px;
                 padding-top: 20px;
                 margin-left: 20px;
+                margin-bottom: 30px;
+                border-bottom: solid 1px rgb(78, 78, 77);
             }
                 a
                 {
                     font-size: 25px;
-                    color: rgb(255, 255, 255);
+                    color: rgb(78, 78, 77);
                 }
             .nav-link
             {
-                font-size: 20px;
+                font-size: 15px;
+                color: rgb(81, 132, 199);
+            }
+            .nav-link:hover
+            {
                 color: rgb(105, 184, 142);
-                height: 66px;
             }
         }
         .container
@@ -196,6 +197,11 @@ footer
             display: flex;
             flex-direction: column;
         }
+        // .admin_content
+        // {
+        //     text-align: center;
+        //     margin: auto;
+        // }
 }
 
 /*====================== HOME PAGE ========================*/
@@ -509,7 +515,7 @@ footer
     color: green;
 }
 
-/* =================== PAGE TYPE DE CHAMBRE ======================*/
+/* =================== TYPE ROOM PAGE ======================*/
 
 #type_rooms_title
 {
@@ -529,22 +535,19 @@ footer
 }
 
 #type_rooms
-    {
-        .treat
-        {
-            background-color: rgb(105, 184, 142);
-        }
+    {   
         img
         {
             width: 100%;
         }
+        
         .sentence
         {
             margin-top: 80px;
-            font-family: 'Parisienne', cursive;
-            font-size: 45px;
+            font-size: 25px;
+            font-style: italic;
             text-align: center;
-            color: rgb(105, 184, 142);
+            color: rgb(78, 78, 77);
         }
         .type_room
         {
@@ -561,29 +564,34 @@ footer
                         font-size: 30px;
                     }
             }
+            
             p
             {
                margin-bottom: 40px;
                font-size: 17px;
-               font-style: italic;
             }
+            
             .col_opt
             {
                 display: flex;
             }
+                
                 span
                 {
                     margin-bottom: 30px;
                 }
+                
                 .logo
                 {
                     color: rgb(81, 132, 199)
                 }
+                
                 .option
                 {
                     margin-left: 15px;
                     color: rgb(78, 78, 77)
                 }
+            
             .reservation
             {
                 text-align: center;
@@ -617,25 +625,202 @@ footer
         }
 }
 
-/* ======================= PAGE ADMIN ============================*/
+/* =================== AMENITIES PAGE ======================*/
 
-#admin_page
+#amenities_title
 {
-    h1
+    width: 100%;
+    height: 800px;
+    background-image: url("../images/amenities.jpg");
+    filter: opacity(85%);
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+
+        h1
+        {
+            font-size: 80px;
+            font-weight: bold;
+            padding-top: 35px;
+        }
+}
+
+#amenities
+{
+    .sentence
     {
-        height: 137px;
-        background-color: rgb(117, 117, 112);
-        color: rgb(255, 255, 255);
-        padding-top: 35px;
-        margin-bottom: -15px;
+        text-align: center;
+        margin: 80px 0 -20px 0;
+        font-size: 20px;
+        font-style: italic;
     }
+
     img
     {
         width: 100%;
     }
 }
 
+/* =================== DISCOVERY PAGE ======================*/
 
+#discoveries_title
+{
+    width: 100%;
+    height: 600px;
+    background-image: url("../images/discovery.jpg");
+    filter: opacity(85%);
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    
+
+        h1
+        {
+            padding-top: 170px;
+            font-size: 80px;
+            color: rgb(255, 255, 255);
+        }
+}
+
+#discoveries
+{
+    .sentence
+    {
+        margin: 70px 0 -20px 0;
+        font-size: 20px;
+        font-style: italic;
+
+        color: rgb(78, 78, 77);
+    }
+
+    .discovery
+    {
+        margin-top: 50px;
+    }
+
+        .location
+        {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        
+                .city
+                {
+                    color: rgb(81, 132, 199);
+                }
+
+                .gps
+                {
+                    color: rgb(105, 184, 142);
+                }
+        }
+
+    img
+    {
+        width: 100%;
+    }
+}
+
+/* ======================= SUPPLIERS PAGE ============================*/
+
+#suppliers_title
+{
+    width: 100%;
+    height: 800px;
+    background-image: url("../images/suppliers.jpg");
+    filter: opacity(85%);
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    
+
+        h1
+        {
+            padding-top: 30px;
+            margin-right: 140px;
+            font-size: 80px;
+            color: rgb(255, 255, 255);
+        }
+}
+
+/* ======================= ADMIN PAGE ============================*/
+
+#admin_page
+{      
+    width: 100%;
+    height: 800px;
+    background-color: rgb(167, 190, 218);
+    margin-bottom: -20px;
+
+        h1
+        {
+            margin: auto;
+            padding-top: 250px;
+            margin-bottom: -250px;
+        }
+}
+
+/* ======================= USERS ADMIN PAGE ============================*/
+
+#users_admin
+{
+    h1
+    {
+       margin: 50px 0;
+    }
+    
+    table
+    {
+        .show, .edit
+        {
+            text-decoration: none;
+            color: rgb(81, 132, 199);
+            font-size: 18px;
+        }
+
+        .show
+        {
+            margin-right: 15px;
+            color: rgb(105, 184, 142);
+        }
+    }
+    .btn
+    {
+        width: 250px;
+        margin-top: 50px;
+    }
+}
+
+/* ======================= RESERVATION ADMIN PAGE ============================*/
+
+#users_admin
+{
+    h1
+    {
+       margin: 50px 0;
+    }
+    
+    table
+    {
+        .show, .edit
+        {
+            text-decoration: none;
+            color: rgb(81, 132, 199);
+            font-size: 18px;
+        }
+
+        .show
+        {
+            margin-right: 15px;
+            color: rgb(105, 184, 142);
+        }
+    }
+    .btn
+    {
+        width: 250px;
+        margin-top: 50px;
+    }
+}
 
 /*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/
 

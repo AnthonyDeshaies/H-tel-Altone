@@ -5,46 +5,48 @@
 {% block body %}
 
 <body>
-    <h1>Venez visiter notre région !</h1>
+    <section id="discoveries_title">
+        <h1>Venez visiter notre région !</h1>
+    </section>
 
-    <p>Le Val de la Loire, et le Loir-et-Cher en particulier, c'est l'escapade où les édifices
-        architecturaux parcourent le temps pour nous conter l'histoire de France. Laissez-vous
-        surprendre par ces paysages aux nombreuses empreintes culturelles. De l'époque
-        médiévale aux grandes royautés, c'est ici que nombre d'événements ont fait évoluer
-        notre monde actuel. Au gré des envies de chacun, retracez le chemin de ceux et celles
-        qui ont marqué notre ère.
-    </p>
-
-    <section id="suite" class="container">
-
+    <section id="discoveries" class="container">
+        <p class="sentence">Le Val de la Loire, et le Loir-et-Cher en particulier, c'est l'escapade où les édifices
+            architecturaux parcourent le temps pour nous conter l'histoire de France. Laissez-vous
+            surprendre par ces paysages aux nombreuses empreintes culturelles. De l'époque
+            médiévale aux grandes royautés, c'est ici que nombre d'événements ont fait évoluer
+            notre monde actuel. Au gré des envies de chacun, retracez le chemin de ceux et celles
+            qui ont marqué notre ère.
+        </p>
         {% set nb = 0 %}
         {% for discovery in discoveries %}
         {% set nb = nb+1 %}
 
         {% if (nb is even ) %}
-        <div class="row">
+        <div class="treat"></div>
+        <div class="row discovery">
             <div class="col-lg-5">
                 <img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" width="100">
             </div>
             <div class="col-lg-7">
                 <h2>{{ discovery.nameDiscovery }}</h2>
                 <p>{{ discovery.descriptionDiscovery |raw}}</p>
-                <div>
-                    <p>{{ discovery.cpDiscovery }} {{ discovery.cityDiscovery }}<p>
-                    <p>latitude: {{ discovery.latitudeDiscovery }} ; longitude {{ discovery.longitudeDiscovery }}</p>
+                <div class="location">
+                    <p class="city"><span> {{ discovery.cpDiscovery }} </span> {{ discovery.cityDiscovery }}<p>
+                    <p class="gps">latitude: {{ discovery.latitudeDiscovery }} ; longitude {{ discovery.longitudeDiscovery }}</p>
                 </div>
             </div>
         </div>
         {% endif %}
 
         {% if (nb is odd ) %}
-        <div class="row">
+        <div class="treat"></div>
+        <div class="row discovery">
             <div class="col-lg-7">
                 <h2>{{ discovery.nameDiscovery }}</h2>
                 <p>{{ discovery.descriptionDiscovery |raw}}</p>
-                <div>
-                    <p>{{ discovery.cpDiscovery }} {{ discovery.cityDiscovery }}<p>
-                    <p>latitude: {{ discovery.latitudeDiscovery }} ; longitude {{ discovery.longitudeDiscovery }}</p>
+                <div class="location">
+                    <p class="city"><span> {{ discovery.cpDiscovery }} </span> {{ discovery.cityDiscovery }}<p>
+                    <p class="gps">latitude: {{ discovery.latitudeDiscovery }} ; longitude {{ discovery.longitudeDiscovery }}</p>
                 </div>
             </div>
             <div class="col-lg-5">
@@ -55,45 +57,4 @@
         {% endfor %}
     </section>
 </body>
-
-
-<!-- {# <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom de l'activité</th>
-                <th>Description de l'activité</th>
-                <th>Image de l'activité</th>
-                <th>Code postal</th>
-                <th>Commune</th>
-                <th>Latitude</th>
-                <th>Longitude</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for discovery in discoveries %}
-            <tr>
-                <td>{{ discovery.id }}</td>
-                <td>{{ discovery.nameDiscovery }}</td>
-                <td>{{ discovery.descriptionDiscovery |raw }}</td>
-                <td><img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" width="100"></td>
-                <td>{{ discovery.cpDiscovery }}</td>
-                <td>{{ discovery.cityDiscovery }}</td>
-                <td>{{ discovery.latitudeDiscovery }}</td>
-                <td>{{ discovery.longitudeDiscovery }}</td>
-                <td>
-                    <a href="{{ path('discoveries_show', {'id': discovery.id}) }}">Voir activité</a>
-                    <a href="{{ path('discoveries_edit', {'id': discovery.id}) }}">Modifier activité</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">Pas d'enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table> -->
-</body>
-<a href="{{ path('discoveries_new') }}">Créer nouvelle activité</a> #}
 {% endblock %}

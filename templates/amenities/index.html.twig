@@ -1,51 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Index des services
-{% endblock %}
+{% block title %}Les services{% endblock %}
 
 {% block body %}
-
 <body>
-    <section id="suite" class="container">
+    <section id="amenities_title">
         <h1>Nos services</h1>
-        <p>Pour rendre votre séjour des plus agréables, nous mettons à votre 
-            disposition des services de haute-qualité.
+    </section>
+
+    <section id="amenities" class="container">
+        <p class="sentence">Pour rendre votre séjour des plus agréables, nous mettons à votre
+            disposition des prestationss de haute-qualité.
         </p>
-        
-        {% set nb = 0 %}
-        {% for amenity in amenities %}
-        {% set nb = nb+1 %}
-        
-        {% if (nb is even ) %}
+        <div class="treat"></div>
         <div class="row">
-            <div class="col-lg-3">
-                <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
-            </div>
-            <div class="col-lg-9">
-                <div>
-                    <h2>{{ amenity.nameAmenity }}</h2>
-                    <h3>{{ amenity.priceAmenity}}</h3>
+            {% for amenity in amenities %}
+            <div class="col-lg-6">
+                <h2>{{ amenity.nameAmenity }}</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
+                        <p class="price">{{ amenity.priceAmenity}}</p>   
+                    </div>
                 </div>
-                <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
             </div>
-        </div>
-        {% endif %}
-        
-        {% if (nb is odd ) %}
-        <div class="row">
-            <div class="col-lg-9">
-                <div>
-                    <h2>{{ amenity.nameAmenity }}</h2>
-                    <p class="price">{{ amenity.priceAmenity}}</p>
-                </div>
-                <p class="description">{{ amenity.descriptionAmenity|raw }}</p>
-            </div>
-            <div class="col-lg-3">
-                <img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100">
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
+            {% endfor %}
     </section>
 </body>
 {% endblock %}

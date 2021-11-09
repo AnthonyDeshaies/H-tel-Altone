@@ -36,7 +36,7 @@ p {
 .treat {
   width: 300px;
   height: 2px;
-  background-color: #757570;
+  background-color: #69b88e;
   margin: 100px auto;
 }
 
@@ -82,9 +82,8 @@ header #navbar nav a {
 
 header #navbar nav a:hover {
   color: #5184c7 !important;
-  border-bottom: solid 4px #5184c7;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 /* ====================== FOOTER ==========================*/
@@ -123,49 +122,57 @@ footer p {
 }
 
 /* =================== ADMIN.HTML.TWIG ==========================*/
+#navbar_admin {
+  border-bottom: solid 1px #5184c7;
+}
+
 #navbar_admin nav img {
   height: 50px;
 }
 
 #navbar_admin nav a {
   color: #69b88e !important;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 #navbar_admin nav a:hover {
   color: #5184c7 !important;
-  border-bottom: solid 4px #5184c7;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
-#admin {
-  margin-bottom: -150px;
+#side_bar {
+  margin-bottom: -130px;
   text-align: center;
 }
 
-#admin .aside {
-  background-color: #757570;
+#side_bar .aside {
+  background-color: white;
 }
 
-#admin nav .navbar-brand {
-  height: 127px;
+#side_bar nav .navbar-brand {
+  height: 120px;
   padding-top: 20px;
   margin-left: 20px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px #4e4e4d;
 }
 
-#admin nav a {
+#side_bar nav a {
   font-size: 25px;
-  color: white;
+  color: #4e4e4d;
 }
 
-#admin nav .nav-link {
-  font-size: 20px;
+#side_bar nav .nav-link {
+  font-size: 15px;
+  color: #5184c7;
+}
+
+#side_bar nav .nav-link:hover {
   color: #69b88e;
-  height: 66px;
 }
 
-#admin .container {
+#side_bar .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,7 +182,7 @@ footer p {
           flex-direction: column;
 }
 
-#admin .navbar-nav {
+#side_bar .navbar-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,7 +497,7 @@ footer p {
   color: green;
 }
 
-/* =================== PAGE TYPE DE CHAMBRE ======================*/
+/* =================== TYPE ROOM PAGE ======================*/
 #type_rooms_title {
   width: 100%;
   height: 600px;
@@ -506,20 +513,16 @@ footer p {
   color: #5184c7;
 }
 
-#type_rooms .treat {
-  background-color: #69b88e;
-}
-
 #type_rooms img {
   width: 100%;
 }
 
 #type_rooms .sentence {
   margin-top: 80px;
-  font-family: 'Parisienne', cursive;
-  font-size: 45px;
+  font-size: 25px;
+  font-style: italic;
   text-align: center;
-  color: #69b88e;
+  color: #4e4e4d;
 }
 
 #type_rooms .type_room {
@@ -543,7 +546,6 @@ footer p {
 #type_rooms p {
   margin-bottom: 40px;
   font-size: 17px;
-  font-style: italic;
 }
 
 #type_rooms .col_opt {
@@ -591,17 +593,159 @@ footer p {
   font-family: 'Parisienne', cursive;
 }
 
-/* ======================= PAGE ADMIN ============================*/
-#admin_page h1 {
-  height: 137px;
-  background-color: #757570;
-  color: white;
-  padding-top: 35px;
-  margin-bottom: -15px;
+/* =================== AMENITIES PAGE ======================*/
+#amenities_title {
+  width: 100%;
+  height: 800px;
+  background-image: url("../images/amenities.jpg");
+  -webkit-filter: opacity(85%);
+          filter: opacity(85%);
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
 }
 
-#admin_page img {
+#amenities_title h1 {
+  font-size: 80px;
+  font-weight: bold;
+  padding-top: 35px;
+}
+
+#amenities .sentence {
+  text-align: center;
+  margin: 80px 0 -20px 0;
+  font-size: 20px;
+  font-style: italic;
+}
+
+#amenities img {
   width: 100%;
+}
+
+/* =================== DISCOVERY PAGE ======================*/
+#discoveries_title {
+  width: 100%;
+  height: 600px;
+  background-image: url("../images/discovery.jpg");
+  -webkit-filter: opacity(85%);
+          filter: opacity(85%);
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+}
+
+#discoveries_title h1 {
+  padding-top: 170px;
+  font-size: 80px;
+  color: white;
+}
+
+#discoveries .sentence {
+  margin: 70px 0 -20px 0;
+  font-size: 20px;
+  font-style: italic;
+  color: #4e4e4d;
+}
+
+#discoveries .discovery {
+  margin-top: 50px;
+}
+
+#discoveries .location {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#discoveries .location .city {
+  color: #5184c7;
+}
+
+#discoveries .location .gps {
+  color: #69b88e;
+}
+
+#discoveries img {
+  width: 100%;
+}
+
+/* ======================= SUPPLIERS PAGE ============================*/
+#suppliers_title {
+  width: 100%;
+  height: 800px;
+  background-image: url("../images/suppliers.jpg");
+  -webkit-filter: opacity(85%);
+          filter: opacity(85%);
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+}
+
+#suppliers_title h1 {
+  padding-top: 30px;
+  margin-right: 140px;
+  font-size: 80px;
+  color: white;
+}
+
+/* ======================= ADMIN PAGE ============================*/
+#admin_page {
+  width: 100%;
+  height: 800px;
+  background-color: #a7beda;
+  margin-bottom: -20px;
+}
+
+#admin_page h1 {
+  margin: auto;
+  padding-top: 250px;
+  margin-bottom: -250px;
+}
+
+/* ======================= USERS ADMIN PAGE ============================*/
+#users_admin h1 {
+  margin: 50px 0;
+}
+
+#users_admin table .show, #users_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#users_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#users_admin .btn {
+  width: 250px;
+  margin-top: 50px;
+}
+
+/* ======================= RESERVATION ADMIN PAGE ============================*/
+#users_admin h1 {
+  margin: 50px 0;
+}
+
+#users_admin table .show, #users_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#users_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#users_admin .btn {
+  width: 250px;
+  margin-top: 50px;
 }
 
 /*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/

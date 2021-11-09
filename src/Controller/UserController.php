@@ -16,6 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
  */
 class UserController extends AbstractController
 {
+
     /**
      * @Route("/admin", name="user_admin", methods={"GET"})
      */
