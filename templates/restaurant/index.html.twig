@@ -12,9 +12,13 @@
             <div class="col-lg-5">
                 <img src="{{ asset('uploads/photos/' ~ restaurant.imgStarter) }}">
             </div>
+            
+            {% for dish in dishes %}
             <div class="col-lg-7">
-
+                <p>{{ dish.descriptionDish |raw }}</p>
+                <p>{{ dish.priceDish }}</p>
             </div>
+            {% endfor %}
         </div>
         {% endfor %}
     </section>
