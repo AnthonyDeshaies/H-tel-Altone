@@ -37,6 +37,11 @@ class Drinks
      */
     private $categoryDrinks;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Restaurant::class, inversedBy="Drinks")
+     */
+    private $restaurant;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Drinks
     public function setCategoryDrinks(?CategoryDrinks $categoryDrinks): self
     {
         $this->categoryDrinks = $categoryDrinks;
+
+        return $this;
+    }
+
+    public function getRestaurant(): ?Restaurant
+    {
+        return $this->restaurant;
+    }
+
+    public function setRestaurant(?Restaurant $restaurant): self
+    {
+        $this->restaurant = $restaurant;
 
         return $this;
     }

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Restaurant;
 use App\Form\RestaurantType;
 use App\Repository\DishesRepository;
+use App\Repository\DrinksRepository;
 use App\Repository\RestaurantRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,11 +23,12 @@ class RestaurantController extends AbstractController
     /**
      * @Route("/", name="restaurant_index", methods={"GET"})
      */
-    public function index(RestaurantRepository $restaurantRepository, DishesRepository $dishesRepository ): Response
+    public function index(RestaurantRepository $restaurantRepository, DishesRepository $dishesRepository, DrinksRepository $drinksRepository ): Response
     {
         return $this->render('restaurant/index.html.twig', [
             'restaurants' => $restaurantRepository->findAll(),
             'dishes' => $dishesRepository->findAll(),
+            'drinks' => $drinksRepository->findAll(),
         ]);
     }
 
