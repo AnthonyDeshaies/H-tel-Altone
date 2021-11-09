@@ -3,33 +3,35 @@
 {% block title %}Index des catégorie de boisson{% endblock %}
 
 {% block body %}
-    <h1>Administraion des catégorie de boisson</h1>
+    <section id="drinks_admin">
+        <h1>Administration des catégorie de boisson</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom de la catégorie</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category_drink in category_drinks %}
-            <tr>
-                <td>{{ category_drink.id }}</td>
-                <td>{{ category_drink.nameCategory }}</td>
-                <td>
-                    <a href="{{ path('category_drinks_show', {'id': category_drink.id}) }}">Voir</a>
-                    <a href="{{ path('category_drinks_edit', {'id': category_drink.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">Pas d'enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom de la catégorie</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for category_drink in category_drinks %}
+                <tr>
+                    <td>{{ category_drink.id }}</td>
+                    <td>{{ category_drink.nameCategory }}</td>
+                    <td>
+                        <a class="show" href="{{ path('category_drinks_show', {'id': category_drink.id}) }}">Voir</a>
+                        <a class="edit" href="{{ path('category_drinks_edit', {'id': category_drink.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Pas d'enregistrement trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('category_drinks_new') }}">Créer nouvelle catégorie</a>
+        <a class="btn" href="{{ path('category_drinks_new') }}">Créer nouvelle catégorie</a>
+    </section>
 {% endblock %}

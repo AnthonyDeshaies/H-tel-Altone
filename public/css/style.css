@@ -33,6 +33,10 @@ p {
   background-color: #69b88e;
 }
 
+.btn:hover {
+  color: #3c80da;
+}
+
 .treat {
   width: 300px;
   height: 2px;
@@ -123,7 +127,7 @@ footer p {
 
 /* =================== ADMIN.HTML.TWIG ==========================*/
 #navbar_admin {
-  border-bottom: solid 1px #5184c7;
+  border-bottom: solid 3px #5184c7;
 }
 
 #navbar_admin nav img {
@@ -148,6 +152,7 @@ footer p {
 
 #side_bar .aside {
   background-color: white;
+  border-right: solid 3px #69b88e;
 }
 
 #side_bar nav .navbar-brand {
@@ -724,28 +729,261 @@ footer p {
 
 #users_admin .btn {
   width: 250px;
-  margin-top: 50px;
-}
-
-/* ======================= RESERVATION ADMIN PAGE ============================*/
-#users_admin h1 {
   margin: 50px 0;
 }
 
-#users_admin table .show, #users_admin table .edit {
+/* ======================= ROOMS ADMIN PAGE ============================*/
+#rooms_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#rooms_admin table .show, #rooms_admin table .edit {
   text-decoration: none;
   color: #5184c7;
   font-size: 18px;
 }
 
-#users_admin table .show {
+#rooms_admin table .show {
   margin-right: 15px;
   color: #69b88e;
 }
 
-#users_admin .btn {
+#rooms_admin .btn {
   width: 250px;
-  margin-top: 50px;
+  margin: 50px 0;
+}
+
+/* ======================= TYPE ROOM ADMIN PAGE ============================*/
+#type_room_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#type_room_admin table .td {
+  vertical-align: middle;
+}
+
+#type_room_admin table .show, #type_room_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#type_room_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#type_room_admin .btn {
+  width: 250px;
+  margin: 50px 0;
+}
+
+/* ================== OPTION TYPE ROOM ADMIN PAGE =======================*/
+#option_type_room_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#option_type_room_admin table .show, #option_type_room_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#option_type_room_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#option_type_room_admin .btn {
+  width: 250px;
+  margin: 50px 0;
+}
+
+/* ================== OPTION TYPE ROOM ADMIN PAGE =======================*/
+#amenities_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#amenities_admin table .show, #amenities_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#amenities_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#amenities_admin .btn {
+  width: 250px;
+  margin: 50px 0;
+}
+
+/* ======================= RESTAURANT ADMIN PAGE ============================*/
+#restaurant_admin h1 {
+  padding-top: 80px;
+  margin-bottom: 50px;
+}
+
+#restaurant_admin table td {
+  vertical-align: middle;
+}
+
+#restaurant_admin table .show, #restaurant_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#restaurant_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#restaurant_admin .btn {
+  width: 250px;
+  margin: 50px 0;
+}
+
+/* ======================= DISHES ADMIN PAGE ============================*/
+#dishes_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#dishes_admin table .show, #dishes_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#dishes_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#dishes_admin .btn {
+  width: 250px;
+  margin: 50px 0;
+}
+
+/* ======================= CATEGORY DISHES ADMIN PAGE ============================*/
+#category_dishes_admin h1 {
+  padding-top: 120px;
+  margin-bottom: 80px;
+}
+
+#category_dishes_admin table .show, #category_dishes_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#category_dishes_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#category_dishes_admin .btn {
+  width: 250px;
+  margin: 120px 0;
+}
+
+/* ======================= DRINKS ADMIN PAGE ============================*/
+#drinks_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#drinks_admin table .show, #drinks_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#drinks_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#drinks_admin .btn {
+  width: 250px;
+  margin: 50px 0;
+}
+
+/* ======================= CATEGORY DRINKS ADMIN PAGE ============================*/
+#drinks_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#drinks_admin table .show, #drinks_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#drinks_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#drinks_admin .btn {
+  width: 250px;
+  margin: 50px 0;
+}
+
+/* ======================= SUPPLIERS ADMIN PAGE ============================*/
+#suppliers_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+#suppliers_admin table td {
+  vertical-align: middle;
+}
+
+#suppliers_admin table .show, #suppliers_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#suppliers_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#suppliers_admin .btn {
+  width: 250px;
+  margin: 50px 0px;
+}
+
+/* ======================= CATEGORY SUPPLIERS ADMIN PAGE ============================*/
+#category_suppliers_admin h1 {
+  padding-top: 120px;
+  margin-bottom: 80px;
+}
+
+#category_suppliers_admin table .show, #category_suppliers_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
+  font-size: 18px;
+}
+
+#category_suppliers_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#category_suppliers_admin .btn {
+  width: 250px;
+  margin: 100px 0px;
 }
 
 /*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/

@@ -3,39 +3,41 @@
 {% block title %}Administration des plats{% endblock %}
 
 {% block body %}
-    <h1>Administration des plats</h1>
+    <section id="restaurant_admin">
+        <h1>Administration des plats</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom de plat</th>
-                <th>Description du plat</th>
-                <th>Prix du plat</th>
-                <th>Categorie</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for dish in dishes %}
-            <tr>
-                <td>{{ dish.id }}</td>
-                <td>{{ dish.nameDish }}</td>
-                <td>{{ dish.descriptionDish |raw }}</td>
-                <td>{{ dish.priceDish }}</td>
-                <td>{{ dish.CategoryDishes.nameCategory }}</td>
-                <td>
-                    <a href="{{ path('dishes_show', {'id': dish.id}) }}">Voir</a>
-                    <a href="{{ path('dishes_edit', {'id': dish.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">Pas d'enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom de plat</th>
+                    <th>Description du plat</th>
+                    <th>Prix du plat</th>
+                    <th>Categorie</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for dish in dishes %}
+                <tr>
+                    <td>{{ dish.id }}</td>
+                    <td>{{ dish.nameDish }}</td>
+                    <td>{{ dish.descriptionDish |raw }}</td>
+                    <td>{{ dish.priceDish }}</td>
+                    <td>{{ dish.CategoryDishes.nameCategory }}</td>
+                    <td>
+                        <a class="show" href="{{ path('dishes_show', {'id': dish.id}) }}">Voir</a>
+                        <a class="edit" href="{{ path('dishes_edit', {'id': dish.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Pas d'enregistrement trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('dishes_new') }}">Créer un nouveau plat</a>
+        <a class="btn" href="{{ path('dishes_new') }}">Créer un nouveau plat</a>
+    </section>
 {% endblock %}

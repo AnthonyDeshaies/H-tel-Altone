@@ -3,49 +3,49 @@
 {% block title %}Administration des types de chambre{% endblock %}
 
 {% block body %}
-    <h1>Administration des types de chambre</h1>
+    <section id="type_room_admin">
+        <h1>Administration des types de chambre</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Type de chambre</th>
-                <th>Tarif minimum</th>
-                <th>Image 1</th>
-                <th>Image 2</th>
-                <th>Image 3</th>
-                <th>Description</th>
-                <th>Nombre de places</th>
-                <th>Options</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for type_room in type_rooms %}
-            <tr>
-                <td>{{ type_room.id }}</td>
-                <td>{{ type_room.nameType }}</td>
-                <td>{{ type_room.startPrice }}</td>
-                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
-                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
-                <td><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
-                <td>{{ type_room.descriptionTypeRoom |raw }}</td>
-                <td>{{ type_room.nbPlaces }}</td>
-                <td> {% for option in type_room.optionTypeRoom %}
-                    {{ option.nameOptionTypeRoom }}
-                {% endfor %} </td>
-                <td>
-                    <a href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir</a>
-                    <a href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">Aucun enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Places</th>
+                    <th>Image 1</th>
+                    <th>Image 2</th>
+                    <th>Image 3</th>
+                    <th>Tarif</th>
+                    <th>Description</th>
+                    <th>Options</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for type_room in type_rooms %}
+                <tr>
+                    <td class="td">{{ type_room.nameType }}</td>
+                    <td class="td">{{ type_room.nbPlaces }}</td>
+                    <td class="td"><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
+                    <td class="td"><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
+                    <td class="td"><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
+                    <td class="td">{{ type_room.startPrice }}</td>
+                    <td>{{ type_room.descriptionTypeRoom |raw }}</td>
+                    <td> {% for option in type_room.optionTypeRoom %}
+                        {{ option.nameOptionTypeRoom }} -
+                    {% endfor %} </td>
+                    <td class="options">
+                        <a class="show" href="{{ path('type_room_show', {'id': type_room.id}) }}">Voir</a>
+                        <a class="edit" href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Aucun enregistrement trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('type_room_new') }}">Créer un nouveau type de chambre</a>
+        <a class="btn" href="{{ path('type_room_new') }}">Créer un nouveau type de chambre</a>
+    </section>
 {% endblock %}

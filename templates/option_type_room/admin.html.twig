@@ -3,35 +3,37 @@
 {% block title %}Administration des options de type de chambre{% endblock %}
 
 {% block body %}
-    <h1>Administration des options de type de chambre</h1>
+    <section id="option_type_room_admin">
+        <h1>Administration des options de type de chambre</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Option</th>
-                <th>logo</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for option_type_room in option_type_rooms %}
-            <tr>
-                <td>{{ option_type_room.id }}</td>
-                <td>{{ option_type_room.nameOptionTypeRoom }}</td>
-                <td>{{ option_type_room.logoOptionTypeRoom }}</td>
-                <td>
-                    <a href="{{ path('option_type_room_show', {'id': option_type_room.id}) }}">voir</a>
-                    <a href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">Pas d'enregistrement</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Option</th>
+                    <th>logo</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for option_type_room in option_type_rooms %}
+                <tr>
+                    <td>{{ option_type_room.id }}</td>
+                    <td>{{ option_type_room.nameOptionTypeRoom }}</td>
+                    <td>{{ option_type_room.logoOptionTypeRoom }}</td>
+                    <td>
+                        <a class="show" href="{{ path('option_type_room_show', {'id': option_type_room.id}) }}">voir</a>
+                        <a class="edit" href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Pas d'enregistrement</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('option_type_room_new') }}">Créer une nouvelle option</a>
+        <a class="btn" href="{{ path('option_type_room_new') }}">Créer une nouvelle option</a>
+    </section>
 {% endblock %}
