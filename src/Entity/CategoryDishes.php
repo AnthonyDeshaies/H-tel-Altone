@@ -29,6 +29,11 @@ class CategoryDishes
      */
     private $dishes;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imgCategoryDishes;
+
     public function __construct()
     {
         $this->dishes = new ArrayCollection();
@@ -77,6 +82,18 @@ class CategoryDishes
                 $dish->setCategoryDishes(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImgCategoryDishes(): ?string
+    {
+        return $this->imgCategoryDishes;
+    }
+
+    public function setImgCategoryDishes(string $imgCategoryDishes): self
+    {
+        $this->imgCategoryDishes = $imgCategoryDishes;
 
         return $this;
     }

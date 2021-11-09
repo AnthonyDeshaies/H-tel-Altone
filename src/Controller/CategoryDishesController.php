@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @Route("/category/dishes")
@@ -28,13 +31,31 @@ class CategoryDishesController extends AbstractController
     /**
      * @Route("/new", name="category_dishes_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $categoryDish = new CategoryDishes();
         $form = $this->createForm(CategoryDishesType::class, $categoryDish);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imgCategoryDishes = $form->get('imgCategoryDishes')->getData();
+            if ($imgCategoryDishes) {
+                $originalFilename = pathinfo($imgCategoryDishes->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgCategoryDishes->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $imgCategoryDishes->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
+                }
+                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF au lieu de son contenu
+                $categoryDish->setImgCategoryDishes($newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($categoryDish);
             $entityManager->flush();
@@ -61,12 +82,30 @@ class CategoryDishesController extends AbstractController
     /**
      * @Route("/{id}/edit", name="category_dishes_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, CategoryDishes $categoryDish): Response
+    public function edit(Request $request, CategoryDishes $categoryDish, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(CategoryDishesType::class, $categoryDish);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imgCategoryDishes = $form->get('imgCategoryDishes')->getData();
+            if ($imgCategoryDishes) {
+                $originalFilename = pathinfo($imgCategoryDishes->getClientOriginalName(), PATHINFO_FILENAME);
+                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgCategoryDishes->guessExtension();
+                // Déplacez le fichier dans le répertoire où les brochures sont stockées
+                try {
+                    $imgCategoryDishes->move(
+                        $this->getParameter('photos_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
+                }
+                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF au lieu de son contenu
+                $categoryDish->setImgCategoryDishes($newFilename);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('category_dishes_admin', [], Response::HTTP_SEE_OTHER);
