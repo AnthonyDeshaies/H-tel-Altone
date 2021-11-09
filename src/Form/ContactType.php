@@ -16,38 +16,38 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('firstname', TextType::class, [
-                'label' => 'Votre prénom :',
+                'label' => 'Votre prénom : ',
                 'attr' => [
-                    'class' => 'contact-form-control'
+                    'class' => 'firstname'
                 ]
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Votre nom :',
+                'label' => 'Votre nom : ',
                 'attr' => [
-                    'class' => 'contact-form-control'
+                    'class' => 'lastname'
                 ]
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Votre email :',
+                'label' => 'Votre email : ',
                 'attr' => [
-                    'class' => 'contact-form-control'
+                    'class' => 'email'
                 ]
             ])
             ->add('subject', TextType::class, [
                 'label' => 'Sujet :',
                 'attr' => [
-                    'class' => 'contact-form-control'
+                    'class' => 'subject'
                 ]
             ])
             ->add('message', CKEditorType::class, [
                 'label' => 'Votre message :',
                 'attr' => [
-                    'class' => 'contact-form-control'
+                    'class' => 'message'
                 ]
             ])
             ->add('Envoyer', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn-primary'
+                    'class' => 'btn'
                 ]
             ])
         ;

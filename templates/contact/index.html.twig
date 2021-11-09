@@ -3,15 +3,18 @@
 {% block title %}Contact{% endblock %}
 
 {% block body %}
-<section id="form_contact">
+<section id="form_contact" class="container">
     <h1>Formulaire de contact</h1>
-    <p>Pour toute remarque ou demande de renseignements, 
+    <p class="sentence1">Pour toute remarque ou demande de renseignements, 
         n'hésitez pas à nous envoyer un email directement !
     </p>
-    <span>Pour toute demande de réservation, veuillez remplir le 
+    <p class="sentence2">
+    Pour toute demande de réservation, veuillez remplir le 
         <a href="#">formulaire de réservation</a>.
-    </span>
+    </p>
+    <div class="infos">
 {{ form_start(form) }}
 {{ form_end(form) }}
+    </div>
 </section>
 {% endblock %}

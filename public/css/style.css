@@ -127,7 +127,7 @@ footer p {
 
 /* =================== ADMIN.HTML.TWIG ==========================*/
 #navbar_admin {
-  border-bottom: solid 3px #5184c7;
+  border-bottom: solid 2px #5184c7;
 }
 
 #navbar_admin nav img {
@@ -136,7 +136,7 @@ footer p {
 
 #navbar_admin nav a {
   color: #69b88e !important;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 #navbar_admin nav a:hover {
@@ -697,7 +697,52 @@ footer p {
   color: white;
 }
 
-/* ======================= ADMIN PAGE ============================*/
+/* ===================+++==== CONTACT PAGE ============================*/
+#form_contact {
+  text-align: center;
+}
+
+#form_contact h1 {
+  font-size: 60px;
+  margin: 60px 0;
+}
+
+#form_contact .sentence1 {
+  font-size: 20px;
+}
+
+#form_contact .sentence2 {
+  font-size: 19px;
+  font-style: italic;
+  color: #69b88e;
+  margin-bottom: 30px;
+}
+
+#form_contact a {
+  text-decoration: none;
+}
+
+#form_contact label {
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4e4e4d;
+}
+
+#form_contact input {
+  width: 500px;
+  text-align: center;
+}
+
+#form_contact #cke_contact_message {
+  margin-top: 15px;
+}
+
+#form_contact .btn {
+  margin-top: 60px;
+}
+
+/* =========================== ADMIN PAGE =============================*/
 #admin_page {
   width: 100%;
   height: 800px;
@@ -802,7 +847,7 @@ footer p {
   margin: 50px 0;
 }
 
-/* ================== OPTION TYPE ROOM ADMIN PAGE =======================*/
+/* ================== AMENITIES ADMIN PAGE =======================*/
 #amenities_admin h1 {
   padding-top: 50px;
   margin-bottom: 50px;
