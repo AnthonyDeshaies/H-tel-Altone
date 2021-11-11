@@ -1,26 +1,32 @@
 {% extends 'admin.html.twig' %}
 
-{% block title %}CategoryDishes{% endblock %}
+{% block title %}Categorie de plat{% endblock %}
 
 {% block body %}
-    <h1>CategoryDishes</h1>
+    <section id="show_category_dishes">
+        <h1>Categorie de plat</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ category_dish.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom de catégorie de plat</th>
-                <td>{{ category_dish.nameCategory }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ category_dish.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom de catégorie de plat</th>
+                    <td>{{ category_dish.nameCategory }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('category_dishes_admin') }}">retour à la liste des catégories de plat</a>
+        <div class="links">
+            <a class="btn" href="{{ path('category_dishes_admin') }}">Retour</a>
+            <a class="btn edit" href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}">Modifier</a>
 
-    <a href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}">Modifier catégorie de plat</a>
-
-    {{ include('category_dishes/_delete_form.html.twig') }}
+            <form method="post" action="{{ path('category_dishes_delete', {'id': category_dish.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category_dish.id) }}">
+                <button class="btn">Supprimer</button>
+            </form>}
+        </div>
+    </section>
 {% endblock %}

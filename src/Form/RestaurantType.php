@@ -19,7 +19,6 @@ class RestaurantType extends AbstractType
             ->add('nameRestaurant', TextType::class, [
                  'label' => 'Nom du restaurant'
             ])
-            ->add('descriptionRestaurant', CKEditorType::class)
             ->add('imgRestaurant', FileType::class, [
                 'label' => 'image du restaurant',
                 'mapped' => false,
@@ -89,7 +88,8 @@ class RestaurantType extends AbstractType
                         'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
                     ])
                 ],
-            ]);
+            ])
+            ->add('descriptionRestaurant', CKEditorType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

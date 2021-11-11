@@ -3,11 +3,13 @@
 {% block title %}modifier Restaurant{% endblock %}
 
 {% block body %}
-    <h1>Modifier le Restaurant</h1>
-
-    {{ include('restaurant/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-
-    <a href="{{ path('restaurant_admin') }}">Retour</a>
-
-    {{ include('restaurant/_delete_form.html.twig') }}
+    <section id="edit_restaurant" class="container">
+        <h1>Modifier le Restaurant</h1>
+        {{ include('restaurant/_form.html.twig') }}
+        <section class="links">
+            <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+            <a class="btn back" href="{{ path('restaurant_admin') }}">Retour</a>
+            {{ include('restaurant/_delete_form.html.twig') }}
+        </section>
+    </section>
 {% endblock %}

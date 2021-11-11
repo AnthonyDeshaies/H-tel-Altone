@@ -12,11 +12,6 @@
                     <th>Id</th>
                     <th>Nom du restaurant</th>
                     <th>Description du restaurant</th>
-                    <th>Image du restaurant</th>
-                    <th>Image entrée</th>
-                    <th>Image plat de résistance</th>
-                    <th>Image dessert</th>
-                    <th>Image boisson</th>
                     <th>actions</th>
                 </tr>
             </thead>
@@ -26,11 +21,6 @@
                     <td>{{ restaurant.id }}</td>
                     <td>{{ restaurant.nameRestaurant }}</td>
                     <td>{{ restaurant.descriptionRestaurant |raw }}</td>
-                    <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgRestaurant) }}" width="100"></td>
-                    <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgStarter) }}" width="100"></td>
-                    <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgMainCourse) }}" width="100"></td>
-                    <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgDessert) }}" width="100"></td>
-                    <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgDrink) }}" width="100"></td>
                     <td>
                         <a class="show" href="{{ path('restaurant_show', {'id': restaurant.id}) }}">Voir</a>
                         <a class="edit" href="{{ path('restaurant_edit', {'id': restaurant.id}) }}">Modifier</a>

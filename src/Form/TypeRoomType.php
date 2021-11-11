@@ -24,9 +24,6 @@ class TypeRoomType extends AbstractType
             ->add('startPrice', TextType::class, [
                 'label' => 'Tarif minimum'
             ])
-            ->add('descriptionTypeRoom', CKEditorType::class, 
-                array ('label' => 'Description')
-            )
             ->add('nbPlaces', TextType::class, 
                 array ('label' => 'Nombre de places')
             )
@@ -72,6 +69,9 @@ class TypeRoomType extends AbstractType
                     ])
                 ],
             ])
+            ->add('descriptionTypeRoom', CKEditorType::class, 
+                array ('label' => 'Description')
+            )
             ->add('optionTypeRoom', EntityType::class, [
                 'class' => OptionTypeRoom::class,
                 'multiple' => true,

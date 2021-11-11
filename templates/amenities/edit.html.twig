@@ -3,11 +3,13 @@
 {% block title %}Modifier service{% endblock %}
 
 {% block body %}
-    <h1>Modifier service</h1>
-
-    {{ include('amenities/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-
-    <a href="{{ path('amenities_admin') }}">retour à la liste des services</a>
-
-    {{ include('amenities/_delete_form.html.twig') }}
+    <section id="edit_amenities">
+        <h1>Modifier service</h1>
+        {{ include('amenities/_form.html.twig') }}
+        <section class="links">
+            <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+            <a class="btn back" href="{{ path('amenities_admin') }}">Retour</a>
+            {{ include('amenities/_delete_form.html.twig') }}
+        </section>
+    </section>
 {% endblock %}

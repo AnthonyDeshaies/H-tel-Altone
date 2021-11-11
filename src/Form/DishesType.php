@@ -19,8 +19,6 @@ class DishesType extends AbstractType
             ->add('nameDish', TextType::class, [
                 'label' => 'Nom de plat'
             ])
-            ->add('descriptionDish', CKEditorType::class, 
-            array ('label' => 'Description'))
             ->add('priceDish', TextType::class, [
                 'label' => 'Prix'
             ])
@@ -29,7 +27,9 @@ class DishesType extends AbstractType
                 'choice_label' => 'nameCategory',
                  'label' => 'Catégorie du plat',
                 ])
-        ;
+            ->add('descriptionDish', CKEditorType::class, 
+            array ('label' => 'Description')
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver): void

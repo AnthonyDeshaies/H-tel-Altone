@@ -7,17 +7,23 @@
         <h1>Restaurant Le <span>Lotus</span></h1>
     </section>
     <section id="restaurant_menu" class="container">
-        {% for restaurant in restaurants %}
+        {% for categoryDish in categoryDishes %}
         <div class="row">
-            <div class="col-lg-5">
-                <img src="{{ asset('uploads/photos/' ~ restaurant.imgStarter) }}">
-            </div>
             
+                
+          
+                        <div class="col-lg-5">
+                            <img src="{{ asset('uploads/photos/' ~ categoryDish.imgCategoryDishes) }}">
+                        </div>
+               
             {% for dish in dishes %}
+            {% if categoryDish.id == dish.categoryDishes.id %}
+            
             <div class="col-lg-7">
                 <p>{{ dish.descriptionDish |raw }}</p>
                 <p>{{ dish.priceDish }}</p>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
         {% endfor %}

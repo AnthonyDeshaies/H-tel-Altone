@@ -22,11 +22,6 @@ class AmenitiesType extends AbstractType
             ->add('priceAmenity', TextType::class, [
                 'label' => 'Tarif'
             ])
-            ->add(
-                'descriptionAmenity',
-                CKEditorType::class,
-                array('label' => 'Description')
-            )
             ->add('imgAmenity', FileType::class, [
                 'label' => 'image du service',
                 'mapped' => false,
@@ -41,7 +36,13 @@ class AmenitiesType extends AbstractType
             valide',
                     ])
                 ],
-            ]);
+            ])
+            ->add(
+                'descriptionAmenity',
+                CKEditorType::class,
+                array('label' => 'Description')
+            )
+;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

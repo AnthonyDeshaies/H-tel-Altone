@@ -1,39 +1,44 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}Rooms{% endblock %}
+{% block title %}Les chambres{% endblock %}
 
 {% block body %}
-    <h1>Chambres</h1>
+    <section id="show_rooms">
+        <h1>Les chambres</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ room.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom/Numéro de chambre</th>
-                <td>{{ room.nameRoom }}</td>
-            </tr>
-            <tr>
-                <th>Type de chambre</th>
-                <td>{{ room.typeRoom.nameType }}</td>
-            </tr>
-            <tr>
-            <tr>
-                <th>Tarif</th>
-                <td>{{ room.priceRoom }}</td>
-            </tr>
-            <tr>
-                <th>Vue</th>
-                <td>{{ room.viewRoom }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('rooms_admin') }}">Retour à la liste</a>
-
-    <a href="{{ path('rooms_edit', {'id': room.id}) }}">Modifier</a>
-
-    {{ include('rooms/_delete_form.html.twig') }}
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ room.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom/Numéro de chambre</th>
+                    <td>{{ room.nameRoom }}</td>
+                </tr>
+                <tr>
+                    <th>Type de chambre</th>
+                    <td>{{ room.typeRoom.nameType }}</td>
+                </tr>
+                <tr>
+                <tr>
+                    <th>Tarif</th>
+                    <td>{{ room.priceRoom }}</td>
+                </tr>
+                <tr>
+                    <th>Vue</th>
+                    <td>{{ room.viewRoom }}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="links">
+            <a class="btn" href="{{ path('rooms_admin') }}">Retour</a>
+            <a class="btn edit" href="{{ path('rooms_edit', {'id': room.id}) }}">Modifier</a>
+            <form method="post" action="{{ path('rooms_delete', {'id': room.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ room.id) }}">
+                <button class="btn">Supprimer</button>
+            </form>
+        </div>
+    </section>
 {% endblock %}

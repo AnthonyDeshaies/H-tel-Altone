@@ -26,9 +26,6 @@ class SuppliersType extends AbstractType
                 'choice_label' => 'nameCategory',
                 'label' => 'Catégorie'
             ])
-            ->add('descriptionSupplier', CKEditorType::class, 
-            array ('label' => 'Description du fournisseur', 'required' => false),
-            )
             ->add('adressSupplier', TextType::class, [
                 'label' => 'Adresse',
                 'required' => false,
@@ -53,6 +50,9 @@ class SuppliersType extends AbstractType
                 'label' => 'Site internet',
                 'required' => false,
             ])
+            ->add('descriptionSupplier', CKEditorType::class, 
+            array ('label' => 'Description du fournisseur', 'required' => false),
+            )
             ;
     }
 

@@ -7,6 +7,7 @@ use App\Form\RestaurantType;
 use App\Repository\DishesRepository;
 use App\Repository\DrinksRepository;
 use App\Repository\RestaurantRepository;
+use App\Repository\CategoryDishesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,12 +24,13 @@ class RestaurantController extends AbstractController
     /**
      * @Route("/", name="restaurant_index", methods={"GET"})
      */
-    public function index(RestaurantRepository $restaurantRepository, DishesRepository $dishesRepository, DrinksRepository $drinksRepository ): Response
+    public function index(RestaurantRepository $restaurantRepository, DishesRepository $dishesRepository, CategoryDishesRepository $CategoryDishesRepository, DrinksRepository $drinksRepository ): Response
     {
         return $this->render('restaurant/index.html.twig', [
             'restaurants' => $restaurantRepository->findAll(),
             'dishes' => $dishesRepository->findAll(),
             'drinks' => $drinksRepository->findAll(),
+            'categoryDishes' => $CategoryDishesRepository->findAll(),
         ]);
     }
 

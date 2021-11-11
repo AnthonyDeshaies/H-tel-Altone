@@ -3,36 +3,40 @@
 {% block title %}Services{% endblock %}
 
 {% block body %}
-    <h1>Services</h1>
+    <section id="show_amenities">
+        <h1>Services</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ amenity.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom du service</th>
-                <td>{{ amenity.nameAmenity }}</td>
-            </tr>
-            <tr>
-                <th>Tarif</th>
-                <td>{{ amenity.priceAmenity }}</td>
-            </tr>
-            <tr>
-                <th>Description du service</th>
-                <td>{{ amenity.descriptionAmenity |raw }}</td>
-            </tr>
-            <tr>
-                <th>Image du service</th>
-                <td><img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100"></td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ amenity.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom du service</th>
+                    <td>{{ amenity.nameAmenity }}</td>
+                </tr>
+                <tr>
+                    <th>Tarif</th>
+                    <td>{{ amenity.priceAmenity }}</td>
+                </tr>
+                <tr>
+                    <th>Description du service</th>
+                    <td>{{ amenity.descriptionAmenity |raw }}</td>
+                </tr>
+                <tr>
+                    <th>Image du service</th>
+                    <td><img src="{{ asset('uploads/photos/' ~ amenity.imgAmenity) }}" width="100"></td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('amenities_admin') }}">Retour à la liste des services</a>
+        <div class="links">
+        <a class="btn" href="{{ path('amenities_admin') }}">Retour</a>
 
-    <a href="{{ path('amenities_edit', {'id': amenity.id}) }}">modifier service</a>
+        <a class="btn edit" href="{{ path('amenities_edit', {'id': amenity.id}) }}">Modifier</a>
 
-    {{ include('amenities/_delete_form.html.twig') }}
+        {{ include('amenities/_delete_form.html.twig') }}
+        </div>
+    </section>
 {% endblock %}

@@ -20,9 +20,6 @@ class DrinksType extends AbstractType
             ->add('nameDrink', TextType::class, [
                 'label' => 'Nom de la boisson'
             ])
-            ->add('detailDrink', CKEditorType::class, 
-            array ('label' => 'Détail')
-            )
             ->add('priceDrink', TextType::class, [
                 'label' => 'Tarif de la boisson'
             ])
@@ -31,6 +28,9 @@ class DrinksType extends AbstractType
                 'choice_label' => 'nameCategory',
                 'label' => 'Catégorie'
                 ])
+            ->add('detailDrink', CKEditorType::class, 
+            array ('label' => 'Détail')
+            )
         ;
     }
 

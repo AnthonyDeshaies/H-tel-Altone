@@ -3,51 +3,33 @@
 {% block title %}Restaurant{% endblock %}
 
 {% block body %}
-    <h1>Restaurant</h1>
+    <section id="show_restaurant">
+        <h1>Restaurant</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ restaurant.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom du restaurant</th>
-                <td>{{ restaurant.nameRestaurant }}</td>
-            </tr>
-            <tr>
-                <th>Description du restaurant</th>
-                <td>{{ restaurant.descriptionRestaurant |raw }}</td>
-            </tr>
-            <tr>
-                <th>Image du restaurant</th>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgRestaurant) }}" width="100"></td>
-                <td>{{ restaurant.imgRestaurant }}</td>
-            </tr>
-            <tr>
-                <th>Image entrée</th>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgStarter) }}" width="100"></td>
-                <td>{{ restaurant.imgStarter }}</td>
-            </tr>
-            <tr>
-                <th>Image plat de résistance</th>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgMainCourse) }}" width="100"></td>
-                <td>{{ restaurant.imgMainCourse }}</td>
-            </tr>
-            <tr>
-                <th>Image Dessert</th>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgDessert) }}" width="100"></td>
-            </tr>
-            <tr>
-                <th>Image Boisson</th>
-                <td><img src="{{ asset('uploads/photos/' ~ restaurant.imgDrink) }}" width="100"></td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ restaurant.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom du restaurant</th>
+                    <td>{{ restaurant.nameRestaurant }}</td>
+                </tr>
+                <tr>
+                    <th>Description du restaurant</th>
+                    <td>{{ restaurant.descriptionRestaurant |raw }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('restaurant_admin') }}">Retour</a>
-
-    <a href="{{ path('restaurant_edit', {'id': restaurant.id}) }}">Modifier</a>
-
-    {{ include('restaurant/_delete_form.html.twig') }}
+        <div class="links">
+            <a class="btn" href="{{ path('restaurant_admin') }}">Retour</a>
+            <a class="btn edit" href="{{ path('restaurant_edit', {'id': restaurant.id}) }}">Modifier</a>
+            <form method="post" action="{{ path('restaurant_delete', {'id': restaurant.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ restaurant.id) }}">
+                <button class="btn">Supprimer</button>
+            </form>
+        </div>
+    </section>
 {% endblock %}
