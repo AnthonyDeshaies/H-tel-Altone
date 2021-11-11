@@ -41,7 +41,7 @@
 							<a class="nav-link" href="{{ path('discoveries_index') }}">Tourisme</a>
 							<a class="nav-link" href="{{ path('suppliers_index') }}">Fournisseurs</a>
 							<a class="nav-link" href="{{ path('contact') }}">Contact</a>
-							<a class="nav-link" href="{{ ('/home') }}">Déconnexion</a>
+							<a class="nav-link" href="{{ ('/logout') }}">Déconnexion</a>
 						</div>
 					</div>
 				</div>
@@ -72,7 +72,7 @@
 								<a class="nav-link" href="{{ path('discoveries_admin') }}">Activités</a>
 								{% endif %}	
 								<a class="nav-link" href="{{ path('restaurant_admin') }}">Restaurant</a>
-								<a class="nav-link" href="#">Menus</a>
+								<a class="nav-link" href="{{ path('menus_admin') }}">Menus</a>
 								<a class="nav-link" href="{{ path('dishes_admin') }}">Plats</a>
 								<a class="nav-link" href="{{ path('category_dishes_admin') }}">Type de plat</a>
 								<a class="nav-link" href="{{ path('drinks_admin') }}">Boissons</a>

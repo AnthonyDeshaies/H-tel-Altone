@@ -3,82 +3,9 @@
 {% block title %}Formulaire de réservation{% endblock %}
 
 {% block body %}
-    <h1>Réservez votre séjour</h1>
-    {{ form_start(form) }}
-    {{ form_end(form) }}
-    {# <!-- <section id="banner_reservation" class="container">
-    <form action="GET" class="">
-        {# <div class="row"> #}
-            <div class="col-lg-2 col">
-                <a href="#">RÉSERVEZ !</a>
-            </div>
-            <div class="col-lg-2 col">
-                <label for="start_date" class="form-label">Date d'éntrée</label>
-                <input type="date" class="form-control" id="start_date">
-            </div>
-            <div class="col-lg-2 col">
-                <label for="end_date" class="form-label">Date de fin</label>
-                <input type="date" class="form-control" id="end_date">
-            </div>
-            <div class="col-lg-2 col">
-                <label for="start_date" class="form-label">Chambre</label>
-                <br>
-                <select name="" id="type_room">
-                    <option value="">Suite Altone</option>
-                    <option value="">Ch. Famille</option>
-                    <option value="">Ch. Double</option>
-                </select>
-            </div>
-            <div class="col-lg-2 col">
-                <label for="start_date" class="form-label">Participants</label>
-                <br>
-                <select name="" id="nb_people">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                    <option value="">5</option>
-                    <option value="">6</option>
-                </select>
-            </div>
-            <div class="btn_reservation">
-                <a href="#"> Voir Disponinilité</a>
-            </div>
-        </div>
-    </form>
-</section> --> #}
-
-    <!-- {# <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Date de début de séjour</th>
-                <th>Date de fin de séjour</th>
-                <th>Participants</th>
-                <th>Transport</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for reservation in reservations %}
-            <tr>
-                <td>{{ reservation.id }}</td>
-                <td>{{ reservation.dateStartReservation ? reservation.dateStartReservation|date('Y-m-d') : '' }}</td>
-                <td>{{ reservation.dateEndReservation ? reservation.dateEndReservation|date('Y-m-d') : '' }}</td>
-                <td>{{ reservation.nbPeopleReservation }}</td>
-                <td>{{ reservation.transportReservation ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}">Voir</a>
-                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">pas d'enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('reservation_new') }}">Créer nouvelle réservation</a> #} -->
+    <section id="reservation">
+        <h1>Réservez votre séjour</h1>
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    </section>
 {% endblock %}

@@ -27,7 +27,7 @@
                 avec wifi haut débit, un service de chambre entièrement dévoué à
                 votre bien-être, un restaurant haut de gamme, des sallons de détente,
                 un spa, et tout ce dont vous auriez besoin...</p>
-            <a href="#" class="btn">En savoir +</a>
+            <a href="{{ path('discoveries_index') }}" class="btn">En savoir +</a>
         </div>
     </div>
 </section>
@@ -59,7 +59,7 @@
 
         <div class="col-lg-6">
 
-            <a href="#"><img src="{{ asset ('images/suite_room1.jpg') }}"></a>
+            <a href="{{ path('type_room_index') }}"><img src="{{ asset ('images/suite_room1.jpg') }}"></a>
         </div>
 
         <div class="col-lg-6 suite_home_page_txt">
@@ -72,35 +72,34 @@
             </div>
             <div>
                 <h4>Caractéristiques</h4>
-                <P><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i
-                        class="fas fa-male man"></i>
-                    4 personnes</P>
+                <P><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male man"></i>
+                4 personnes</P>
                 <p><i class="far fa-square"></i> Superficie : 92m²</p>
                 <p><i class="far fa-eye"></i> Vue sur la vallée de la Loire</p>
                 <P><i class="fas fa-bath"></i> Salle de bain avec baignoire</P>
             </div>
-            <a href="#" class="btn">En savoir +</a>
+            <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
         </div>
     </div>
     <div class="row rooms_kind_home_page">
         <div class="col-lg-3">
-            <a href="#"><img src="{{ asset ('images/double_room.jpg') }}"></a>
+            <a href="{{ path('type_room_index') }}"><img src="{{ asset ('images/double_room.jpg') }}"></a>
         </div>
         <div class="col-lg-3 rooms_home_page_txt">
             <h3>Chambres doubles</h3>
             <p>Ces chambres sont spacieuses, lumineuses. Elles offrent
                 une intimité avec vue sur la Loire, le château d’Amboise
                 ou les jardins à l’italienne.</p>
-            <a href="#" class="btn">En savoir +</a>
+            <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
         </div>
         <div class="col-lg-3">
-            <a href="#"><img src="{{ asset ('images/familly_room1.jpg') }}"></a>
+            <a href="{{ path('type_room_index') }}"><img src="{{ asset ('images/familly_room1.jpg') }}"></a>
         </div>
         <div class="col-lg-3 rooms_home_page_txt">
             <h3>Chambres familiales</h3>
             <p>Ce sont de belles et grandes chambres de style, avec un espace salon et un blacon privée.
                 L’ambiance feutrée vous apportera calme et sérénité.</p>
-            <a href="#" class="btn">En savoir +</a>
+            <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
         </div>
     </div>
 </section>
@@ -121,7 +120,7 @@
                 locaux, mettant en valeur les viandes d'élevage régionales et les poissons français tout en
                 les transformant en plats gastronomiques d'art.
             </p>
-            <a href="#" class="btn">En savoir +</a>
+            <a href="{{ path('restaurant_index') }}" class="btn">En savoir +</a>
         </div>
         <div class="col-lg-6">
             <a href="#"><img src="{{ asset ('images/food_home.jpg') }}"></a>

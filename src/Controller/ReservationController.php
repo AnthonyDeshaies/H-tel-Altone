@@ -30,16 +30,6 @@ class ReservationController extends AbstractController
     }
 
     /**
-     * @Route("/admin", name="reservation_admin", methods={"GET"})
-     */
-    public function admin(ReservationRepository $reservationRepository): Response
-    {
-        return $this->render('reservation/admin.html.twig', [
-            'reservations' => $reservationRepository->findAll(),
-        ]);
-    }
-
-    /**
      * @Route("/new", name="reservation_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -112,18 +102,18 @@ class ReservationController extends AbstractController
     {
         $form = $this->createForm(ReservationType::class);
         $reservation = $form->handleRequest($request);
-        $mail= $this->getUser()->getEmail();
+
    
         if ($form->isSubmitted() && $form->isValid()) {
             $email = (new TemplatedEmail())
-                ->from($mail)
+                ->from($reservation->get('email')->getData())
                 ->to('a.deshaies@laposte.net')
                 ->subject('reservation')
                 ->htmlTemplate('email/reservation.html.twig')
                 ->context([
                     'prenom' => $reservation->get('firstname')->getData(),
                     'nom' => $reservation->get('lastname')->getData(),
-                    'mail' => $mail,
+                    'mail' => ($reservation->get('email')->getData()),
                     'dateStartReservation' => $reservation->get('dateEndReservation')->getData(),
                     'dateEndReservation' => $reservation->get('dateStartReservation')->getData(),
                     'nbPeopleReservation' => $reservation->get('nbPeopleReservation')->getData(),

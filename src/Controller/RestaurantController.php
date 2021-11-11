@@ -54,24 +54,7 @@ class RestaurantController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $imgRestaurant = $form->get('imgRestaurant')->getData();
-            if ($imgRestaurant) {
-                $originalFilename = pathinfo($imgRestaurant->getClientOriginalName(), PATHINFO_FILENAME);
-                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgRestaurant->guessExtension();
-                // Déplacez le fichier dans le répertoire où les brochures sont stockées
-                try {
-                    $imgRestaurant->move(
-                        $this->getParameter('photos_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
-                }
-                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF au lieu de son contenu
-                $restaurant->setImgRestaurant($newFilename);
-            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($restaurant);
             $entityManager->flush();
@@ -104,24 +87,6 @@ class RestaurantController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $imgRestaurant = $form->get('imgRestaurant')->getData();
-            if ($imgRestaurant) {
-                $originalFilename = pathinfo($imgRestaurant->getClientOriginalName(), PATHINFO_FILENAME);
-                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgRestaurant->guessExtension();
-                // Déplacez le fichier dans le répertoire où les brochures sont stockées
-                try {
-                    $imgRestaurant->move(
-                        $this->getParameter('photos_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                    // ... gérer l'exception si quelque chose se produit pendant letéléchargement du fichier
-                }
-                // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF au lieu de son contenu
-                $restaurant->setImgRestaurant($newFilename);
-            }
             
             $this->getDoctrine()->getManager()->flush();
 

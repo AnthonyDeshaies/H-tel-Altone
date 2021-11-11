@@ -18,7 +18,6 @@ class ContactController extends AbstractController
     public function index(Request $request, MailerInterface $mailer): Response
     {
         $form = $this->createForm(ContactType::class);
-        
         $contact = $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

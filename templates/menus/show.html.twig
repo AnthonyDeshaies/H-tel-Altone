@@ -3,32 +3,36 @@
 {% block title %}Menus{% endblock %}
 
 {% block body %}
-    <h1>Menus</h1>
+    <section id="show_menu">
+        <h1>Menus</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ menu.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom du menu</th>
-                <td>{{ menu.nameMenu }}</td>
-            </tr>
-            <tr>
-                <th>Prix du menu</th>
-                <td>{{ menu.priceMenu }}</td>
-            </tr>
-            <tr>
-                <th>Description du menu</th>
-                <td>{{ menu.descriptionMenu |raw }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('menus_admin') }}">Retour à la liste des menus</a>
-
-    <a href="{{ path('menus_edit', {'id': menu.id}) }}">modifier menu</a>
-
-    {{ include('menus/_delete_form.html.twig') }}
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ menu.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom du menu</th>
+                    <td>{{ menu.nameMenu }}</td>
+                </tr>
+                <tr>
+                    <th>Prix du menu</th>
+                    <td>{{ menu.priceMenu }}</td>
+                </tr>
+                <tr>
+                    <th>Description du menu</th>
+                    <td>{{ menu.descriptionMenu |raw }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="links">
+            <a class="btn" href="{{ path('menus_admin') }}">Retour</a>
+            <a class="btn edit" href="{{ path('menus_edit', {'id': menu.id}) }}">Modifier</a>
+            <form method="post" action="{{ path('menus_delete', {'id': menu.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ menu.id) }}">
+                <button class="btn">Supprimer</button>
+            </form>
+        </div>
+    </section>
 {% endblock %}

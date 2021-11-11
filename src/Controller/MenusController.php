@@ -15,15 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class MenusController extends AbstractController
 {
-    /**
-     * @Route("/", name="menus_index", methods={"GET"})
-     */
-    public function index(MenusRepository $menusRepository): Response
-    {
-        return $this->render('menus/index.html.twig', [
-            'menuses' => $menusRepository->findAll(),
-        ]);
-    }
 
      /**
      * @Route("/admin", name="menus_admin", methods={"GET"})

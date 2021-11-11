@@ -37,6 +37,21 @@ class Menus
      */
     private $restaurant;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $starters;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mainCourses;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $desserts;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +101,42 @@ class Menus
     public function setRestaurant(?Restaurant $restaurant): self
     {
         $this->restaurant = $restaurant;
+
+        return $this;
+    }
+
+    public function getStarters(): ?string
+    {
+        return $this->starters;
+    }
+
+    public function setStarters(string $starters): self
+    {
+        $this->starters = $starters;
+
+        return $this;
+    }
+
+    public function getMainCourses(): ?string
+    {
+        return $this->mainCourses;
+    }
+
+    public function setMainCourses(string $mainCourses): self
+    {
+        $this->mainCourses = $mainCourses;
+
+        return $this;
+    }
+
+    public function getDesserts(): ?string
+    {
+        return $this->desserts;
+    }
+
+    public function setDesserts(string $desserts): self
+    {
+        $this->desserts = $desserts;
 
         return $this;
     }

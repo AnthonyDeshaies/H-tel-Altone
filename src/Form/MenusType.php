@@ -22,6 +22,15 @@ class MenusType extends AbstractType
             ->add('descriptionMenu', TextType::class, [
                 'label' => 'Description du menu'
             ])
+            ->add('starters', TextType::class, [
+                'label' => 'Entrées'
+            ])
+            ->add('mainCourses', TextType::class, [
+                'label' => 'Plats'
+            ])
+            ->add('desserts', TextType::class, [
+                'label' => 'Desserts'
+            ])            
         ;
     }
 

@@ -4,12 +4,11 @@
 
 {% block body %}
 <section id="inscription" class="container-fluid">
-    <div class="inscription">
         <h1>Inscription</h1>
 
         {{ form_start(registrationForm) }}
         {{ form_label(registrationForm.email) }}<br>
-    {{ form_widget(registrationForm.email) }}
+        {{ form_widget(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
         label: 'Password'
         }) }}
@@ -19,12 +18,11 @@
         {{ form_row(registrationForm.adressUser) }}
         {{ form_row(registrationForm.cpUser) }}
         {{ form_row(registrationForm.cityUser) }}
-        <p>Conformément au règlement 2016/679 de l'Union Européenne, <br> veuillez accepter la Politique sur la <a
+        <p class="sentence">Conformément au règlement 2016/679 de l'Union Européenne, veuillez accepter la Politique sur la <a
                 href="{{ path('privatePolicy') }}">protection de vos données personnelles</a>.</p>
         {{ form_row(registrationForm.agreeTerms) }}
 
         <button type="submit" class="btn">S'inscrire</button>
         {{ form_end(registrationForm) }}
-    </div>
 </section>
 {% endblock %}

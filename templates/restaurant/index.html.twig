@@ -3,29 +3,35 @@
 {% block title %}Restaurant index{% endblock %}
 
 {% block body %}
-    <section id="restaurant_title">
-        <h1>Restaurant Le <span>Lotus</span></h1>
-    </section>
-    <section id="restaurant_menu" class="container">
-        {% for categoryDish in categoryDishes %}
-        <div class="row">
-            
-                
-          
-                        <div class="col-lg-5">
-                            <img src="{{ asset('uploads/photos/' ~ categoryDish.imgCategoryDishes) }}">
-                        </div>
-               
-            {% for dish in dishes %}
-            {% if categoryDish.id == dish.categoryDishes.id %}
-            
-            <div class="col-lg-7">
-                <p>{{ dish.descriptionDish |raw }}</p>
-                <p>{{ dish.priceDish }}</p>
-            </div>
-            {% endif %}
-            {% endfor %}
+<section id="restaurant_title">
+    <h1>Restaurant Le <span>Lotus</span></h1>
+</section>
+<section id="restaurant_menu" class="container">
+    {% for restaurant in restaurants %}
+    <p>{{ restaurant.descriptionRestaurant |raw }}</p>
+    {% endfor %}
+    
+    {% for categoryDish in categoryDishes %}
+    <div class="treat"></div>
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{ asset('uploads/photos/' ~ categoryDish.imgCategoryDishes) }}">
         </div>
-        {% endfor %}
-    </section>
-    {% endblock %}
+        <div class="col-md-7">
+            <h2>{{ categoryDish.nameCategory }}</h2>
+            <div class="row">
+                {% for dish in dishes %}
+                {% if categoryDish.id == dish.categoryDishes.id %}
+                <div class="col-md-12">
+                    <p>{{ dish.descriptionDish |raw }}</p>
+                    <p>{{ dish.priceDish }} euros</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

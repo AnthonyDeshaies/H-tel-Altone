@@ -99,7 +99,7 @@ header
         }
 }
 
-/* ====================== FOOTER ==========================*/
+/* ------------------------ FOOTER -------------------------*/
 
 footer
 {
@@ -134,7 +134,7 @@ footer
     }
 }
 
-/* =================== ADMIN.HTML.TWIG ==========================*/
+/* =================== ADMIN BASE ==========================*/
 
 #navbar_admin
 {
@@ -203,14 +203,9 @@ footer
             flex-direction: column;
             padding-bottom: 30px;
         }
-        // .admin_content
-        // {
-        //     text-align: center;
-        //     margin: auto;
-        // }
 }
 
-/*====================== HOME PAGE ========================*/
+/*====================== FRONT - HOME PAGE ========================*/
 
 #main_title
         {
@@ -429,6 +424,11 @@ footer
         {
             max-width: 100%;
         }
+
+        .btn
+        {
+            margin-left: 450px;
+        }
 }
 
 /*----------section location_home_page--------*/
@@ -461,67 +461,60 @@ footer
         }
 }
 
-/*====================== PAGE REGISTER ==========================*/
+/* ===================== FRONT - PAGE RESERVATION ======================*/
 
-#inscription
+#reservation
 {
-    height: 1000px;
     text-align: center;
     background-color: rgb(105, 184, 142);
+    width: 500px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: -70px;
+    border-radius: 15px;
 
-        .inscription
+        h1
         {
-            text-align: center;
-            width: 500px;
-            height: 800px;
-            background-color: rgb(255, 255, 255);
+            font-size: 50px;
+            font-weight: bold;
+            padding-top: 50px;
+        }
+
+        label
+        {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+
+        input, select
+        {
+            border-radius: 5px;
+        }
+
+        .name,.firstname, .mail, .type_room, .transport
+        {
+            display: flex;
+            flex-direction: column;
             margin: auto;
+        }
+
+        .name,.firstname, .mail
+        {
+            width: 200px;
+        }
+        
+        .btn
+        {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: rgb(81, 132, 199);
         }
 }
 
-/* ==================== PAGE PRIVATE POLICY ===================*/
-
-#private_policy
-{
-    .logo
-    {
-        text-align: center;
-        margin-top: 100px;
-    }
-    h1,h2
-    {
-        text-align: center;
-    }
-    h1
-    {
-        margin-top: 150px;
-    }
-    .treat
-    {
-        width: 100%;
-        margin-top: 40px;
-    }
-    h2
-    {
-        margin: 70px 0 50px 0;
-        font-size: 25px;
-    }
-    h3
-    {
-        font-size: 20px;
-        margin: 15px 0 20px 0;
-    }
-}
-
-/* ===================== PAGE RESERVATION========================*/
-
-/*----------section reservation_detail------*/
-.reservation_detail
-{
-    color: green;
-}
-
-/* =================== TYPE ROOM PAGE ======================*/
+/* =================== FRONT - TYPE ROOM PAGE ======================*/
 
 #type_rooms_title
 {
@@ -555,6 +548,7 @@ footer
             text-align: center;
             color: rgb(78, 78, 77);
         }
+        
         .type_room
         {
             margin-top: 50px;
@@ -605,7 +599,7 @@ footer
             }
     }
 
-/* =================== PAGE RESTAURANT ======================*/
+/* =================== FRONT - PAGE RESTAURANT ======================*/
 
 #restaurant_title
 {
@@ -631,7 +625,26 @@ footer
         }
 }
 
-/* =================== AMENITIES PAGE ======================*/
+#restaurant_menu
+{
+    img
+    {
+        width: 100%;
+    }
+
+    h2
+    {
+        text-align: center;
+    }
+
+    .col-md-12
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* =================== FRONT - AMENITIES PAGE ======================*/
 
 #amenities_title
 {
@@ -667,7 +680,7 @@ footer
     }
 }
 
-/* =================== DISCOVERY PAGE ======================*/
+/* =================== FRONT - DISCOVERY PAGE ======================*/
 
 #discoveries_title
 {
@@ -727,7 +740,7 @@ footer
     }
 }
 
-/* ======================= SUPPLIERS PAGE ============================*/
+/* ======================= FRONT - SUPPLIERS PAGE ============================*/
 
 #suppliers_title
 {
@@ -786,7 +799,7 @@ footer
     }
 }
 
-/* ===================+++==== CONTACT PAGE ============================*/
+/* ===================+++==== FRONT - CONTACT PAGE ============================*/
 
 #form_contact
 {
@@ -840,6 +853,157 @@ footer
             margin-top: 60px;
         }
 }
+
+/* ===================+++==== FRONT - LOGIN PAGE ============================*/
+
+#login
+{
+    text-align: center;
+    width: 500px;
+    margin: auto;
+    margin-bottom: -70px;
+    background-color: rgb(105, 184, 142);
+    border-radius: 15px;
+        
+        h1
+        {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 70px;
+            padding-top: 30px;
+        }
+
+        label
+        {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        input
+        {
+            width: 200px;
+            margin: auto;
+        }
+        
+        .btn
+        {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            border: none;
+            background-color: rgb(81, 132, 199);
+        }
+        .btn:hover
+        {
+            color: rgb(81, 132, 199);
+            background-color: rgb(105, 184, 142);
+            transition: 0.8s;
+        }
+}
+
+/*====================== FRONT - PAGE REGISTER ==========================*/
+
+#inscription
+{
+    text-align: center;
+    width: 600px;
+    margin: auto;
+    margin-bottom: -70px;
+    background-color: rgb(105, 184, 142);
+    border-radius: 15px;
+
+        h1
+        {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 80px;
+            padding-top: 50px;
+            padding-bottom: 10px;
+        }    
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label
+        {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        input
+        {
+            width: 200px;
+            margin: auto;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .sentence
+        {
+            margin-top: 40px;
+            margin-bottom: -10px;
+        }
+
+        .agree
+        {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: flex;
+        }
+        .btn
+        {
+            background-color: rgb(81, 132, 199);
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+        .btn:hover
+        {
+            color: rgb(105, 184, 142);
+        }
+}
+
+/* ==================== FRONT - PAGE PRIVATE POLICY ===================*/
+
+#private_policy
+{
+    .logo
+    {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    h1, h2, h3
+    {
+        font-family: 'roboto', sans-serif;
+    }
+    h1,h2
+    {
+        text-align: center;
+    }
+    h1
+    {
+        margin-top: 150px;
+    }
+    .treat
+    {
+        width: 100%;
+        margin-top: 40px;
+    }
+    h2
+    {
+        margin: 70px 0 50px 0;
+        font-size: 25px;
+    }
+    h3
+    {
+        font-size: 20px;
+        margin: 15px 0 20px 0;
+    }
+}
+
 
 /* =========================== ADMIN PAGE =============================*/
 
@@ -1428,7 +1592,7 @@ footer
     }
 }
 
-/* ======================= RESTAURANT ADMIN PAGE ============================*/
+/* ======================= ADMIN - RESTAURANT PAGE ============================*/
 
 #restaurant_admin
 {
@@ -1465,7 +1629,7 @@ footer
     }
 }
 
-/* ===================== ADMIN - SHOW AMENITIES PAGE =======================*/
+/* ===================== ADMIN - SHOW RESTAURANT PAGE =======================*/
 
 #show_restaurant
 {
@@ -1507,7 +1671,7 @@ footer
 {
     h1
     {
-        margin: 80px 0 30px 0;
+        margin: 50px 0 30px 0;
     }
 
     label
@@ -1542,6 +1706,121 @@ footer
     }
 }
 
+/* ======================= ADMIN - MENUS PAGE ============================*/
+
+#menu_admin
+{
+    h1
+    {
+       padding-top: 120px;
+       margin-bottom: 50px;
+    }
+    
+    table
+    {
+        td
+        {
+            vertical-align: middle;
+        }
+
+        .show, .edit
+        {
+            text-decoration: none;
+            color: rgb(81, 132, 199);
+            font-size: 18px;
+        }
+
+        .show
+        {
+            margin-right: 15px;
+            color: rgb(105, 184, 142);
+        }
+    }
+    .btn
+    {
+        width: 250px;
+        margin: 50px 0;
+    }
+}
+
+/* ===================== ADMIN - SHOW MENUS PAGE =======================*/
+
+#show_menu
+{
+    text-align: center;
+
+        h1
+        {
+            margin: 80px 0 30px 0;
+        }
+    
+        tr
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .links
+        {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn
+        {
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+
+        .edit
+        {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+}
+
+/* ===================== ADMIN - EDIT MENUS PAGE =======================*/
+
+#edit_menu
+{
+    h1
+    {
+        margin: 50px 0 30px 0;
+    }
+
+    label
+    {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    
+    div
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    input
+    {
+        text-align: center;
+        width: 600px;
+        margin: auto;
+    }
+    .links
+    {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0 80px 0;
+    }
+    .back
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+
 /* ======================= ADMIN DISHES PAGE ============================*/
 
 #dishes_admin
@@ -1573,6 +1852,7 @@ footer
         margin: 50px 0;
     }
 }
+
 
 /* ===================== ADMIN - SHOW DISHES PAGE =======================*/
 
@@ -1998,7 +2278,7 @@ footer
         margin-right: 30px;
     }
 }
-/* ======================= ADMIN SUPPLIERS PAGE ============================*/
+/* ======================= ADMIN SUPPLIERS PAGE ===========================*/
 
 #suppliers_admin
 {

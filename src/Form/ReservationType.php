@@ -21,41 +21,56 @@ class ReservationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('firstname', TextType::class, [
-                'label' => 'Votre prénom :',
-                'attr' => [
-                    'class' => 'contact-form-contol'
-                ]
-            ])
             ->add('lastname', TextType::class, [
-                'label' => 'Votre nom :',
+                'label' => 'Nom',
                 'attr' => [
-                    'class' => 'contact-form-contol'
+                    'class' => 'name'
                 ]
             ])
-            // ->add('email', EmailType::class, [
-            //     'label' => 'Votre email :',
-            //     'attr' => [
-            //         'class' => 'contact-form-contol'
-            //     ]
-            // ])
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom',
+                'attr' => [
+                    'class' => 'firstname'
+                ]
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'Email',
+                'attr' => [
+                    'class' => 'mail'
+                ]
+            ])
+            ->add('typeRoom', EntityType::class, [
+                'class' => TypeRoom::class,
+                'choice_label' => 'nameType',
+                'label' => 'Type de chambre',
+                'attr' => [
+                    'class' => 'type_room'
+                ]
+            ])
             ->add('dateStartReservation', DateType::class, [
                 'label' => 'Date de début de séjour',
                 'attr' => [
-                    'class' => 'contact-form-control'
+                    'class' => 'start_date'
                 ]
             ])
             ->add('dateEndReservation', DateType::class, [
                 'label' => 'Date de fin de séjour',
                 'attr' => [
-                    'class' => 'contact-form-control'
+                    'class' => 'end_date'
                 ]
             ])
-            ->add('nbPeopleReservation', IntegerType::class, [
-                // 'class' => NbPeoplereservation::class,
-                'label' => 'Type de chambre',
+            ->add('nbPeopleReservation', ChoiceType::class, [
+                'choices' => [
+                    '1' => '0',
+                    '2' => '1',
+                    '3' => '2',
+                    '4' => '2',
+                    '5' => '2',
+                    '6' => '2',
+                ],
+                'label' => 'Nombre de participants',
                 'attr' => [
-                    'class' => 'contact-form-control'
+                    'class' => 'nb_people'
                 ]
             ])
             ->add('transportReservation', ChoiceType::class, [
@@ -65,19 +80,14 @@ class ReservationType extends AbstractType
                 ],
                  'label' => 'Transport jusqu\'à l\'hôtel',
                  'mapped' => false,
-                 'expanded' => true,
-            ])
-            ->add('typeRoom', EntityType::class, [
-                'class' => TypeRoom::class,
-                'choice_label' => 'nameType',
-                'label' => 'Type de chambre',
-                'attr' => [
-                    'class' => 'contact-form-control'
+                 'expanded' => false,
+                 'attr' => [
+                    'class' => 'transport'
                 ]
             ])
             ->add('Envoyer', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn-primary'
+                    'class' => 'btn'
                 ]
                 ]);
     }
