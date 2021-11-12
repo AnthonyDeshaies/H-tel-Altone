@@ -663,7 +663,7 @@ footer
 
     .description
     {
-        margin-top: 37px;
+        margin-top: 20px;
     }
 
     .menus
@@ -725,6 +725,33 @@ footer
                 font-weight: bold;
             }
     }
+
+    .drinks
+    {
+        h3
+        {
+            margin-bottom: 80px;
+        }
+        
+        .info
+        {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+
+                .name_drink
+                {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                .price_drink
+                {
+                    font-size: 18px;
+                }
+        }
+    }
+    
 }
 
 /* =================== FRONT - AMENITIES PAGE ======================*/
@@ -887,10 +914,15 @@ footer
 #form_contact
 {
     text-align: center;
+    margin-top: 80px;
+    padding-top: 20px;
+    background-color: rgb(105, 184, 142);
+    border-radius: 15px;
 
         h1
         {
             font-size: 60px;
+            font-weight: bold;
             margin: 60px 0;
         }
 
@@ -903,8 +935,13 @@ footer
         {
             font-size: 19px;
             font-style: italic;
-            color: rgb(105, 184, 142);
             margin-bottom: 30px;
+        }
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
         }
 
         a
@@ -922,18 +959,28 @@ footer
         
         input
         {
-            width: 500px;
+            width: 300px;
+            margin: auto;
             text-align: center;
+            border-radius: 7px;
         }
         
-        #cke_contact_message
+        .message
         {
             margin-top: 15px;
         }
 
         .btn
         {
-            margin-top: 60px;
+            margin: 80px auto;
+            background-color: rgb(81, 132, 199);
+        }
+        .btn:hover
+        {
+            transition: 0.8s;
+            color: rgb(81, 132, 199);
+            background-color: rgb(105, 184, 142);
+            border: solid 3px rgb(81, 132, 199);
         }
 }
 
@@ -1162,8 +1209,9 @@ footer
         }
         .btn:hover
         {
-            color: rgb(105, 184, 142);
             transition: 0.8s;
+            border: solid 4px rgb(81, 132, 199);
+            background-color: rgb(105, 184, 142)
         }
 }
 
@@ -1196,6 +1244,12 @@ footer
         width: 250px;
         margin: 50px 0;
     }
+    .btn:hover
+    {
+        transition: 0.8s;
+        border: solid 4px rgb(81, 132, 199);
+        background-color: rgb(105, 184, 142)
+    }
 }
 
 /* ===================== ADMIN - SHOW USERS PAGE =======================*/
@@ -1224,6 +1278,12 @@ footer
         .btn
         {
             margin-top: 50px;
+        }
+        .btn:hover
+        {
+            transition: 0.8s;
+            border: solid 4px rgb(81, 132, 199);
+            background-color: rgb(105, 184, 142)
         }
 
         .edit
@@ -1263,6 +1323,12 @@ footer
         width: 250px;
         margin: 50px 0 80px 0;
     }
+    .btn:hover
+    {
+        transition: 0.8s;
+        border: solid 2px rgb(81, 132, 199);
+        background-color: rgb(105, 184, 142)
+    }
 }
 
 /* ===================== ADMIN - SHOW ROOMS PAGE =======================*/
@@ -1292,6 +1358,13 @@ footer
         {
             margin-top: 50px;
         }
+
+        .btn:hover
+    {
+        transition: 0.8s;
+        border: solid 2px rgb(81, 132, 199);
+        background-color: rgb(105, 184, 142)
+    }
 
         .edit
         {

@@ -26,8 +26,8 @@
                 {% for dish in dishes %}
                     {% if categoryDish.id == dish.categoryDishes.id %}
                         <div class="dishes">
-                            <p class="description">{{ dish.descriptionDish |raw }}</p>
-                            <p>{{ dish.priceDish }} €</p>
+                            <div class="description">{{ dish.descriptionDish |raw }}</div>
+                            <div class="description">{{ dish.priceDish }} €</div>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -60,14 +60,21 @@
     </div>
     <div class="treat"></div>
     <div class="drinks">
-        {% for category_drink in drinks.category_drinks %}
-            <div class="#">
+    <h2>Carte des boissons</h2>
+        {% for categoryDrink in categoryDrinks %}
+            
+            <div class="treat"></div>
+            <h3>{{ categoryDrink.nameCategory }}</h3>
+            
                 {% for drink in drinks %}
                     {% if categoryDrink.id == drink.categoryDrinks.id %}
-                        <h3>{{ drink.CategoryDrinks.nameCategory }}</h3>
+                    <div class="info">
+                        <p><span class="name_drink">{{ drink.nameDrink }}</span> - {{ drink.detailDrink }}</p>
+                        <p><span class="price_drink">{{ drink.priceDrink }} €</span></p>
+                    </div>
                     {% endif %}
                 {% endfor %}
-            </div>
+            
         {% endfor %}
     </div>
 </section>
