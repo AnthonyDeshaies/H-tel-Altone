@@ -13,6 +13,9 @@
                     <th>Nom du menu</th>
                     <th>Prix du menu</th>
                     <th>Description du menu</th>
+                    <th>Entrées</th>
+                    <th>Plats</th>
+                    <th>Desserts</th>
                     <th>actions</th>
                 </tr>
             </thead>
@@ -23,6 +26,9 @@
                     <td>{{ menu.nameMenu }}</td>
                     <td>{{ menu.priceMenu }}</td>
                     <td>{{ menu.descriptionMenu |raw }}</td>
+                    <td>{{ menu.starters }}</td>
+                    <td>{{ menu.mainCourses }}</td>
+                    <td>{{ menu.desserts }}</td>
                     <td>
                         <a class="show" href="{{ path('menus_show', {'id': menu.id}) }}">Voir</a>
                         <a class="edit" href="{{ path('menus_edit', {'id': menu.id}) }}">Modifier</a>

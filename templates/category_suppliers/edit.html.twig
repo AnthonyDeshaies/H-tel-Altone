@@ -5,11 +5,8 @@
 {% block body %}
     <section id="edit_category_supplier">
         <h1>Modifier la catégorie du fournisseur</h1>
-        {{ include('category_suppliers/_form.html.twig') }}
-        <section class="links">
-            <button class="btn">{{ button_label|default('Enregistrer') }}</button>
-            <a class="btn back" href="{{ path('category_suppliers_admin') }}">Retour</a>
-            {{ include('category_suppliers/_delete_form.html.twig') }}
-        </section>
+        {{ include('category_suppliers/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+         <a class="btn" href="{{ path('category_suppliers_admin') }}">Retour à la liste</a>
+        {{ include('category_suppliers/_delete_form.html.twig') }}
     </section>
 {% endblock %}

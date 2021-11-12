@@ -7,31 +7,68 @@
     <h1>Restaurant Le <span>Lotus</span></h1>
 </section>
 <section id="restaurant_menu" class="container">
+    <div class="sentence">
     {% for restaurant in restaurants %}
     <p>{{ restaurant.descriptionRestaurant |raw }}</p>
     {% endfor %}
-    
-    {% for categoryDish in categoryDishes %}
+    </div>
     <div class="treat"></div>
-    <div class="row">
-        <div class="col-md-5">
-            <img src="{{ asset('uploads/photos/' ~ categoryDish.imgCategoryDishes) }}">
-        </div>
-        <div class="col-md-7">
-            <h2>{{ categoryDish.nameCategory }}</h2>
-            <div class="row">
+    <h2>La carte</h2>
+    {% for categoryDish in categoryDishes %}
+        <div class="treat"></div>
+        
+        <div class="row">
+            <div class="col-lg-5">
+                <img src="{{ asset('uploads/photos/' ~ categoryDish.imgCategoryDishes) }}">
+            </div>
+            <div class="col-lg-7">
+                <h3>{{ categoryDish.nameCategory }}</h3>
                 {% for dish in dishes %}
-                {% if categoryDish.id == dish.categoryDishes.id %}
-                <div class="col-md-12">
-                    <p>{{ dish.descriptionDish |raw }}</p>
-                    <p>{{ dish.priceDish }} euros</p>
-                </div>
-                {% endif %}
+                    {% if categoryDish.id == dish.categoryDishes.id %}
+                        <div class="dishes">
+                            <p class="description">{{ dish.descriptionDish |raw }}</p>
+                            <p>{{ dish.priceDish }} €</p>
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
-        
-    </div>
     {% endfor %}
+    <div class="menus">
+        <div class="treat"></div>
+        <h2>Nos menus</h2>
+        <div class="row">
+            {% for menu in menus %}
+                <div class="col-lg-6">
+                    <div class="card">
+                    <h3>{{ menu.nameMenu }}</h3>
+                    <p class="description">{{ menu.descriptionMenu }}</p>
+                    <h4>Entrée</h4>
+                    <p>{{ menu.starters }}</p>
+                    <div class="line"></div>
+                    <h4>Plat</h4>
+                    <p>{{ menu.mainCourses }}</p>
+                    <div class="line"></div>
+                    <h4>Dessert</h4>
+                    {{ menu.desserts }}
+                    <div class="line"></div>
+                    <p class="price">{{ menu.priceMenu }} €</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="treat"></div>
+    <div class="drinks">
+        {% for category_drink in drinks.category_drinks %}
+            <div class="#">
+                {% for drink in drinks %}
+                    {% if categoryDrink.id == drink.categoryDrinks.id %}
+                        <h3>{{ drink.CategoryDrinks.nameCategory }}</h3>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}

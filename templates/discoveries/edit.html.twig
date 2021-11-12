@@ -4,10 +4,7 @@
 
 {% block body %}
     <h1>Modifier activité touristique</h1>
-
     {{ include('discoveries/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-
-    <a href="{{ path('discoveries_admin') }}">retour à la liste des activités touristiques</a>
-
+    <a href="{{ path('discoveries_admin') }}">Retour à la liste</a>
     {{ include('discoveries/_delete_form.html.twig') }}
 {% endblock %}
