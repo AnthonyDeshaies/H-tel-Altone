@@ -3,7 +3,7 @@
 {% block title %}Modifier le type de chambre{% endblock %}
 
 {% block body %}
-    <section id="edit_type_room" class="container">
+    <section id="edit" class="container">
         <h1>Modifier le type de chambre</h1>
         {{ include('type_room/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
         <a class="btn" href="{{ path('type_room_admin') }}">Retour à la liste</a>

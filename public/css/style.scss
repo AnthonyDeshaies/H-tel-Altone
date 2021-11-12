@@ -630,9 +630,8 @@ footer
     
     .sentence
     {
-        margin-top: 100px;
+        margin-top: 80px;
         font-size: 18px;
-        font-style: italic;
     }
 
     h2
@@ -1105,13 +1104,76 @@ footer
         }
 }
 
+/* ===================== ADMIN - EDIT PAGES & NEW PAGES================*/
+
+#edit, #new
+{
+    width: 800px;
+    padding: 30px 0 60px 0;
+    margin: 80px auto;
+    background-color: rgb(105, 184, 142);
+    border: solid 10px rgb(105, 184, 142);
+    border-radius: 15px;
+        
+        h1
+        {
+            margin: 50px 0 30px 0;
+        }
+
+        .required
+        {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        input
+        {
+            text-align: center;
+            width: 300px;
+            margin: auto;
+            border-radius: 7px;
+        }
+
+        select
+        {
+            width: 300px;
+            margin: auto;
+            border-radius: 7px;
+        }
+
+        label
+        {
+            margin: 15px 0 30px 0;
+            font-weight: bold;
+        }
+
+        .btn
+        {
+            background-color: rgb(81, 132, 199);
+            width: 200px;
+            margin: 25px auto 0 auto;
+        }
+        .btn:hover
+        {
+            color: rgb(105, 184, 142);
+            transition: 0.8s;
+        }
+}
+
 /* ======================= ADMIN - USERS PAGE ============================*/
 
 #users_admin
 {
     h1
     {
-       margin: 50px 0;
+       margin: 100px 0;
     }
     
     table
@@ -1171,56 +1233,7 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT USERS PAGE =======================*/
-
-#edit_user
-{
-    h1
-    {
-        margin: 50px 0 30px 0;
-    }
-
-    .required
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-
-    #user_roles
-    {
-        input
-        {
-            margin-top: 15px;
-        }
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 50px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
-
-/* ======================= ROOMS ADMIN PAGE ============================*/
+/* ======================= ADMIN - ROOMS PAGE ============================*/
 
 #rooms_admin
 {
@@ -1285,47 +1298,6 @@ footer
             margin-left: 70px;
             margin-right: 70px;
         }
-}
-
-/* ===================== ADMIN - EDIT ROOMS PAGE =======================*/
-
-#edit_rooms
-{
-    h1
-    {
-        margin: 120px 0 50px 0;
-    }
-
-    .required
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 80px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
 }
 
 /* ======================= ADMIN TYPE ROOM PAGE ============================*/
@@ -1401,63 +1373,6 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT TYPE ROOM PAGE =======================*/
-
-#edit_type_room
-{
-    h1
-    {
-        margin: 80px 0 50px 0;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-
-    #type_room_optionTypeRoom
-    {
-        display: flex;
-        flex-direction: row;
-        label
-        {
-            font-weight: normal;
-        }
-
-        input
-        {
-            margin-top: 30px;
-        }
-    }
-
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 70px 0;
-    }
-    .back
-    {
-        margin-left: 70px;
-        margin-right: 70px;
-    }
-}
-
 /* ================== OPTION TYPE ROOM ADMIN PAGE =======================*/
 
 #option_type_room_admin
@@ -1524,47 +1439,6 @@ footer
             margin-left: 20px;
             margin-right: 20px;
         }
-}
-
-/* ===================== ADMIN - EDIT ROOMS PAGE =======================*/
-
-#edit_option_type_room
-{
-    h1
-    {
-        margin: 150px 0 50px 0;
-    }
-
-    .required
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 80px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 70px;
-        margin-right: 70px;
-    }
 }
 
 /* ================== ADMIN AMENITIES PAGE =======================*/
@@ -1635,45 +1509,73 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT AMENITIES PAGE =======================*/
+/* ================== ADMIN DICOVERIES PAGE =======================*/
 
-#edit_amenities
+#discoveries_admin
 {
     h1
     {
-        margin: 80px 0 30px 0;
+       padding-top: 50px;
+       margin-bottom: 50px;
     }
+    
+    table
+    {
+        vertical-align: middle;
+            .show, .edit
+            {
+                text-decoration: none;
+                color: rgb(81, 132, 199);
+                font-size: 18px;
+            }
 
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 20px;
+            .show
+            {
+                margin-right: 15px;
+                color: rgb(105, 184, 142);
+            }
     }
+    .btn
+    {
+        width: 250px;
+        margin: 50px 0;
+    }
+}
+
+/* ===================== ADMIN - SHOW AMENITIES PAGE =======================*/
+
+#show_discoveries
+{
+    text-align: center;
+
+        h1
+        {
+            margin: 50px 0 30px 0;
+        }
     
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 50px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+        tr
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .links
+        {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn
+        {
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+
+        .edit
+        {
+            margin-left: 70px;
+            margin-right: 70px;
+        }
 }
 
 /* ======================= ADMIN - RESTAURANT PAGE ============================*/
@@ -1749,47 +1651,6 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT RESTAURANT PAGE =======================*/
-
-#edit_restaurant
-{
-    h1
-    {
-        margin: 50px 0 30px 0;
-    }
-
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 50px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
-
 /* ======================= ADMIN - MENUS PAGE ============================*/
 
 #menu_admin
@@ -1863,48 +1724,6 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT MENUS PAGE =======================*/
-
-#edit_menu
-{
-    h1
-    {
-        margin: 50px 0 30px 0;
-    }
-
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 50px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
-
-
 /* ======================= ADMIN DISHES PAGE ============================*/
 
 #dishes_admin
@@ -1936,7 +1755,6 @@ footer
         margin: 50px 0;
     }
 }
-
 
 /* ===================== ADMIN - SHOW DISHES PAGE =======================*/
 
@@ -1972,54 +1790,6 @@ footer
             margin-left: 20px;
             margin-right: 20px;
         }
-}
-
-/* ===================== ADMIN - EDIT DISHES PAGE =======================*/
-
-#edit_dishes
-{
-    h1
-    {
-        margin: 50px 0 30px 0;
-    }
-
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-
-    select
-    {
-        width: 600px;
-        margin: auto;
-        text-align: center;
-    }
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 50px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 70px;
-        margin-right: 70px;
-    }
 }
 
 /* ======================= CATEGORY DISHES ADMIN PAGE ============================*/
@@ -2090,48 +1860,6 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT CATEGORY DISHES PAGE =======================*/
-
-#edit_category_dishes
-{
-    h1
-    {
-        margin: 120px 0 50px 0;
-    }
-
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 30px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 80px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-}
-
 /* ======================= DRINKS ADMIN PAGE ============================*/
 
 #drinks_admin
@@ -2200,54 +1928,6 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT DRINK PAGE =======================*/
-
-#edit_drink
-{
-    h1
-    {
-        margin: 50px 0 20px 0;
-    }
-
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 30px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-
-    select
-    {
-        width: 600px;
-        margin: auto;
-        text-align: center;
-    }    
-
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 80px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-}
 /* ======================= CATEGORY DRINKS ADMIN PAGE ============================*/
 
 #drinks_admin
@@ -2321,47 +2001,6 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT CATEGORY DRINK PAGE =======================*/
-
-#edit_category_drink
-{
-    h1
-    {
-        margin: 180px 0 50px 0;
-    }
-
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 30px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 80px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-}
 /* ======================= ADMIN SUPPLIERS PAGE ===========================*/
 
 #suppliers_admin
@@ -2440,55 +2079,6 @@ footer
         }
 }
 
-/* ===================== ADMIN - EDIT SUPPLIERS PAGE =======================*/
-
-#edit_supplier
-{
-    h1
-    {
-        margin: 50px 0 30px 0;
-    }
-
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 30px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-
-    select
-    {
-        width: 600px;
-        margin: auto;
-        text-align: center;
-    }    
-
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 50px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-}
-
 /* ======================= CATEGORY SUPPLIERS ADMIN PAGE ============================*/
 
 #category_suppliers_admin
@@ -2561,55 +2151,6 @@ footer
             margin-left: 20px;
             margin-right: 20px;
         }
-}
-
-/* ===================== ADMIN - EDIT CATEGORY SUPPLIERS PAGE =======================*/
-
-#edit_category_supplier
-{
-    h1
-    {
-        margin: 180px 0 50px 0;
-    }
-
-    label
-    {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 30px;
-    }
-    
-    div
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    input
-    {
-        text-align: center;
-        width: 600px;
-        margin: auto;
-    }
-
-    select
-    {
-        width: 600px;
-        margin: auto;
-        text-align: center;
-    }    
-
-    .links
-    {
-        display: flex;
-        justify-content: center;
-        margin: 80px 0 80px 0;
-    }
-    .back
-    {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
 }
 
 /*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/

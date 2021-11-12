@@ -3,7 +3,7 @@
 {% block title %}Modifier chambre{% endblock %}
 
 {% block body %}
-    <section id="edit_rooms">
+    <section id="edit">
         <h1>Modifier chambre</h1>
         {{ include('rooms/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
         <a class="btn" href="{{ path('rooms_admin') }}">Retour à la liste</a>

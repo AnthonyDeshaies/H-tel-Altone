@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Nouvelle chambre{% endblock %}
 
 {% block body %}
+<section id="new">
     <h1>Créer une nouvelle chambre</h1>
 
     {{ include('rooms/_form.html.twig') }}
 
-    <a href="{{ path('rooms_admin') }}">Retour à la liste des chambres</a>
+    <a class="btn" href="{{ path('rooms_admin') }}">Retour à la liste</a>
+</section>
 {% endblock %}

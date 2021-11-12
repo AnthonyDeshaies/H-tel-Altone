@@ -3,7 +3,7 @@
 {% block title %}modifier Restaurant{% endblock %}
 
 {% block body %}
-    <section id="edit_restaurant" class="container">
+    <section id="edit" class="container">
         <h1>Modifier le Restaurant</h1>
         {{ include('restaurant/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
         <a class="btn" href="{{ path('restaurant_admin') }}">Retour à la liste</a>

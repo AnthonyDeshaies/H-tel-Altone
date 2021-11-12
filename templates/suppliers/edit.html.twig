@@ -3,7 +3,7 @@
 {% block title %}Modifier fournisseur{% endblock %}
 
 {% block body %}
-    <section id="edit_supplier" class="container">
+    <section id="edit" class="container">
         <h1>Modifier fournisseur</h1>
         {{ include('suppliers/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
         <a class="btn" href="{{ path('suppliers_admin') }}">Retour à la liste</a>

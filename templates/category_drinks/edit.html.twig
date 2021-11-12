@@ -3,10 +3,10 @@
 {% block title %}Modifier une catégorie de boisson{% endblock %}
 
 {% block body %}
-    <section id="edit_category_drink">
+    <section id="edit">
         <h1>Modifier une catégorie de boisson</h1>
         {{ include('category_drinks/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-        <a class="btn" href="{{ path('category_drinks_admin') }}">Retour à la liste à la liste</a>
+        <a class="btn" href="{{ path('category_drinks_admin') }}">Retour à la liste</a>
         {{ include('category_drinks/_delete_form.html.twig') }}
     </section>
 {% endblock %}

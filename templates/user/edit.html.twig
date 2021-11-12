@@ -3,7 +3,7 @@
 {% block title %}modifier utilisateur{% endblock %}
 
 {% block body %}
-    <section id="edit_user">
+    <section id="edit">
         <h1>Modifier un utilisateur</h1>
         {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
         <a class="btn" href="{{ path('user_admin') }}">Retour à la liste</a>

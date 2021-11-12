@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Créer un nouveau type de chambre{% endblock %}
 
 {% block body %}
+<section id="new">
     <h1>Créer un nouveau type de chambre</h1>
 
     {{ include('type_room/_form.html.twig') }}
 
-    <a href="{{ path('type_room_admin') }}">Retour à la liste</a>
+    <a class="btn" href="{{ path('type_room_admin') }}">Retour à la liste</a>
+</section>
 {% endblock %}

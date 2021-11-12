@@ -3,9 +3,11 @@
 {% block title %}Créer activité{% endblock %}
 
 {% block body %}
+<section id="new">
     <h1>Creer une nouvelle activité touristique</h1>
 
     {{ include('discoveries/_form.html.twig') }}
 
-    <a href="{{ path('discoveries_admin') }}">Retour à la liste des activités</a>
+    <a class="btn" href="{{ path('discoveries_admin') }}">Retour à la liste</a>
+</section>
 {% endblock %}

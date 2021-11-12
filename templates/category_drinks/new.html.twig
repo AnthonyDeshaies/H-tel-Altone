@@ -3,9 +3,11 @@
 {% block title %}Nouvelle catégorie de boisson{% endblock %}
 
 {% block body %}
+<section id="new">
     <h1>Créer une nouvelle catégorie de boisson</h1>
 
     {{ include('category_drinks/_form.html.twig') }}
 
-    <a href="{{ path('category_drinks_admin') }}">Retour à la liste</a>
+    <a class="btn" href="{{ path('category_drinks_admin') }}">Retour à la liste</a>
+</section>
 {% endblock %}

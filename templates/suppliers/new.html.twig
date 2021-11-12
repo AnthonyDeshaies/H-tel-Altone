@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Nouveau fournisseur{% endblock %}
 
 {% block body %}
+<section id="new">
     <h1>Créer nouveau fournisseur</h1>
 
     {{ include('suppliers/_form.html.twig') }}
 
-    <a href="{{ path('suppliers_admin') }}">Retour à la liste des fournisseurs</a>
+    <a class="btn" href="{{ path('suppliers_admin') }}">Retour à la liste</a>
+</section>
 {% endblock %}

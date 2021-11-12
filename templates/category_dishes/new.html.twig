@@ -3,9 +3,11 @@
 {% block title %}Nouvelle catégorie de plat{% endblock %}
 
 {% block body %}
+<section id="new">
     <h1>Créer une nouvelle catégorie de plat</h1>
 
     {{ include('category_dishes/_form.html.twig') }}
 
-    <a href="{{ path('category_dishes_admin') }}">Retour à la liste des catégories</a>
+    <a class="btn" href="{{ path('category_dishes_admin') }}">Retour à la liste</a>
+</section>
 {% endblock %}

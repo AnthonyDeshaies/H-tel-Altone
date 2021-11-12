@@ -605,9 +605,8 @@ footer p {
 }
 
 #restaurant_menu .sentence {
-  margin-top: 100px;
+  margin-top: 80px;
   font-size: 18px;
-  font-style: italic;
 }
 
 #restaurant_menu h2 {
@@ -1019,9 +1018,69 @@ footer p {
   margin-bottom: -250px;
 }
 
+/* ===================== ADMIN - EDIT PAGES & NEW PAGES================*/
+#edit, #new {
+  width: 800px;
+  padding: 30px 0 60px 0;
+  margin: 80px auto;
+  background-color: #69b88e;
+  border: solid 10px #69b88e;
+  border-radius: 15px;
+}
+
+#edit h1, #new h1 {
+  margin: 50px 0 30px 0;
+}
+
+#edit .required, #new .required {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#edit div, #new div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#edit input, #new input {
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  border-radius: 7px;
+}
+
+#edit select, #new select {
+  width: 300px;
+  margin: auto;
+  border-radius: 7px;
+}
+
+#edit label, #new label {
+  margin: 15px 0 30px 0;
+  font-weight: bold;
+}
+
+#edit .btn, #new .btn {
+  background-color: #5184c7;
+  width: 200px;
+  margin: 25px auto 0 auto;
+}
+
+#edit .btn:hover, #new .btn:hover {
+  color: #69b88e;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
 /* ======================= ADMIN - USERS PAGE ============================*/
 #users_admin h1 {
-  margin: 50px 0;
+  margin: 100px 0;
 }
 
 #users_admin table .show, #users_admin table .edit {
@@ -1077,53 +1136,7 @@ footer p {
   margin-right: 70px;
 }
 
-/* ===================== ADMIN - EDIT USERS PAGE =======================*/
-#edit_user h1 {
-  margin: 50px 0 30px 0;
-}
-
-#edit_user .required {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-#edit_user #user_roles input {
-  margin-top: 15px;
-}
-
-#edit_user div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_user input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_user .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 50px 0 80px 0;
-}
-
-#edit_user .back {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-/* ======================= ROOMS ADMIN PAGE ============================*/
+/* ======================= ADMIN - ROOMS PAGE ============================*/
 #rooms_admin h1 {
   padding-top: 50px;
   margin-bottom: 50px;
@@ -1180,48 +1193,6 @@ footer p {
 #show_rooms .edit {
   margin-left: 70px;
   margin-right: 70px;
-}
-
-/* ===================== ADMIN - EDIT ROOMS PAGE =======================*/
-#edit_rooms h1 {
-  margin: 120px 0 50px 0;
-}
-
-#edit_rooms .required {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-#edit_rooms div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_rooms input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_rooms .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 80px 0 80px 0;
-}
-
-#edit_rooms .back {
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 /* ======================= ADMIN TYPE ROOM PAGE ============================*/
@@ -1288,66 +1259,6 @@ footer p {
   margin-right: 70px;
 }
 
-/* ===================== ADMIN - EDIT TYPE ROOM PAGE =======================*/
-#edit_type_room h1 {
-  margin: 80px 0 50px 0;
-}
-
-#edit_type_room div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_type_room label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-#edit_type_room input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_type_room #type_room_optionTypeRoom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-#edit_type_room #type_room_optionTypeRoom label {
-  font-weight: normal;
-}
-
-#edit_type_room #type_room_optionTypeRoom input {
-  margin-top: 30px;
-}
-
-#edit_type_room .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 70px 0;
-}
-
-#edit_type_room .back {
-  margin-left: 70px;
-  margin-right: 70px;
-}
-
 /* ================== OPTION TYPE ROOM ADMIN PAGE =======================*/
 #option_type_room_admin h1 {
   padding-top: 50px;
@@ -1406,48 +1317,6 @@ footer p {
 #show_option_type_room .edit {
   margin-left: 20px;
   margin-right: 20px;
-}
-
-/* ===================== ADMIN - EDIT ROOMS PAGE =======================*/
-#edit_option_type_room h1 {
-  margin: 150px 0 50px 0;
-}
-
-#edit_option_type_room .required {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-#edit_option_type_room div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_option_type_room input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_option_type_room .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 80px 0 80px 0;
-}
-
-#edit_option_type_room .back {
-  margin-left: 70px;
-  margin-right: 70px;
 }
 
 /* ================== ADMIN AMENITIES PAGE =======================*/
@@ -1510,18 +1379,42 @@ footer p {
   margin-right: 70px;
 }
 
-/* ===================== ADMIN - EDIT AMENITIES PAGE =======================*/
-#edit_amenities h1 {
-  margin: 80px 0 30px 0;
+/* ================== ADMIN DICOVERIES PAGE =======================*/
+#discoveries_admin h1 {
+  padding-top: 50px;
+  margin-bottom: 50px;
 }
 
-#edit_amenities label {
+#discoveries_admin table {
+  vertical-align: middle;
+}
+
+#discoveries_admin table .show, #discoveries_admin table .edit {
+  text-decoration: none;
+  color: #5184c7;
   font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
 }
 
-#edit_amenities div {
+#discoveries_admin table .show {
+  margin-right: 15px;
+  color: #69b88e;
+}
+
+#discoveries_admin .btn {
+  width: 250px;
+  margin: 50px 0;
+}
+
+/* ===================== ADMIN - SHOW AMENITIES PAGE =======================*/
+#show_discoveries {
+  text-align: center;
+}
+
+#show_discoveries h1 {
+  margin: 50px 0 30px 0;
+}
+
+#show_discoveries tr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1531,25 +1424,23 @@ footer p {
           flex-direction: column;
 }
 
-#edit_amenities input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_amenities .links {
+#show_discoveries .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 50px 0 80px 0;
 }
 
-#edit_amenities .back {
-  margin-left: 20px;
-  margin-right: 20px;
+#show_discoveries .btn {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+#show_discoveries .edit {
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 /* ======================= ADMIN - RESTAURANT PAGE ============================*/
@@ -1616,48 +1507,6 @@ footer p {
   margin-right: 70px;
 }
 
-/* ===================== ADMIN - EDIT RESTAURANT PAGE =======================*/
-#edit_restaurant h1 {
-  margin: 50px 0 30px 0;
-}
-
-#edit_restaurant label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-#edit_restaurant div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_restaurant input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_restaurant .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 50px 0 80px 0;
-}
-
-#edit_restaurant .back {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
 /* ======================= ADMIN - MENUS PAGE ============================*/
 #menu_admin h1 {
   padding-top: 80px;
@@ -1722,48 +1571,6 @@ footer p {
   margin-right: 30px;
 }
 
-/* ===================== ADMIN - EDIT MENUS PAGE =======================*/
-#edit_menu h1 {
-  margin: 50px 0 30px 0;
-}
-
-#edit_menu label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-#edit_menu div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_menu input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_menu .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 50px 0 80px 0;
-}
-
-#edit_menu .back {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
 /* ======================= ADMIN DISHES PAGE ============================*/
 #dishes_admin h1 {
   padding-top: 50px;
@@ -1822,54 +1629,6 @@ footer p {
 #show_dishes .edit {
   margin-left: 20px;
   margin-right: 20px;
-}
-
-/* ===================== ADMIN - EDIT DISHES PAGE =======================*/
-#edit_dishes h1 {
-  margin: 50px 0 30px 0;
-}
-
-#edit_dishes label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-#edit_dishes div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_dishes input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_dishes select {
-  width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
-#edit_dishes .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 50px 0 80px 0;
-}
-
-#edit_dishes .back {
-  margin-left: 70px;
-  margin-right: 70px;
 }
 
 /* ======================= CATEGORY DISHES ADMIN PAGE ============================*/
@@ -1932,48 +1691,6 @@ footer p {
   margin-right: 20px;
 }
 
-/* ===================== ADMIN - EDIT CATEGORY DISHES PAGE =======================*/
-#edit_category_dishes h1 {
-  margin: 120px 0 50px 0;
-}
-
-#edit_category_dishes label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 30px;
-}
-
-#edit_category_dishes div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_category_dishes input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_category_dishes .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 80px 0 80px 0;
-}
-
-#edit_category_dishes .back {
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
 /* ======================= DRINKS ADMIN PAGE ============================*/
 #drinks_admin h1 {
   padding-top: 50px;
@@ -2032,54 +1749,6 @@ footer p {
 #show_drink .edit {
   margin-left: 20px;
   margin-right: 20px;
-}
-
-/* ===================== ADMIN - EDIT DRINK PAGE =======================*/
-#edit_drink h1 {
-  margin: 50px 0 20px 0;
-}
-
-#edit_drink label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 30px;
-}
-
-#edit_drink div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_drink input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_drink select {
-  width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
-#edit_drink .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 80px 0 80px 0;
-}
-
-#edit_drink .back {
-  margin-left: 30px;
-  margin-right: 30px;
 }
 
 /* ======================= CATEGORY DRINKS ADMIN PAGE ============================*/
@@ -2144,48 +1813,6 @@ footer p {
 #show_category_drink .edit {
   margin-left: 20px;
   margin-right: 20px;
-}
-
-/* ===================== ADMIN - EDIT CATEGORY DRINK PAGE =======================*/
-#edit_category_drink h1 {
-  margin: 180px 0 50px 0;
-}
-
-#edit_category_drink label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 30px;
-}
-
-#edit_category_drink div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_category_drink input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_category_drink .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 80px 0 80px 0;
-}
-
-#edit_category_drink .back {
-  margin-left: 30px;
-  margin-right: 30px;
 }
 
 /* ======================= ADMIN SUPPLIERS PAGE ===========================*/
@@ -2256,54 +1883,6 @@ footer p {
   margin-right: 20px;
 }
 
-/* ===================== ADMIN - EDIT SUPPLIERS PAGE =======================*/
-#edit_supplier h1 {
-  margin: 50px 0 30px 0;
-}
-
-#edit_supplier label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 30px;
-}
-
-#edit_supplier div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_supplier input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_supplier select {
-  width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
-#edit_supplier .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 50px 0 80px 0;
-}
-
-#edit_supplier .back {
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
 /* ======================= CATEGORY SUPPLIERS ADMIN PAGE ============================*/
 #category_suppliers_admin h1 {
   padding-top: 120px;
@@ -2366,54 +1945,6 @@ footer p {
 #show_category_supplier .edit {
   margin-left: 20px;
   margin-right: 20px;
-}
-
-/* ===================== ADMIN - EDIT CATEGORY SUPPLIERS PAGE =======================*/
-#edit_category_supplier h1 {
-  margin: 180px 0 50px 0;
-}
-
-#edit_category_supplier label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 30px;
-}
-
-#edit_category_supplier div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#edit_category_supplier input {
-  text-align: center;
-  width: 600px;
-  margin: auto;
-}
-
-#edit_category_supplier select {
-  width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
-#edit_category_supplier .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 80px 0 80px 0;
-}
-
-#edit_category_supplier .back {
-  margin-left: 30px;
-  margin-right: 30px;
 }
 
 /*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/

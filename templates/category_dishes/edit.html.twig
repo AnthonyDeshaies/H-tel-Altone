@@ -3,7 +3,7 @@
 {% block title %}Modifier catégorie de plat{% endblock %}
 
 {% block body %}
-    <section id="edit_category_dishes">
+    <section id="edit">
         <h1>Modifier catégorie de plat</h1>
         {{ include('category_dishes/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
         <a class="btn" href="{{ path('category_dishes_admin') }}">Retour à la liste</a>
