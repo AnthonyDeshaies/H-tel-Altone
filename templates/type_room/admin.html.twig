@@ -12,8 +12,6 @@
                     <th>Type</th>
                     <th>Places</th>
                     <th>Image 1</th>
-                    <th>Image 2</th>
-                    <th>Image 3</th>
                     <th>Tarif</th>
                     <th>Description</th>
                     <th>Options</th>
@@ -26,8 +24,6 @@
                     <td class="td">{{ type_room.nameType }}</td>
                     <td class="td">{{ type_room.nbPlaces }}</td>
                     <td class="td"><img src="{{ asset('uploads/photos/' ~ type_room.imgType1) }}" width="100"></td>
-                    <td class="td"><img src="{{ asset('uploads/photos/' ~ type_room.imgType2) }}" width="100"></td>
-                    <td class="td"><img src="{{ asset('uploads/photos/' ~ type_room.imgType3) }}" width="100"></td>
                     <td class="td">{{ type_room.startPrice }}</td>
                     <td>{{ type_room.descriptionTypeRoom |raw }}</td>
                     <td> {% for option in type_room.optionTypeRoom %}

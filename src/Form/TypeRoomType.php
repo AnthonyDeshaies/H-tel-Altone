@@ -41,34 +41,6 @@ class TypeRoomType extends AbstractType
                     ])
                 ],
             ])
-            ->add('imgType2', FileType::class, [
-                'label' => 'Image 2',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/*',
-                        ],
-                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
-                    ])
-                ],
-            ])
-            ->add('imgType3', FileType::class, [
-                'label' => 'Image 3',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'image/*',
-                        ],
-                        'mimeTypesMessage' => 'Veuillez entrer un format de document valide',
-                    ])
-                ],
-            ])
             ->add('descriptionTypeRoom', CKEditorType::class, 
                 array ('label' => 'Description')
             )

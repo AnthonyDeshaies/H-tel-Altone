@@ -40,6 +40,7 @@ p
 .btn:hover
 {
     color: rgb(60, 128, 218);
+    border: solid 3px rgb(81, 132, 199);
 }
 
 .treat
@@ -207,6 +208,8 @@ footer
 
 /*====================== FRONT - HOME PAGE ========================*/
 
+/*---------------Section main_title----------*/
+
 #main_title
         {
             width: 100%;
@@ -233,6 +236,8 @@ footer
                     font-family: 'Roboto, cursive';
                 }
         }
+
+/*---------------Section banner_reservation----------*/
 
 #banner_reservation
 {
@@ -262,6 +267,8 @@ footer
             transition: 0.5s;
         }
 }
+
+/*---------------Section welcome----------*/
 
 #welcome
 {
@@ -659,11 +666,20 @@ footer
     {
         display: flex;
         justify-content: space-between;
-    }
-
-    .description
-    {
-        margin-top: 20px;
+        border-bottom: dotted 1px rgb(117, 117, 112);
+        
+            .description
+            {
+                margin-top: 13px;
+                font-style: italic;
+                font-size: 17px;
+            }
+            .price
+            {
+                margin-top: 13px;
+                color: rgb(81, 132, 199);
+                font-size: 17px;
+            }
     }
 
     .menus
@@ -738,7 +754,8 @@ footer
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
-
+            border-bottom: dotted 1px rgb(117, 117, 112);
+            
                 .name_drink
                 {
                     font-size: 18px;
@@ -752,6 +769,19 @@ footer
         }
     }
     
+}
+
+#suppliers_link
+{
+    .sentence_link
+    {
+        font-size: 19px;
+
+            a
+            {
+                text-decoration: none;
+            }
+    }
 }
 
 /* =================== FRONT - AMENITIES PAGE ======================*/
@@ -2243,15 +2273,66 @@ footer
     }
 }
 
+/*========RESPONSIVE TYPE ROOM PAGE==============*/
+
+@media screen and (max-width: 991px)
+{
+    #type_rooms
+    {
+        .btn_odd
+        {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+
 /*========RESPONSIVE RESTAURANT PAGE==============*/
 
 @media screen and (max-width: 1300px)
 {
     #restaurant_title
     {
-        h1 span
+        h1
         {
             color: rgb(255, 255, 255);
         }
+    }
+}
+
+@media screen and (max-width: 991px)
+{
+    #restaurant_menu
+    {
+        .name_category
+        {
+            margin-top: 40px;
+        }        
+    }
+}
+
+/*========RESPONSIVE AMENITIES PAGE==============*/
+
+@media screen and (max-width: 991px)
+{
+    #amenities
+    {
+        .price
+        {
+            margin-bottom: 80px;
+        }        
+    }
+}
+
+/*========RESPONSIVE AMENITIES PAGE==============*/
+
+@media screen and (max-width: 991px)
+{
+    #discoveries
+    {
+        .discovery_even
+        {
+            margin-top: 40px;
+        }        
     }
 }

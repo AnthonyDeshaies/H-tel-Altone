@@ -56,12 +56,9 @@
             , parfaitement équipés pour un séjour des plus agréables.</em>
     </p>
     <div class="row suite_home_page">
-
         <div class="col-lg-6">
-
-            <a href="{{ path('type_room_index') }}"><img src="{{ asset ('images/suite_room1.jpg') }}"></a>
+            <img class="active" src="{{ asset ('images/suite_room1.jpg') }}">
         </div>
-
         <div class="col-lg-6 suite_home_page_txt">
             <div>
                 <h3>Suite Altone</h3>
@@ -81,9 +78,10 @@
             <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
         </div>
     </div>
+    <div class="treat"></div>
     <div class="row rooms_kind_home_page">
         <div class="col-lg-3">
-            <a href="{{ path('type_room_index') }}"><img src="{{ asset ('images/double_room.jpg') }}"></a>
+            <img src="{{ asset ('images/double_room.jpg') }}">
         </div>
         <div class="col-lg-3 rooms_home_page_txt">
             <h3>Chambres doubles</h3>
@@ -93,7 +91,7 @@
             <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
         </div>
         <div class="col-lg-3">
-            <a href="{{ path('type_room_index') }}"><img src="{{ asset ('images/familly_room1.jpg') }}"></a>
+            <img src="{{ asset ('images/familly_room1.jpg') }}">
         </div>
         <div class="col-lg-3 rooms_home_page_txt">
             <h3>Chambres familiales</h3>
@@ -123,7 +121,7 @@
             <a href="{{ path('restaurant_index') }}" class="btn">En savoir +</a>
         </div>
         <div class="col-lg-6">
-            <a href="#"><img src="{{ asset ('images/food_home.jpg') }}"></a>
+            <img src="{{ asset ('images/food_home.jpg') }}">
         </div>
     </div>
 </section>
@@ -132,21 +130,22 @@
 
 <section id="location_home_page" class="container">
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-5">
             <h2>Accès à l'hôtel</h2>
             <div class="location_infos">
-                <p><i class="fas fa-map-marker-alt" href="#"></i> Chemin de l'île Ardouin, 49400 Saumur</p>
-                <p><i class="fas fa-envelope" href="#"></i> contact@altone.fr</p>
-                <p><i class="fas fa-phone-alt href=" #""></i> 06 33 10 81 28</p>
+                <p><i class="fas fa-map-marker-alt"></i> Chemin de l'île Ardouin, 49400 Saumur</p>
+                <p><i class="fas fa-envelope"></i> contact@altone.fr</p>
+                <p><i class="fas fa-phone-alt"></i> 06 33 10 81 28</p>
                 <p><i class="fas fa-thumbtack"></i> 47.290531, -0.109539</p>
             </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-7">
             <iframe src="https://www.google.com/maps/d/embed?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox" width="100%"
-                height="350px"></iframe>
+                height="400px"></iframe>
         </div>
 
     </div>
 
 </section>
+<script src="{{ asset('js/app.js')}}" ></script>
 {% endblock %}

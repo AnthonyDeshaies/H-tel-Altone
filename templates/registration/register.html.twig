@@ -9,9 +9,8 @@
         {{ form_start(registrationForm) }}
         {{ form_label(registrationForm.email) }}<br>
         {{ form_widget(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-        label: 'Password'
-        }) }}
+        <div><label>Mot de passe</label> {{ form_widget(registrationForm.password.first) }}</div>
+        <div><label>Confirmez le mot de passe</label> {{ form_widget(registrationForm.password.second) }}</div>
         {{ form_row(registrationForm.nameUser) }}
         {{ form_row(registrationForm.firstNameUser) }}
         {{ form_row(registrationForm.phoneUser) }}

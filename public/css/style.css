@@ -35,6 +35,7 @@ p {
 
 .btn:hover {
   color: #3c80da;
+  border: solid 3px #5184c7;
 }
 
 .treat {
@@ -200,6 +201,7 @@ footer p {
 }
 
 /*====================== FRONT - HOME PAGE ========================*/
+/*---------------Section main_title----------*/
 #main_title {
   width: 100%;
   height: 800px;
@@ -225,6 +227,7 @@ footer p {
   font-family: 'Roboto, cursive';
 }
 
+/*---------------Section banner_reservation----------*/
 #banner_reservation {
   height: 120px;
   background-color: #69b88e;
@@ -253,6 +256,7 @@ footer p {
   transition: 0.5s;
 }
 
+/*---------------Section welcome----------*/
 #welcome {
   margin: 100px 0 80px 0;
 }
@@ -634,10 +638,19 @@ footer p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-bottom: dotted 1px #757570;
 }
 
-#restaurant_menu .description {
-  margin-top: 20px;
+#restaurant_menu .dishes .description {
+  margin-top: 13px;
+  font-style: italic;
+  font-size: 17px;
+}
+
+#restaurant_menu .dishes .price {
+  margin-top: 13px;
+  color: #5184c7;
+  font-size: 17px;
 }
 
 #restaurant_menu .menus {
@@ -703,6 +716,7 @@ footer p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 20px;
+  border-bottom: dotted 1px #757570;
 }
 
 #restaurant_menu .drinks .info .name_drink {
@@ -712,6 +726,14 @@ footer p {
 
 #restaurant_menu .drinks .info .price_drink {
   font-size: 18px;
+}
+
+#suppliers_link .sentence_link {
+  font-size: 19px;
+}
+
+#suppliers_link .sentence_link a {
+  text-decoration: none;
 }
 
 /* =================== FRONT - AMENITIES PAGE ======================*/
@@ -2035,10 +2057,37 @@ footer p {
   }
 }
 
+/*========RESPONSIVE TYPE ROOM PAGE==============*/
+@media screen and (max-width: 991px) {
+  #type_rooms .btn_odd {
+    margin-bottom: 50px;
+  }
+}
+
 /*========RESPONSIVE RESTAURANT PAGE==============*/
 @media screen and (max-width: 1300px) {
-  #restaurant_title h1 span {
+  #restaurant_title h1 {
     color: white;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #restaurant_menu .name_category {
+    margin-top: 40px;
+  }
+}
+
+/*========RESPONSIVE AMENITIES PAGE==============*/
+@media screen and (max-width: 991px) {
+  #amenities .price {
+    margin-bottom: 80px;
+  }
+}
+
+/*========RESPONSIVE AMENITIES PAGE==============*/
+@media screen and (max-width: 991px) {
+  #discoveries .discovery_even {
+    margin-top: 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -68,36 +68,6 @@ class TypeRoomController extends AbstractController
                 // met à jour la propriété 'imgType1' pour stocker le nom du fichier PDF au lieu de son contenu
                 $typeRoom->setImgType1($newFilename);
             }
-            $imgType2 = $form->get('imgType2')->getData();
-            if ($imgType2) {
-                $originalFilename = pathinfo($imgType1->getClientOriginalName(), PATHINFO_FILENAME);
-                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgType2->guessExtension();
-                // Déplacez le fichier dans le répertoire où les brochures sont stockées
-                try {
-                    $imgType2->move(
-                        $this->getParameter('photos_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                }
-                $typeRoom->setImgType2($newFilename);
-            }
-            $imgType3 = $form->get('imgType3')->getData();
-            if ($imgType3) {
-                $originalFilename = pathinfo($imgType3->getClientOriginalName(), PATHINFO_FILENAME);
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgType3->guessExtension();
-                try {
-                    $imgType3->move(
-                        $this->getParameter('photos_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                }
-                $typeRoom->setImgType3($newFilename);
-            }
         
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($typeRoom);
@@ -149,36 +119,6 @@ class TypeRoomController extends AbstractController
                 }
                 // met à jour la propriété 'imgType1' pour stocker le nom du fichier PDF au lieu de son contenu
                 $typeRoom->setImgType1($newFilename);
-            }
-            $imgType2 = $form->get('imgType2')->getData();
-            if ($imgType2) {
-                $originalFilename = pathinfo($imgType1->getClientOriginalName(), PATHINFO_FILENAME);
-                // ceci est nécessaire pour inclure en toute sécurité le nom de fichier dans l'URL
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgType2->guessExtension();
-                // Déplacez le fichier dans le répertoire où les brochures sont stockées
-                try {
-                    $imgType2->move(
-                        $this->getParameter('photos_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                }
-                $typeRoom->setImgType2($newFilename);
-            }
-            $imgType3 = $form->get('imgType3')->getData();
-            if ($imgType3) {
-                $originalFilename = pathinfo($imgType3->getClientOriginalName(), PATHINFO_FILENAME);
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $imgType3->guessExtension();
-                try {
-                    $imgType3->move(
-                        $this->getParameter('photos_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                }
-                $typeRoom->setImgType3($newFilename);
             }
 
             $this->getDoctrine()->getManager()->flush();

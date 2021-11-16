@@ -30,15 +30,6 @@ class TypeRoom
      */
     private $imgType1;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $imgType2;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $imgType3;
 
     /**
      * @ORM\Column(type="text")

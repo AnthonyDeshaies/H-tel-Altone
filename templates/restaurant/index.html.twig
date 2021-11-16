@@ -4,7 +4,7 @@
 
 {% block body %}
 <section id="restaurant_title">
-    <h1>Restaurant Le <span>Lotus</span></h1>
+    <h1>Restaurant <span> Le Lotus</span></h1>
 </section>
 <section id="restaurant_menu" class="container">
     <div class="sentence">
@@ -22,12 +22,12 @@
                 <img src="{{ asset('uploads/photos/' ~ categoryDish.imgCategoryDishes) }}">
             </div>
             <div class="col-lg-7">
-                <h3>{{ categoryDish.nameCategory }}</h3>
+                <h3 class="name_category">{{ categoryDish.nameCategory }}</h3>
                 {% for dish in dishes %}
                     {% if categoryDish.id == dish.categoryDishes.id %}
                         <div class="dishes">
                             <div class="description">{{ dish.descriptionDish |raw }}</div>
-                            <div class="description">{{ dish.priceDish }} €</div>
+                            <div class="price">{{ dish.priceDish }} €</div>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -42,17 +42,17 @@
                 <div class="col-lg-6">
                     <div class="card">
                     <h3>{{ menu.nameMenu }}</h3>
-                    <p class="description">{{ menu.descriptionMenu }}</p>
+                    <div class="description">{{ menu.descriptionMenu }}</div>
                     <h4>Entrée</h4>
-                    <p>{{ menu.starters }}</p>
+                    <div class="choice">{{ menu.starters }}</div>
                     <div class="line"></div>
                     <h4>Plat</h4>
-                    <p>{{ menu.mainCourses }}</p>
+                    <div class="choice">{{ menu.mainCourses }}</div>
                     <div class="line"></div>
                     <h4>Dessert</h4>
-                    {{ menu.desserts }}
+                    <div clas="choice">{{ menu.desserts }} </div>
                     <div class="line"></div>
-                    <p class="price">{{ menu.priceMenu }} €</p>
+                    <div class="price">{{ menu.priceMenu }} €</div>
                     </div>
                 </div>
             {% endfor %}
@@ -62,14 +62,12 @@
     <div class="drinks">
     <h2>Carte des boissons</h2>
         {% for categoryDrink in categoryDrinks %}
-            
             <div class="treat"></div>
             <h3>{{ categoryDrink.nameCategory }}</h3>
-            
                 {% for drink in drinks %}
                     {% if categoryDrink.id == drink.categoryDrinks.id %}
                     <div class="info">
-                        <p><span class="name_drink">{{ drink.nameDrink }}</span> - {{ drink.detailDrink }}</p>
+                        <p><span class="name_drink">{{ drink.nameDrink }}</span> . <span> {{ drink.detailDrink }}</span></p>
                         <p><span class="price_drink">{{ drink.priceDrink }} €</span></p>
                     </div>
                     {% endif %}
@@ -77,5 +75,9 @@
             
         {% endfor %}
     </div>
+</section>
+<section id="suppliers_link" class="container">
+    <div class="treat"></div>
+    <p class="sentence_link">Découvrez nos <a class="suppliers_link" href="{{ path('suppliers_index') }}">fournisseurs</a>, de confiance et de qualité.</p>
 </section>
 {% endblock %}
