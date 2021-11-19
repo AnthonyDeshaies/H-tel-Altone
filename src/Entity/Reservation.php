@@ -57,6 +57,11 @@ class Reservation
      */
     private $lastName;
 
+    /**
+     * @ORM\Column(type="string", length=55)
+     */
+    private $email;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,6 +159,18 @@ class Reservation
     public function setLastName(string $lastName): self
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

@@ -3,20 +3,18 @@
 
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
-			{% block title %}Hôtel ALTONE
-			{% endblock %}
+			{% block title %}Hôtel ALTONE{% endblock %}
 		</title>
-		{# Run `composer require symfony/webpack-encore-bundle`
-			and uncomment the following Encore helpers to start using Symfony UX #}
 
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Source+Sans+Pro&display=swap">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 		<!-- ICONS -->
 		<script src="https://kit.fontawesome.com/e6187d3d12.js" crossorigin="anonymous"></script>
 
@@ -25,9 +23,6 @@
 			<link rel="stylesheet" href="{{ asset('css/style.css')}}">
 		{% endblock %}
 
-		{% block javascripts %}
-			{#{{ encore_entry_script_tags('app') }}#}
-		{% endblock %}
 	</head>
 	{% block header %}
 		<header>
@@ -52,7 +47,7 @@
 						</button>
 						<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 							<div class="navbar-nav  ms-auto">
-								{% if (is_granted('ROLE_ADMIN')) or (is_granted('ROLE_EDITOR'))  %}
+								{% if (is_granted('ROLE_EDITOR'))  %}
 								<a class="nav-link" href="{{ path('admin') }}">Administration</a>
 								{% endif %}
 								<a class="nav-link" href="{{ path('type_room_index') }}">Les Chambres</a>
@@ -60,7 +55,7 @@
 								<a class="nav-link" href="{{ path('amenities_index') }}">Services</a>
 								<a class="nav-link" href="{{ path('discoveries_index') }}">Tourisme</a>
 								<a class="nav-link" href="{{ path('contact') }}">Contact</a>
-								{% if (is_granted('ROLE_ADMIN')) or (is_granted('ROLE_EDITOR')) or (is_granted('ROLE_USER')) %}
+								{% if (is_granted('ROLE_USER')) %}
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										<span class="login-logo"><i class="fas fa-user-times" title="Déconnexion"></i></span>
