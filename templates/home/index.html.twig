@@ -4,14 +4,14 @@
 
 {% block body %}
 <section id="main_title">
-    <img src="{{ asset ('logos/flat_logo_small.png') }}" alt="">
-    <h1>Venez-vous détendre en bord de Loire dans le plus agréable des hôtels...</h1>
+    <img src="{{ asset ('logos/flat_logo_small.png') }}" class="img-fluid" alt="">
+    <h1>Venez-vous détendre en bord de Loire !</h1>
 </section>
 <section id="banner_reservation" class="container">
     {% if (is_granted('ROLE_USER')) %}
     <h2><a href="{{ path('reservation_index') }}">Réservez ici votre séjour dés à présent !</a></h2>
     {% else %}
-    <h2><a href="{{ ('/login') }}">Réservez ici votre séjour dés à présent !</a></h2>
+    <h2><a href="{{ ('/login') }}">Réservez ici votre séjour dés maintenant !</a></h2>
     {% endif %}
 </section>
 
@@ -37,20 +37,22 @@
 </section>
 
 <section id="amenities_banner">
-    <div class="amenities_banner_element">
-        <i class="fas fa-wifi"></i>
-        <h3>Free wifi</h3>
-        <p>Pour rester connecté partout dans l'hotêl, y compris dans les jardins !</p>
-    </div>
-    <div class="amenities_banner_element">
-        <i class="fas fa-key"></i>
-        <h3>Service de chambre</h3>
-        <p>Profitez d'un service de chambre irréprochable à votre service !</p>
-    </div>
-    <div class="amenities_banner_element">
-        <i class="fas fa-parking"></i>
-        <h3>Parking</h3>
-        <p>Parking couvert sous vidéo-surveillance accessible 24h/24h ! </p>
+    <div class="row">
+        <div class="col-lg-4 amenities_banner_element">
+            <i class="fas fa-wifi"></i>
+            <h3>Free wifi</h3>
+            <p>Pour rester connecté partout dans l'hotêl, y compris dans les jardins !</p>
+        </div>
+        <div class="col-lg-4 amenities_banner_element">
+            <i class="fas fa-key"></i>
+            <h3>Service de chambre</h3>
+            <p>Profitez d'un service de chambre irréprochable à votre service !</p>
+        </div>
+        <div class="col-lg-4 amenities_banner_element">
+            <i class="fas fa-parking"></i>
+            <h3>Parking</h3>
+            <p>Parking couvert sous vidéo-surveillance accessible 24h/24h ! </p>
+        </div>
     </div>
 </section>
 
@@ -71,13 +73,13 @@
                     vous divertir en vacances que pour préparer vos dossier professionnels.
                 </p>
             </div>
-            <div>
+            <div class="features">
                 <h4>Caractéristiques</h4>
-                <P><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male man"></i>
+                <P class="people"><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male man"></i>
                 4 personnes</P>
-                <p><i class="far fa-square"></i> Superficie : 92m²</p>
-                <p><i class="far fa-eye"></i> Vue sur la vallée de la Loire</p>
-                <P><i class="fas fa-bath"></i> Salle de bain avec baignoire</P>
+                <p class="area"><i class="far fa-square"></i> Superficie : 92m²</p>
+                <p class="view"><i class="far fa-eye"></i> Vue sur la vallée de la Loire</p>
+                <P class="bathroom"><i class="fas fa-bath"></i> Salle de bain avec baignoire</P>
             </div>
             <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
         </div>
@@ -137,10 +139,10 @@
         <div class="col-lg-5">
             <h2>Accès à l'hôtel</h2>
             <div class="location_infos">
-                <p><i class="fas fa-map-marker-alt"></i> Chemin de l'île Ardouin, 49400 Saumur</p>
-                <p><i class="fas fa-envelope"></i> contact@altone.fr</p>
-                <p><i class="fas fa-phone-alt"></i> 06 33 10 81 28</p>
-                <p><i class="fas fa-thumbtack"></i> 47.290531, -0.109539</p>
+                <a href="https://www.google.com/maps/d/viewer?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox&ll=47.29090490000001%2C-0.10921979999999554&z=16" target="_blank"><i class="fas fa-map-marker-alt"></i> Chemin de l'île Ardouin, 49400 Saumur</p>
+                <a href="{{ path('contact') }}"><i class="fas fa-envelope"></i> contact@altone.fr</a>
+                <a href="tel:+33633108128"><i class="fas fa-phone-alt"></i> 06 33 10 81 28</a>
+                <a href="https://www.google.com/maps/d/viewer?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox&ll=47.29090490000001%2C-0.10921979999999554&z=16" target="_blank"><i class="fas fa-thumbtack"></i> 47.290531, -0.109539</a>
             </div>
         </div>
         <div class="col-lg-7">

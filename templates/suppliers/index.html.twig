@@ -10,8 +10,8 @@
         <p class="sentence"> Pour le plaisir de vos papilles, le chef Delouche selectionne les meilleurs 
             producteurs pour mettre dans votre assiette les aliments les plus savoureux .
         </p>
-        <div class="treat"></div>
         {% for supplier in suppliers %}
+        <div class="treat"></div>
             <p><span class="supplier"> {{ supplier.nameSupplier }} </span> - <span class="category"> {{ supplier.CategorySuppliers.nameCategory }} </span> - <span class="adress"> {{ supplier.adressSupplier }}
                 - <span class="cp"> {{ supplier.cpSupplier }} </span> - <span class="city"> {{ supplier.citySupplier }} </span> - <span class="phone"> {{ supplier.phoneSupplier }} </span> - <span class="mail"> {{ supplier.mailSupplier }}</span> 
                 - <a href="http://{{ supplier.websiteSupplier }}"> {{ supplier.websiteSupplier }} </a>

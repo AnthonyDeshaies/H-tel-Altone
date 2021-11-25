@@ -106,7 +106,7 @@ class ReservationController extends AbstractController
    
         if ($form->isSubmitted() && $form->isValid()) {
             $email = (new TemplatedEmail())
-                ->from($reservation->get('email')->getData())
+                ->from('contact@anthonydeshaies.com')
                 ->to('a.deshaies@laposte.net')
                 ->subject('reservation')
                 ->htmlTemplate('email/reservation.html.twig')

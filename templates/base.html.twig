@@ -27,21 +27,23 @@
 	{% block header %}
 		<header>
 			<section id="banner">
-				<div class="adress">
-					<p><i class="fas fa-map-marker-alt" href="#"></i>Chemin de l'île Ardouin, 49400 Saumur</p>
-				</div>
-				<div class="mail">
-					<p><i class="fas fa-envelope" href="#"></i>contact@altone.f</p>
-				</div>
-				<div class="phone">
-					<p><i class="fas fa-phone-alt href=" #""></i>06 33 10 81 28</p>
+				<div class="row">
+					<div class="col-lg-4 adress">
+						<a href="https://www.google.com/maps/d/viewer?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox&ll=47.29090490000001%2C-0.10921979999999554&z=16" target="_blank"><i class="fas fa-map-marker-alt" href="#"></i>Chemin de l'île Ardouin, 49400 Saumur</a>
+					</div>
+					<div class="col-lg-4 mail">
+						<a href="{{ path('contact') }}"><i class="fas fa-envelope" href="#"></i>contact@altone.f</a>
+					</div>
+					<div class="col-lg-4 phone">
+						<a href="tel:+33633108128"><i class="fas fa-phone-alt" href="#"></i>06 33 10 81 28</a>
+					</div>
 				</div>
 			</section>
 
 			<section id="navbar">
 				<nav class="navbar navbar-expand-lg navbar-light bg-light">
 					<div class="container">
-						<a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset ('logos/flat_logo_small.png') }}" class="" alt=""></a>
+						<a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset ('logos/flat_logo_small.png') }}" class="img-fluid"></a>
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
@@ -91,7 +93,6 @@
 				<a href="{{ path('restaurant_index') }}">Restaurant</a>
 				<a href="{{ path('amenities_index') }}">Services</a>
 				<a href="{{ path('discoveries_index') }}">Tourisme</a>
-				<a href="{{ path('suppliers_index') }}">Nos fournisseurs</a>
 				<a href="{{ path('contact') }}">Contact</a>
 			</div>
 			<p>Hôtel Anjou 2021 @ All Rights Reserved</p>

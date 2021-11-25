@@ -53,19 +53,15 @@ header {
 
 header #banner {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  text-align: center;
   background-color: #69b88e;
   color: white;
   margin: auto;
 }
 
-header #banner p {
-  margin-top: 10px;
+header #banner a {
+  text-decoration: none;
+  color: #4e4e4d;
 }
 
 header #banner i {
@@ -211,19 +207,19 @@ footer p {
 }
 
 #main_title img {
-  height: 150px;
   display: block;
   margin: auto;
   padding-top: 20px;
+  max-width: 90%;
 }
 
 #main_title h1 {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 40px;
   color: #313130;
+  margin: 0 25px;
   font-size: 35px;
   font-style: italic;
-  margin: 0 300px 0 300px;
   font-family: 'Roboto, cursive';
 }
 
@@ -330,6 +326,7 @@ footer p {
   width: 300px;
   color: #4e4e4d;
   font-style: italic;
+  margin: auto;
 }
 
 /*----------section rooms_home_page------*/
@@ -428,7 +425,7 @@ footer p {
 }
 
 #restaurant_home_page .btn {
-  margin-left: 450px;
+  margin: auto;
 }
 
 /*----------section location_home_page--------*/
@@ -453,8 +450,11 @@ footer p {
           justify-content: space-between;
 }
 
-#location_home_page p {
+#location_home_page a {
   margin: 20px 0 20px 80px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #4e4e4d;
 }
 
 #location_home_page i {
@@ -754,6 +754,10 @@ footer p {
   padding-top: 35px;
 }
 
+#amenities {
+  margin-bottom: -120px;
+}
+
 #amenities .sentence {
   text-align: center;
   margin: 80px 0 -20px 0;
@@ -763,6 +767,10 @@ footer p {
 
 #amenities img {
   width: 100%;
+}
+
+#amenities .price {
+  color: #69b88e;
 }
 
 /* =================== FRONT - DISCOVERY PAGE ======================*/
@@ -2046,14 +2054,275 @@ footer p {
   margin-right: 20px;
 }
 
-/*xxxxxxxxxxxxxxxxxxxRESPONSIVExxxxxxxxxxxxxxxxxx*/
-/*========RESPONSIVE HOME PAGE==============*/
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx RESPONSIVE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+/*========== RESPONSIVE ALL PAGEs ===============*/
+@media screen and (max-width: 991px) {
+  * {
+    text-align: center;
+  }
+  * .btn {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 451px) {
+  * h2 {
+    font-size: 35px;
+  }
+  * h3 {
+    font-size: 32px;
+  }
+  * p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  * h2 {
+    font-size: 28px;
+  }
+  * h3 {
+    font-size: 25px;
+  }
+  * .treat {
+    width: 150px;
+  }
+}
+
+/*========== RESPONSIVE  BASE PAGE ==============*/
+@media screen and (max-width: 429px) {
+  footer .footer_archors {
+    font-size: 11px;
+  }
+  footer a {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  footer p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 299px) {
+  footer .footer_archors {
+    font-size: 8px;
+  }
+  footer a {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  footer p {
+    font-size: 7px;
+  }
+}
+
+/*========== RESPONSIVE  HOME PAGE ==============*/
+/*------ Responsive : section main_title -----*/
+@media screen and (max-width: 1000px) {
+  #main_title {
+    height: 700px;
+  }
+  #main_title h1 {
+    font-size: 33px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #main_title {
+    height: 500px;
+  }
+  #main_title h1 {
+    font-size: 25px;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  #main_title {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  #main_title {
+    height: 400px;
+  }
+  #main_title h1 {
+    font-size: 22px;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  #main_title {
+    height: 350px;
+  }
+  #main_title h1 {
+    font-size: 20px;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  #main_title {
+    height: 300px;
+  }
+  #main_title h1 {
+    font-size: 18px;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 307px) {
+  #main_title {
+    height: 280px;
+  }
+  #main_title h1 {
+    font-size: 14px;
+    padding-top: 0;
+  }
+}
+
+/*------ Responsive : section banner_reservation -----*/
+@media screen and (max-width: 767px) {
+  #banner_reservation {
+    height: 80px;
+  }
+  #banner_reservation h2 {
+    padding-top: 0;
+    vertical-align: middle;
+  }
+  #banner_reservation a {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  #banner_reservation a {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  #banner_reservation {
+    height: 60px;
+  }
+  #banner_reservation a {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 301px) {
+  #banner_reservation {
+    height: 60px;
+  }
+  #banner_reservation a {
+    font-size: 10px;
+  }
+}
+
+/*------ Responsive : section welcome -----*/
 @media screen and (max-width: 1500px) {
-  .welcome_txt {
+  #welcome .welcome_txt {
     padding: 0 50px;
   }
-  .welcome_txt p {
+}
+
+@media screen and (max-width: 991px) {
+  #welcome {
+    margin: 50px 0;
+  }
+}
+
+@media screen and (max-width: 451px) {
+  #welcome .welcome_txt span {
     font-size: 15px;
+  }
+}
+
+/*------ Responsive : section amenities_banner -----*/
+@media screen and (max-width: 331px) {
+  #amenities_banner p {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/*------ Responsive : section rooms_home_page -----*/
+@media screen and (max-width: 991px) {
+  #rooms_home_page {
+    margin-top: 50px;
+    margin-bottom: -80px;
+  }
+  #rooms_home_page h2 {
+    margin-bottom: 20px;
+  }
+  #rooms_home_page h3 {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  #rooms_home_page p {
+    padding-bottom: 15px;
+  }
+  #rooms_home_page .man {
+    margin-right: 17px;
+  }
+  #rooms_home_page .people {
+    padding-right: 100px;
+  }
+  #rooms_home_page .area {
+    padding-right: 70px;
+  }
+  #rooms_home_page .fa-bath {
+    margin: 0 22px 0 18px;
+  }
+  #rooms_home_page .fa-eye {
+    margin: 0 19px 0 7px;
+  }
+  #rooms_home_page .btn {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 261px) {
+  #rooms_home_page p {
+    text-align: left;
+  }
+}
+
+/*------ Responsive : section restaurant_home_page -----*/
+@media screen and (max-width: 991px) {
+  #restaurant_home_page {
+    margin-top: -50px;
+  }
+  #restaurant_home_page h2 {
+    margin-bottom: 30px;
+  }
+  #restaurant_home_page .btn {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+/*------ Responsive : section location -----*/
+@media screen and (max-width: 991px) {
+  #location_home_page {
+    margin-top: -50px;
+    margin-bottom: -80px;
+  }
+  #location_home_page .col-lg-5 {
+    margin-bottom: 50px;
+  }
+  #location_home_page .col-lg-5 a {
+    text-align: left;
+    height: 27px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  #location_home_page a {
+    font-size: 13px;
   }
 }
 
@@ -2062,10 +2331,41 @@ footer p {
   #type_rooms .btn_odd {
     margin-bottom: 50px;
   }
+  #type_rooms .treat {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  #type_rooms h2 {
+    margin-top: 15px;
+  }
+  #type_rooms h3 {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  #type_rooms_title {
+    height: 400px;
+  }
+  #type_rooms_title h1 {
+    font-size: 50px;
+  }
+  #type_rooms .sentence {
+    font-size: 20px;
+  }
+  #type_rooms .name_price {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 /*========RESPONSIVE RESTAURANT PAGE==============*/
 @media screen and (max-width: 1300px) {
+  #restaurant_title {
+    height: 500px;
+  }
   #restaurant_title h1 {
     color: white;
   }
@@ -2077,17 +2377,131 @@ footer p {
   }
 }
 
-/*========RESPONSIVE AMENITIES PAGE==============*/
-@media screen and (max-width: 991px) {
-  #amenities .price {
-    margin-bottom: 80px;
+@media screen and (max-width: 591px) {
+  #restaurant_title {
+    height: 400px;
+  }
+  #restaurant_title h1 {
+    padding-top: 20px;
+    font-size: 60px;
+  }
+  #restaurant_menu {
+    margin-top: -40px;
+  }
+  #restaurant_menu .treat {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  #restaurant_menu h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  #restaurant_title {
+    height: 300px;
+  }
+  #restaurant_title h1 {
+    padding-top: 15px;
+    font-size: 40px;
   }
 }
 
 /*========RESPONSIVE AMENITIES PAGE==============*/
 @media screen and (max-width: 991px) {
+  #amenities {
+    margin-top: -40px;
+  }
+  #amenities .price {
+    margin-bottom: 80px;
+  }
+  #amenities .sentence {
+    padding-top: -15px;
+  }
+  #amenities .treat {
+    margin-top: 60px;
+  }
+  #amenities h2 {
+    margin-top: -40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #amenities_title {
+    height: 400px;
+  }
+  #amenities_title h1 {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 307px) {
+  #amenities_title {
+    height: 250px;
+  }
+  #amenities_title h1 {
+    padding-top: 15px;
+    font-size: 40px;
+  }
+}
+
+/*========RESPONSIVE DISCOVERIES PAGE==============*/
+@media screen and (max-width: 991px) {
   #discoveries .discovery_even {
     margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 467px) {
+  #discoveries_title {
+    height: 400px;
+  }
+  #discoveries_title h1 {
+    font-size: 50px;
+    padding-top: 70px;
+  }
+  #discoveries .sentence {
+    font-size: 17px;
+  }
+}
+
+/*========RESPONSIVE SUPPLIERSS PAGE==============*/
+@media screen and (max-width: 1300px) {
+  #suppliers_title {
+    height: 600px;
+  }
+  #suppliers_title h1 {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  #suppliers_title {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 820pxpx) {
+  #suppliers_title {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #suppliers_title {
+    height: 300px;
+  }
+  #suppliers_title h1 {
+    font-size: 50px;
+  }
+  #suppliers .sentence {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: -30px;
+  }
+  #suppliers p {
+    margin: 0 30px 20px 30px;
   }
 }
 /*# sourceMappingURL=style.css.map */

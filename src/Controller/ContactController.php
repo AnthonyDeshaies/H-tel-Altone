@@ -22,7 +22,7 @@ class ContactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $email = (new TemplatedEmail())
-                ->from($contact->get('email')->getData())
+                ->from('contact@anthonydeshaies.com')
                 ->to('a.deshaies@laposte.net')
                 ->subject('contact')
                 ->htmlTemplate('email/contact.html.twig')
@@ -36,6 +36,7 @@ class ContactController extends AbstractController
 
                 $mailer->send($email);
 
+                $this->addFlash('message', 'mail de contact envoyé');
                 return $this->redirectToRoute('contact');
 
         }
