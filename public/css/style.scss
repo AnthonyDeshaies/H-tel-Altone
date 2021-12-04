@@ -1184,6 +1184,7 @@ footer
         }
 }
 
+
 /* ======================= ADMIN - USERS PAGE ============================*/
 
 #users_admin
@@ -1550,6 +1551,137 @@ footer
             margin-right: 70px;
         }
 }
+
+#new_amenities
+{
+    width: 800px;
+    height: 1100px;
+    padding: 30px 0 60px 0;
+    margin: 80px auto;
+    background-color: rgb(105, 184, 142);
+    border: solid 10px rgb(105, 184, 142);
+    border-radius: 15px;
+        
+        h1
+        {
+            margin: 50px 0 30px 0;
+        }
+
+        .required
+        {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        input
+        {
+            text-align: center;
+            width: 300px;
+            margin: auto;
+            border-radius: 7px;
+        }
+
+        select
+        {
+            width: 300px;
+            margin: auto;
+            border-radius: 7px;
+        }
+
+        label
+        {
+            margin: 15px 0 30px 0;
+            font-weight: bold;
+        }
+
+        .btn
+        {
+            background-color: rgb(81, 132, 199);
+            width: 200px;
+            margin: 150px auto -120px auto;
+        }
+
+        .btn:hover
+        {
+            transition: 0.8s;
+            border: solid 4px rgb(81, 132, 199);
+            background-color: rgb(105, 184, 142)
+        }
+}
+
+/* ===================== ADMIN - EDIT AMENITIES PAGE ================*/
+
+#edit_amenities
+{
+    width: 800px;
+    height: 1150px;
+    padding: 30px 0 60px 0;
+    margin: 80px auto;
+    background-color: rgb(105, 184, 142);
+    border: solid 10px rgb(105, 184, 142);
+    border-radius: 15px;
+        
+        h1
+        {
+            margin: 50px 0 30px 0;
+        }
+
+        .required
+        {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        input
+        {
+            text-align: center;
+            width: 300px;
+            margin: auto;
+            border-radius: 7px;
+        }
+
+        select
+        {
+            width: 300px;
+            margin: auto;
+            border-radius: 7px;
+        }
+
+        label
+        {
+            margin: 15px 0 30px 0;
+            font-weight: bold;
+        }
+
+        .btn
+        {
+            background-color: rgb(81, 132, 199);
+            width: 200px;
+            margin: 150px auto -120px auto;
+        }
+
+        .btn:hover
+        {
+            transition: 0.8s;
+            border: solid 4px rgb(81, 132, 199);
+            background-color: rgb(105, 184, 142)
+        }
+}
+
 
 /* ================== ADMIN DICOVERIES PAGE =======================*/
 

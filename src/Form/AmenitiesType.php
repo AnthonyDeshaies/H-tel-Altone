@@ -40,7 +40,7 @@ class AmenitiesType extends AbstractType
             ->add(
                 'descriptionAmenity',
                 CKEditorType::class,
-                array('label' => 'Description')
+                array('label' => 'descriptionAmenity')
             )
 ;
     }

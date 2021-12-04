@@ -3,7 +3,7 @@
 {% block title %}Modifier service{% endblock %}
 
 {% block body %}
-    <section id="edit">
+    <section id="edit_amenities">
         <h1>Modifier service</h1>
         {{ include('amenities/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
         <a class="btn" href="{{ path('amenities_admin') }}">Retour à la liste</a>
