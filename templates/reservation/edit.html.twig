@@ -5,6 +5,6 @@
 {% block body %}
     <h1>modifier une réservation</h1>
     {{ include('reservation/_form.html.twig', {'button_label': 'Update'}) }}
-    <a href="{{ path('reservation_admin') }}">Retour à la liste</a>
+    <a href="{{ path('reservation_admin') }}" rel="noopener noefferer">Retour à la liste</a>
     {{ include('reservation/_delete_form.html.twig') }}
 {% endblock %}

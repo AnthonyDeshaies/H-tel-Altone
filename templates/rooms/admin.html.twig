@@ -28,8 +28,8 @@
                     <td>{{ room.priceRoom }}</td>
                     <td>{{ room.viewRoom }}</td>
                     <td>
-                        <a class="show" href="{{ path('rooms_show', {'id': room.id}) }}">Voir</a>
-                        <a class="edit" href="{{ path('rooms_edit', {'id': room.id}) }}">Modifier</a>
+                        <a class="show" href="{{ path('rooms_show', {'id': room.id}) }}" rel="noopener noefferer">Voir</a>
+                        <a class="edit" href="{{ path('rooms_edit', {'id': room.id}) }}" rel="noopener noefferer">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -40,6 +40,6 @@
             </tbody>
         </table>
 
-        <a class="btn" href="{{ path('rooms_new') }}">Créer une nouvelle chambre</a>
+        <a class="btn" href="{{ path('rooms_new') }}" rel="noopener noefferer">Créer une nouvelle chambre</a>
     </section>
 {% endblock %}

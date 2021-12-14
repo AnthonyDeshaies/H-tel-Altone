@@ -26,8 +26,8 @@
                     <td>{{ dish.priceDish }}</td>
                     <td>{{ dish.CategoryDishes.nameCategory }}</td>
                     <td>
-                        <a class="show" href="{{ path('dishes_show', {'id': dish.id}) }}">Voir</a>
-                        <a class="edit" href="{{ path('dishes_edit', {'id': dish.id}) }}">Modifier</a>
+                        <a class="show" href="{{ path('dishes_show', {'id': dish.id}) }}" rel="noopener noefferer">Voir</a>
+                        <a class="edit" href="{{ path('dishes_edit', {'id': dish.id}) }}" rel="noopener noefferer">Modifier</a>
                     </td>
                 </tr>
             {% else %}

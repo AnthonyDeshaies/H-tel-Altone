@@ -23,8 +23,8 @@
             </tbody>
         </table>
         <div class="links">
-            <a class="btn" href="{{ path('option_type_room_admin') }}">Retour</a>
-            <a class="btn edit" href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}">Modifier</a>
+            <a class="btn" href="{{ path('option_type_room_admin') }}" rel="noopener noefferer">Retour</a>
+            <a class="btn edit" href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}" rel="noopener noefferer">Modifier</a>
             <form method="post" action="{{ path('option_type_room_delete', {'id': option_type_room.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ option_type_room.id) }}">
                 <button class="btn">Supprimer</button>

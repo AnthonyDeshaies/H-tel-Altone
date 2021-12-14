@@ -40,8 +40,8 @@
         </table>
 
         <div class="links">
-        <a class="btn" href="{{ path('type_room_admin') }}">Retour</a>
-        <a class="btn edit" href="{{ path('type_room_edit', {'id': type_room.id}) }}">Modier</a>
+        <a class="btn" href="{{ path('type_room_admin') }}" rel="noopener noefferer">Retour</a>
+        <a class="btn edit" href="{{ path('type_room_edit', {'id': type_room.id}) }}" rel="noopener noefferer">Modier</a>
         {{ include('type_room/_delete_form.html.twig') }}
         </div>
     </section>

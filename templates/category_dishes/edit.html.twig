@@ -6,7 +6,7 @@
     <section id="edit">
         <h1>Modifier catégorie de plat</h1>
         {{ include('category_dishes/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-        <a class="btn" href="{{ path('category_dishes_admin') }}">Retour à la liste</a>
+        <a class="btn" href="{{ path('category_dishes_admin') }}" rel="noopener noefferer">Retour à la liste</a>
         {{ include('category_dishes/_delete_form.html.twig') }}
     </section>
 {% endblock %}

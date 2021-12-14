@@ -6,7 +6,7 @@
     <section id="edit" class="container">
         <h1>Modifier le Restaurant</h1>
         {{ include('restaurant/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-        <a class="btn" href="{{ path('restaurant_admin') }}">Retour à la liste</a>
+        <a class="btn" href="{{ path('restaurant_admin') }}" rel="noopener noefferer">Retour à la liste</a>
         {{ include('restaurant/_delete_form.html.twig') }}
     </section>
 {% endblock %}

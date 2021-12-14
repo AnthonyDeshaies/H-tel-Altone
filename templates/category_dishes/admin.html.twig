@@ -19,10 +19,10 @@
                 <tr>
                     <td>{{ category_dish.id }}</td>
                     <td>{{ category_dish.nameCategory }}</td>
-                    <td><img src="{{ asset('uploads/photos/' ~ category_dish.imgCategoryDishes) }}" width="100"></td>                    
+                    <td><img src="{{ asset('uploads/photos/' ~ category_dish.imgCategoryDishes) }}" alt="Plats" width="100"></td>                    
                     <td>
-                        <a class="show" href="{{ path('category_dishes_show', {'id': category_dish.id}) }}">Voir</a>
-                        <a class="edit" href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}">Modifier</a>
+                        <a class="show" href="{{ path('category_dishes_show', {'id': category_dish.id}) }}" rel="noopener noefferer">Voir</a>
+                        <a class="edit" href="{{ path('category_dishes_edit', {'id': category_dish.id}) }}" rel="noopener noefferer">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -33,6 +33,6 @@
             </tbody>
         </table>
 
-        <a class="btn" href="{{ path('category_dishes_new') }}">Créer nouvelle catégorie</a>
+        <a class="btn" href="{{ path('category_dishes_new') }}" rel="noopener noefferer">Créer nouvelle catégorie</a>
     </section>
 {% endblock %}

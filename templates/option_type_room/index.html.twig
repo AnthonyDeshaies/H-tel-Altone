@@ -21,8 +21,8 @@
                 <td>{{ option_type_room.nameOptionTypeRoom }}</td>
                 <td>{{ option_type_room.logoOptionTypeRoom }}</td>
                 <td>
-                    <a href="{{ path('option_type_room_show', {'id': option_type_room.id}) }}">show</a>
-                    <a href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}">edit</a>
+                    <a href="{{ path('option_type_room_show', {'id': option_type_room.id}) }}" rel="noopener noefferer">show</a>
+                    <a href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}" rel="noopener noefferer">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('option_type_room_new') }}">Create new</a>
+    <a href="{{ path('option_type_room_new') }}" rel="noopener noefferer">Create new</a>
 {% endblock %}

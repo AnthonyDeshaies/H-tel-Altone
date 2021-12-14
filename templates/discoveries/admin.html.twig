@@ -25,14 +25,14 @@
                 <td>{{ discovery.id }}</td>
                 <td>{{ discovery.nameDiscovery }}</td>
                 <td>{{ discovery.descriptionDiscovery |raw }}</td>
-                <td><img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" width="100"></td>
+                <td><img src="{{ asset('uploads/photos/' ~ discovery.imgDiscovery) }}" alt="Activités touristiques" width="100"></td>
                 <td>{{ discovery.cpDiscovery }}</td>
                 <td>{{ discovery.cityDiscovery }}</td>
                 <td>{{ discovery.latitudeDiscovery }}</td>
                 <td>{{ discovery.longitudeDiscovery }}</td>
                 <td>
-                    <a class="show" href="{{ path('discoveries_show', {'id': discovery.id}) }}">Voir</a>
-                    <a class="edit" href="{{ path('discoveries_edit', {'id': discovery.id}) }}">Modifier</a>
+                    <a class="show" href="{{ path('discoveries_show', {'id': discovery.id}) }}" rel="noopener noefferer">Voir</a>
+                    <a class="edit" href="{{ path('discoveries_edit', {'id': discovery.id}) }}" rel="noopener noefferer">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -43,6 +43,6 @@
         </tbody>
     </table>
 
-    <a class="btn" href="{{ path('discoveries_new') }}">Créer nouvelle activité</a>
+    <a class="btn" href="{{ path('discoveries_new') }}" rel="noopener noefferer">Créer nouvelle activité</a>
 </section>
 {% endblock %}

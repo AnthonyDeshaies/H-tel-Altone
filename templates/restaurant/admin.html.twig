@@ -22,8 +22,8 @@
                     <td>{{ restaurant.nameRestaurant }}</td>
                     <td>{{ restaurant.descriptionRestaurant |raw }}</td>
                     <td>
-                        <a class="show" href="{{ path('restaurant_show', {'id': restaurant.id}) }}">Voir</a>
-                        <a class="edit" href="{{ path('restaurant_edit', {'id': restaurant.id}) }}">Modifier</a>
+                        <a class="show" href="{{ path('restaurant_show', {'id': restaurant.id}) }}" rel="noopener noefferer">Voir</a>
+                        <a class="edit" href="{{ path('restaurant_edit', {'id': restaurant.id}) }}" rel="noopener noefferer">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -34,6 +34,6 @@
             </tbody>
         </table>
 
-        <a class="btn" href="{{ path('restaurant_new') }}">Créer un nouveau restaurant</a>
+        <a class="btn" href="{{ path('restaurant_new') }}" rel="noopener noefferer">Créer un nouveau restaurant</a>
     </section>
 {% endblock %}

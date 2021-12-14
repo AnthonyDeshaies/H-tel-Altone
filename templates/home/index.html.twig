@@ -9,9 +9,9 @@
 </section>
 <section id="banner_reservation" class="container">
     {% if (is_granted('ROLE_USER')) %}
-    <h2><a href="{{ path('reservation_index') }}">Réservez ici votre séjour dés à présent !</a></h2>
+    <h2><a href="{{ path('reservation_index') }}" rel="noopener noefferer">Réservez ici votre séjour dés à présent !</a></h2>
     {% else %}
-    <h2><a href="{{ ('/login') }}">Réservez ici votre séjour dés maintenant !</a></h2>
+    <h2><a href="{{ ('/login') }}" rel="noopener noefferer">Réservez ici votre séjour dés maintenant !</a></h2>
     {% endif %}
 </section>
 
@@ -31,7 +31,7 @@
                 avec wifi haut débit, un service de chambre entièrement dévoué à
                 votre bien-être, un restaurant haut de gamme, des sallons de détente,
                 un spa, et tout ce dont vous auriez besoin...</p>
-            <a href="{{ path('discoveries_index') }}" class="btn">En savoir +</a>
+            <a href="{{ path('discoveries_index') }}" class="btn" rel="noopener noefferer">En savoir +</a>
         </div>
     </div>
 </section>
@@ -81,7 +81,7 @@
                 <p class="view"><i class="far fa-eye"></i> Vue sur la vallée de la Loire</p>
                 <P class="bathroom"><i class="fas fa-bath"></i> Salle de bain avec baignoire</P>
             </div>
-            <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
+            <a href="{{ path('type_room_index') }}" class="btn" rel="noopener noefferer">En savoir +</a>
         </div>
     </div>
     <div class="treat"></div>
@@ -94,7 +94,7 @@
             <p>Ces chambres sont spacieuses, lumineuses. Elles offrent
                 une intimité avec vue sur la Loire, le château d’Amboise
                 ou les jardins à l’italienne.</p>
-            <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
+            <a href="{{ path('type_room_index') }}" class="btn" rel="noopener noefferer">En savoir +</a>
         </div>
         <div class="col-lg-3">
             <img src="{{ asset ('images/familly_room1.jpg') }}" alt="Chambre familiale">
@@ -103,7 +103,7 @@
             <h3>Chambres familiales</h3>
             <p>Ce sont de belles et grandes chambres de style, avec un espace salon et un blacon privée.
                 L’ambiance feutrée vous apportera calme et sérénité.</p>
-            <a href="{{ path('type_room_index') }}" class="btn">En savoir +</a>
+            <a href="{{ path('type_room_index') }}" class="btn" rel="noopener noefferer">En savoir +</a>
         </div>
     </div>
 </section>
@@ -124,7 +124,7 @@
                 locaux, mettant en valeur les viandes d'élevage régionales et les poissons français tout en
                 les transformant en plats gastronomiques d'art.
             </p>
-            <a href="{{ path('restaurant_index') }}" class="btn">En savoir +</a>
+            <a href="{{ path('restaurant_index') }}" class="btn" rel="noopener noefferer">En savoir +</a>
         </div>
         <div class="col-lg-6">
             <img src="{{ asset ('images/food_home.jpg') }}" alt="Plat Restaurant">
@@ -139,15 +139,14 @@
         <div class="col-lg-5">
             <h2>Accès à l'hôtel</h2>
             <div class="location_infos">
-                <a href="https://www.google.com/maps/d/viewer?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox&ll=47.29090490000001%2C-0.10921979999999554&z=16" target="_blank"><i class="fas fa-map-marker-alt"></i> Chemin de l'île Ardouin, 49400 Saumur</p>
+                <a href="https://www.google.com/maps/d/viewer?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox&ll=47.29090490000001%2C-0.10921979999999554&z=16" target="_blank" rel="noopener noefferer"><i class="fas fa-map-marker-alt"></i> Chemin de l'île Ardouin, 49400 Saumur</p>
                 <a href="{{ path('contact') }}"><i class="fas fa-envelope"></i> contact@altone.fr</a>
                 <a href="tel:+33633108128"><i class="fas fa-phone-alt"></i> 06 33 10 81 28</a>
-                <a href="https://www.google.com/maps/d/viewer?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox&ll=47.29090490000001%2C-0.10921979999999554&z=16" target="_blank"><i class="fas fa-thumbtack"></i> 47.290531, -0.109539</a>
+                <a href="https://www.google.com/maps/d/viewer?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox&ll=47.29090490000001%2C-0.10921979999999554&z=16" target="_blank" rel="noopener noefferer"><i class="fas fa-thumbtack"></i> 47.290531, -0.109539</a>
             </div>
         </div>
         <div class="col-lg-7">
-            <iframe src="https://www.google.com/maps/d/embed?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox" width="100%"
-                height="400px"></iframe>
+            <iframe title="Plan d'accès à l'hôtel" src="https://www.google.com/maps/d/embed?mid=106yV4GtIp51TY2YHeIFe4aQVoHWv6Uox" rel="noopener noefferer" width="100%" height="400px"></iframe>
         </div>
 
     </div>

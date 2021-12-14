@@ -20,8 +20,8 @@
                     <td>{{ category_supplier.id }}</td>
                     <td>{{ category_supplier.nameCategory }}</td>
                     <td>
-                        <a class="show" href="{{ path('category_suppliers_show', {'id': category_supplier.id}) }}">Voir</a>
-                        <a class="edit" href="{{ path('category_suppliers_edit', {'id': category_supplier.id}) }}">Modifier</a>
+                        <a class="show" href="{{ path('category_suppliers_show', {'id': category_supplier.id}) }}" rel="noopener noefferer">Voir</a>
+                        <a class="edit" href="{{ path('category_suppliers_edit', {'id': category_supplier.id}) }}" rel="noopener noefferer">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -32,6 +32,6 @@
             </tbody>
         </table>
 
-        <a class="btn" href="{{ path('category_suppliers_new') }}">Créer une nouvelle catégorie</a>
+        <a class="btn" href="{{ path('category_suppliers_new') }}" rel="noopener noefferer">Créer une nouvelle catégorie</a>
         </section>
 {% endblock %}

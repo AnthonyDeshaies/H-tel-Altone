@@ -39,8 +39,8 @@
             </tbody>
         </table>
         <div class="links">
-            <a class="btn" href="{{ path('menus_admin') }}">Retour</a>
-            <a class="btn edit" href="{{ path('menus_edit', {'id': menu.id}) }}">Modifier</a>
+            <a class="btn" href="{{ path('menus_admin') }}" rel="noopener noefferer">Retour</a>
+            <a class="btn edit" href="{{ path('menus_edit', {'id': menu.id}) }}" rel="noopener noefferer">Modifier</a>
             <form method="post" action="{{ path('menus_delete', {'id': menu.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ menu.id) }}">
                 <button class="btn">Supprimer</button>

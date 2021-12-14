@@ -30,8 +30,8 @@
                     <td>{{ menu.mainCourses }}</td>
                     <td>{{ menu.desserts }}</td>
                     <td>
-                        <a class="show" href="{{ path('menus_show', {'id': menu.id}) }}">Voir</a>
-                        <a class="edit" href="{{ path('menus_edit', {'id': menu.id}) }}">Modifier</a>
+                        <a class="show" href="{{ path('menus_show', {'id': menu.id}) }}" rel="noopener noefferer">Voir</a>
+                        <a class="edit" href="{{ path('menus_edit', {'id': menu.id}) }}" rel="noopener noefferer">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -42,6 +42,6 @@
             </tbody>
         </table>
 
-        <a class="btn" href="{{ path('menus_new') }}">Créer un nouveau menu</a>
+        <a class="btn" href="{{ path('menus_new') }}" rel="noopener noefferer">Créer un nouveau menu</a>
     </section>
 {% endblock %}

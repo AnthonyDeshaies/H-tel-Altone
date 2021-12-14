@@ -22,8 +22,8 @@
                     <td>{{ option_type_room.nameOptionTypeRoom }}</td>
                     <td>{{ option_type_room.logoOptionTypeRoom }}</td>
                     <td>
-                        <a class="show" href="{{ path('option_type_room_show', {'id': option_type_room.id}) }}">voir</a>
-                        <a class="edit" href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}">Modifier</a>
+                        <a class="show" href="{{ path('option_type_room_show', {'id': option_type_room.id}) }}" rel="noopener noefferer">voir</a>
+                        <a class="edit" href="{{ path('option_type_room_edit', {'id': option_type_room.id}) }}" rel="noopener noefferer">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -34,6 +34,6 @@
             </tbody>
         </table>
 
-        <a class="btn" href="{{ path('option_type_room_new') }}">Créer une nouvelle option</a>
+        <a class="btn" href="{{ path('option_type_room_new') }}" rel="noopener noefferer">Créer une nouvelle option</a>
     </section>
 {% endblock %}

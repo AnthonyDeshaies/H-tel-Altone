@@ -14,7 +14,7 @@
         <div class="treat"></div>
             <p><span class="supplier"> {{ supplier.nameSupplier }} </span> - <span class="category"> {{ supplier.CategorySuppliers.nameCategory }} </span> - <span class="adress"> {{ supplier.adressSupplier }}
                 - <span class="cp"> {{ supplier.cpSupplier }} </span> - <span class="city"> {{ supplier.citySupplier }} </span> - <span class="phone"> {{ supplier.phoneSupplier }} </span> - <span class="mail"> {{ supplier.mailSupplier }}</span> 
-                - <a href="http://{{ supplier.websiteSupplier }}"> {{ supplier.websiteSupplier }} </a>
+                - <a href="http://{{ supplier.websiteSupplier }}" rel="noopener noefferer"> {{ supplier.websiteSupplier }} </a>
             </p>
         {% endfor %}
     </section>

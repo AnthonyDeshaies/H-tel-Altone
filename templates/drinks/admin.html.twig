@@ -26,8 +26,8 @@
                     <td>{{ drink.detailDrink |raw }}</td>
                     <td>{{ drink.priceDrink }}</td>
                     <td>
-                        <a class="show" href="{{ path('drinks_show', {'id': drink.id}) }}">Voir</a>
-                        <a class="edit" href="{{ path('drinks_edit', {'id': drink.id}) }}">Modifier</a>
+                        <a class="show" href="{{ path('drinks_show', {'id': drink.id}) }}" rel="noopener noefferer">Voir</a>
+                        <a class="edit" href="{{ path('drinks_edit', {'id': drink.id}) }}" rel="noopener noefferer">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -38,6 +38,6 @@
             </tbody>
         </table>
 
-        <a class="btn" href="{{ path('drinks_new') }}">Créer une nouvelle boisson</a>
+        <a class="btn" href="{{ path('drinks_new') }}" rel="noopener noefferer">Créer une nouvelle boisson</a>
     </section>
 {% endblock %}
